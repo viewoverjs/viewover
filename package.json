@@ -1,0 +1,28 @@
+{
+  "name": "boxview",
+  "version": "0.1.0",
+  "description": "Create a light & stylish pop-up (modal) to display forms, contents, photos & videos gallery overlay on the page",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "dev": "nodemon index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yedidya10/popupbox.git"
+  },
+  "keywords": [
+    "popup",
+    "pop-up",
+    "modal",
+    "dialog",
+    "lightbox"
+  ],
+  "author": "Yedidya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yedidya10/popupbox/issues"
+  },
+  "homepage": "https://github.com/Yedidya10/popupbox#readme"
+}
