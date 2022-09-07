@@ -1,18 +1,18 @@
 export const dialog = `
-<button class="button popup-box__navigate-button popup-box__navigate-button_before" data-button="nav-before">
+<button class="button boxview__navigate-button boxview__navigate-button_before" data-button="nav-before">
 <svg class="svg-icon svg-icon_nav" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px">
   <path d="M0 0h24v24H0V0z" fill="none" />
   <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
 </svg>
 </button>
-<button class="button popup-box__navigate-button popup-box__navigate-button_next" data-button="nav-next">
+<button class="button boxview__navigate-button boxview__navigate-button_next" data-button="nav-next">
 <svg class="svg-icon svg-icon_nav" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px">
   <path d="M0 0h24v24H0V0z" fill="none" />
   <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
 </svg>
 </button>
-<div class="popup-box__buttons">
-<div class="popup-box__controls-buttons popup-box__controls-buttons_type_share">
+<div class="boxview__buttons">
+<div class="boxview__controls-buttons boxview__controls-buttons_type_share">
 <div class="share-options-buttons">
 <div>
   <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="30px" width="30px" viewBox="0 0 24 24" fill="none">
@@ -61,7 +61,7 @@ export const dialog = `
     </svg>
   </button>
 </div>
-<div class="popup-box__controls-buttons popup-box__controls-buttons_type_interactive">
+<div class="boxview__controls-buttons boxview__controls-buttons_type_interactive">
   <button class="button">
     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px">
       <path d="M0 0h24v24H0z" fill="none" />
@@ -92,16 +92,16 @@ export const dialog = `
     </svg>
   </button>
 </div>
-<button class="button popup-box__close-button" data-button="close">
+<button class="button boxview__close-button" data-button="close">
   <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#000000">
     <path d="M0 0h24v24H0V0z" fill="none" />
     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
   </svg>
 </button>
 </div>
-<div class="popup-box__content" data-element="popup-box-content">
-<div class="popup-box__media">
+<div class="boxview__content" data-element="boxview-content">
+<div class="boxview__media">
 </div>
-<div class="popup-box__preview">
+<div class="boxview__preview">
 </div>
 </div>`;

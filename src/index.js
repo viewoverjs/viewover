@@ -3,97 +3,118 @@ import { dialog } from './utils/dialog.js';
 
 // Create dialog
 const dialogElement = document.createElement('dialog');
-dialogElement.classList.add('popup-box');
+dialogElement.classList.add('boxview');
 dialogElement.innerHTML = dialog;
 document.body.appendChild(dialogElement);
-const mediaElementActive = document.createElement('img');
-mediaElementActive.classList.add('popup-box__image');
 
 // const
-const mediaImages = document.querySelectorAll('[data-media="image"]');
-const popupBox = document.querySelector('.popup-box');
+const allMediaList = document.querySelectorAll('[data-media]');
+const boxview = document.querySelector('.boxview');
 
-const nextButton = popupBox.querySelector('[data-button="nav-next"]');
-const beforeButton = popupBox.querySelector('[data-button="nav-before"]');
-const shareButton = popupBox.querySelector('[data-button="share"]');
-const zoomInButton = popupBox.querySelector('[data-button="zoom-in"]');
-const zoomOutButton = popupBox.querySelector('[data-button="zoom-out"]');
-const closeButton = popupBox.querySelector('[data-button="close"]');
+const nextButton = boxview.querySelector('[data-button="nav-next"]');
+const beforeButton = boxview.querySelector('[data-button="nav-before"]');
+const shareButton = boxview.querySelector('[data-button="share"]');
+const zoomInButton = boxview.querySelector('[data-button="zoom-in"]');
+const zoomOutButton = boxview.querySelector('[data-button="zoom-out"]');
+const closeButton = boxview.querySelector('[data-button="close"]');
 
-const shareOptionsButtons = popupBox.querySelector('.share-options-buttons');
+const shareOptionsButtons = boxview.querySelector('.share-options-buttons');
 
-const popupBoxMedia = popupBox.querySelector('.popup-box__media');
-const popupBoxPreview = popupBox.querySelector('.popup-box__preview');
+const boxviewMediaWrapper = boxview.querySelector('.boxview__media');
+const boxviewPreview = boxview.querySelector('.boxview__preview');
 
-// function getKeyByValue(object, value) {
-//   return Object.keys(object).find((key) => object[key] === value);
-// }
 
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
+
+// Create active boxview media 
+let boxviewActiveMedia;
+
+const createImageElement = function({ type, url }) {
+  boxviewActiveMedia = document.createElement(`${type}`);
+  boxviewActiveMedia.classList.add(`boxview__${type}`);
+  boxviewActiveMedia.setAttribute('src', url);
+  boxviewMediaWrapper.appendChild(boxviewActiveMedia);
+}
+
+const createMediaElement = function({ type, url }) {
+  const imageTemplate = document.createElement(`${type}`);
+  const videoTemplate = document.createElement(`${type}`);
+  // if (type === 'img') {
+  //   boxviewActiveMedia.classList.add(`boxview__${type}`);
+  //   boxviewActiveMedia.setAttribute('src', url);
+  //   boxviewMediaWrapper.appendChild(boxviewActiveMedia);
+  // }
+  // if (type === 'video') {
+  //   boxviewActiveMedia
+  // }
+}
+
+// Get active boxview image resolution
+const GetImageResolution = function() {
+  const canvas = document.createElement('canvas'); 
+  const ctx = canvas.getContext('2d');
+  
+  canvas.width = boxviewActiveMedia.width; 
+  canvas.height = boxviewActiveMedia.height;
+   
+  ctx.drawImage(img, 0, 0); 
+   
+  const rgba = ctx.getImageData( 
+    0, 0, img.width, img.height 
+  ).data;
 }
 
 // Document Events
 document.addEventListener('mouseup', (e) => {
-  if (e.target === popupBox) {
-    const popupBoxMediaChildren = [...popupBoxMedia.children];
-    removeEventListeners();
-    popupBox.close();
-    popupBoxMediaChildren.forEach((element) => {
+  if (e.target === boxview) {
+    const boxviewMediaChildren = [...boxviewMediaWrapper.children];
+    boxview.close();
+    boxviewMediaChildren.forEach((element) => {
       if (!element.classList.contains('button')) {
         element.remove();
       }
     });
-    removeAllChildNodes(popupBoxPreview);
+    removeAllChildNodes(boxviewPreview);
   }
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    removeEventListeners();
-    popupBox.close();
-    const popupBoxMediaChildren = [...popupBoxMedia.children];
-    popupBoxMediaChildren.forEach((element) => {
+    boxview.close();
+    const boxviewMediaChildren = [...boxviewMediaWrapper.children];
+    boxviewMediaChildren.forEach((element) => {
       if (!element.classList.contains('button')) {
         element.remove();
       }
     });
-    removeAllChildNodes(popupBoxPreview);
+    removeAllChildNodes(boxviewPreview);
   }
-});
-
-// Events Handlers
-mediaImages.forEach((image) => {
-  image.addEventListener('click', openPopupBox);
 });
 
 // --- Handle the buttons ---
 // share button
 shareButton.addEventListener('click', handleShareButton);
 
-function handleShareButton(e) {
+function handleShareButton() {
   shareOptionsButtons.classList.toggle('share-options-buttons_active');
 }
 
 // zoom buttons
 ClickAndHoldEvent.apply(zoomInButton, handleZoomInButton);
 ClickAndHoldEvent.apply(zoomOutButton, handleZoomOutButton);
-mediaElementActive.addEventListener('wheel', handleZoomWheel);
+
 
 let imageScale = 1;
 function handleZoomInButton() {
   if (imageScale < 3) {
     imageScale += 0.003;
-    return (mediaElementActive.style.transform = `scale(${imageScale})`);
+    return (boxviewActiveMedia.style.transform = `scale(${imageScale})`);
   }
 }
 
 function handleZoomOutButton() {
   if (imageScale > 1.01) {
     imageScale -= 0.003;
-    return (mediaElementActive.style.transform = `scale(${imageScale})`);
+    return (boxviewActiveMedia.style.transform = `scale(${imageScale})`);
   }
 }
 
@@ -110,118 +131,153 @@ function handleZoomWheel(e) {
 }
 
 // close button
-closeButton.addEventListener('click', (e) => {
-  handleCloseButton(e, popupBox, popupBoxMedia, popupBoxPreview, nextButton, beforeButton);
-});
+const removeAllChildNodes = function (parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 
-function handleCloseButton(e) {
-  removeEventListeners();
-  popupBox.close();
-  const popupBoxMediaChildren = [...popupBoxMedia.children];
-  popupBoxMediaChildren.forEach((element) => {
+const handleCloseButton = function() {
+  boxview.close();
+  const boxviewMediaChildren = [...boxviewMediaWrapper.children];
+  boxviewMediaChildren.forEach((element) => {
     if (!element.classList.contains('button')) {
       element.remove();
     }
   });
-  removeAllChildNodes(popupBoxPreview);
+  removeAllChildNodes(boxviewPreview);
 }
 
-function removeEventListeners() {
-  nextButton.removeEventListener('click', handleNextButton);
-  beforeButton.removeEventListener('click', handleNextButton);
-}
+// close button
+closeButton.addEventListener('click', () => {
+  handleCloseButton();
+});
 
 
 
+// Next button
+// const handleNextButton = function(mediaObjsList) {
+//   const mediaSrc = boxviewActiveMedia.getAttribute('src');
+//   const boxviewActiveMediaIndex = mediaObjsList.findIndex((media) => media.url === mediaSrc);
+//   const num = boxviewActiveMediaIndex + 1;
 
+//   let boxviewNextMedia;
+//   if (num < mediaObjsList.length) {
+//     boxviewNextMedia = mediaObjsList.find((media, i) => i === num);
+//   } else {
+//     boxviewNextMedia = mediaObjsList.at(0);
+//   }
+//   boxviewActiveMedia.setAttribute('src', boxviewNextMedia.url);
+// }
+
+// Before button
+// const handleBeforeButton = function(mediaObjsList) {
+//   const mediaSrc = boxviewActiveMedia.getAttribute('src');
+//   const boxviewActiveMediaIndex = mediaObjsList.findIndex((media) => media.url === mediaSrc);
+//   const num = boxviewActiveMediaIndex - 1;
+//   let boxviewBeforeMedia;
+
+//   if (num > -1) {
+//     boxviewBeforeMedia = mediaObjsList.find((media, i) => i === num);
+//   } else {
+//     boxviewBeforeMedia = mediaObjsList.at(-1);
+//   }
+//   boxviewActiveMedia.setAttribute('src', boxviewBeforeMedia.url);
+// }
+
+// show preview strip
+// const showPreviewMedia = function(mediaSrc) {
+//   boxviewActiveMedia.setAttribute('src', mediaSrc);
+// }
+
+// function showPreviewStrip(mediaObjsList) {
+//   const boxviewContent = boxview.querySelector('[data-element="boxview-content"]');
+//   boxviewContent.style.setProperty('--media-preview-height', '80px');
+//   for (let i = 0; i < mediaObjsList.length; i++) {
+//     const mediaElement = document.createElement('img');
+//     const mediaUrl = mediaObjsList[i].url;
+//     mediaElement.setAttribute('src', mediaUrl);
+//     mediaElement.classList.add('boxview__preview-media');
+//     boxviewPreview.appendChild(mediaElement);
+//   }
+//   const mediaPreviewList = [...boxviewPreview.children];
+//   mediaPreviewList.forEach((media) => {
+//     const mediaSrc = media.getAttribute('src');
+//     media.addEventListener('click', () => {
+//       showPreviewMedia(mediaSrc);
+//     });
+//   });
+// }
 
 // Open Dialog
-function openPopupBox(e) {
-  const mediaContent = e.target.parentElement.querySelectorAll('*');
+const openBoxview = function(e) {
+  const mediaElementsList = [...e.target.parentElement.children];
+  // const mediaObjsList = mediaElementsList.map((element) => ({ type: element.localName, url: element.currentSrc }));
 
-  let mediaUrlList = [];
-  mediaContent.forEach((item) => {
-    const mediaUrl = item.currentSrc;
-    mediaUrlList.push(mediaUrl);
-  });
+  const initialMedia = (function getInitialMedia() {
+    return { type: e.target.localName, url: e.target.currentSrc };
+  })();
 
-  const mediaUrls = [];
-  for (let i = 0; i < mediaUrlList.length; i++) {
-    const mediaObj = {
-      id: i,
-      type: 'image',
-      url: mediaUrlList[i],
-    };
+  const CheckWhatTypesContains = function() {
+    const allImages = mediaElementsList.every(element => element.localName === 'img');
+    const someVideo = mediaElementsList.some(element => element.localName === 'video');
+    const someIframe = mediaElementsList.some(element => element.localName === 'iframe');
 
-    mediaUrls.push(mediaObj);
+    if (allImages) {
+      createImageElement(initialMedia);
+    }
+    if (someVideo && !someIframe) {
+      createMediaElement(initialMedia);
+    }
+    if (someIframe) {
+      const youtubeElementsList = mediaElementsList.filter(element => element.localName === 'iframe');
+      const youtubeObjsList = youtubeElementsList.map((element) => ({ type: element.localName, url: element.attributes.src.value }));
+      console.log(youtubeElementsList);
+    }
+    
+    
   }
-  mediaUrlList = mediaUrls;
+  CheckWhatTypesContains();
+
+  // const initialMediaSrc = getInitialMediaSrc(e.target.src, initialMediaSrc);
+  
+
+  // function getInitialMediaSrc(src, initialMediaSrc) {
+  //   if (src !== '') {
+  //     // If the src attribute is an image
+  //     initialMediaSrc = src;
+  //   } else if {
+  //     const ;
+  //     initialMediaSrc = ;
+  //   } else if {
+
+  //   }
+  // }
 
   // option =  on/off
-  showPreviewStrip(mediaUrlList, popupBoxPreview);
+  // Show preview strip
+  // showPreviewStrip(mediaObjsList, boxviewPreview);
 
+  // Display the clicked image
+  // createMediaElement(initialMedia);
+  console.log(boxviewActiveMedia);
+  // Zoom wheel
+  boxviewActiveMedia.addEventListener('wheel', handleZoomWheel);
   
+  // Next button
+  nextButton.onclick = () => {
+    handleNextButton(mediaObjsList);
+  };
 
-  // --- Display the clicked image ---
-  mediaElementActive.setAttribute('src', e.target.src);
-  popupBoxMedia.appendChild(mediaElementActive);
+  // Before button
+  beforeButton.onclick = () => {
+    handleBeforeButton(mediaObjsList);
+  };
 
-  // before/next buttons
-nextButton.addEventListener('click', handleNextButton);
-// beforeButton.addEventListener('click', () => handleBeforeButton(mediaUrlList));
-let currentMedia = mediaUrlList.find((media) => media.url === e.target.src);
-function handleNextButton() {
-  
-  console.log('a');
-  const mediaSrc = mediaElementActive.getAttribute('src');
-  let mediaIndex = mediaUrlList.findIndex(media => media.url === currentMedia.url);
-  console.log(mediaIndex);
-  if (mediaSrc !== currentMedia.url) {
-    const num = mediaIndex + 1;
-    if (num < mediaUrlList.length) {
-      currentMedia = mediaUrlList.find(media => media.id === num);
-    } else {
-      currentMedia = mediaUrlList[0];
-    }
-    mediaElementActive.setAttribute('src', currentMedia.url);
-  } else {
-    mediaIndex = mediaUrlList.findIndex(media => media.url === mediaSrc);
-    const num = mediaIndex + 1;
-    if (num < mediaUrlList.length) {
-      currentMedia = mediaUrlList.find(media => media.id === num);
-    } else {
-      currentMedia = mediaUrlList[0];
-    }
-    mediaElementActive.setAttribute('src', currentMedia.url);
-  }
-
-  
+  // Show modal
+  boxview.showModal();
 }
 
-  // --- Show modal ---
-  popupBox.showModal();
-}
-
-function showPreviewStrip(mediaUrlList) {
-  const popupBoxContent = popupBox.querySelector('[data-element="popup-box-content"]');
-  popupBoxContent.style.setProperty('--media-preview-height', '80px');
-  for (let i = 0; i < mediaUrlList.length; i++) {
-    const mediaElement = document.createElement('img');
-    const mediaUrl = mediaUrlList[i].url;
-    mediaElement.setAttribute('src', mediaUrl);
-    mediaElement.classList.add('popup-box__preview-media');
-    popupBoxPreview.appendChild(mediaElement);
-  }
-  const mediaPreviewList = [...popupBoxPreview.children];
-  mediaPreviewList.forEach((media) => {
-    const mediaSrc = media.getAttribute('src');
-    media.addEventListener('click', () => {
-      showPreviewMedia(mediaSrc)
-    });
-  })
-  
-}
-
-function showPreviewMedia(mediaSrc) {
-  mediaElementActive.setAttribute('src', mediaSrc);
-}
+allMediaList.forEach((media) => {
+  media.addEventListener('click', openBoxview);
+});
