@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <div class="media-content">
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://cdn3.photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg"
+        alt=""
+      />
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://images.unsplash.com/photo-1661565883779-774d498a3a96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        alt=""
+      />
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://images.unsplash.com/photo-1661345741272-17a0b691b6da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+        alt=""
+      />
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://images.unsplash.com/photo-1662241131527-f57cadcacf32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+        alt=""
+      />
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://images.unsplash.com/photo-1662221628987-704d38ca9fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        alt=""
+      />
+      <img
+        class="media-content__image"
+        data-media="image"
+        src="https://images.unsplash.com/photo-1657664049360-66ca933f7a82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+        alt=""
+      />
+    </div>
+
+    <!-- <dialog class="popup-box">
+      <div class="popup-box__buttons">
+        <div class="popup-box__controls-buttons popup-box__controls-buttons_type_share">
+          <button class="button" data-button="share">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 0 24 24" width="28px">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"
+              />
+            </svg>
+          </button>
+          <button class="button">
+            <svg
+              class="svg-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              enable-background="new 0 0 24 24"
+              height="32px"
+              viewBox="0 0 24 24"
+              width="32px"
+            >
+              <g><rect fill="none" height="24" width="24" /></g>
+              <g><path d="M5,20h14v-2H5V20z M19,9h-4V3H9v6H5l7,7L19,9z" /></g>
+            </svg>
+          </button>
+        </div>
+        <div class="popup-box__controls-buttons popup-box__controls-buttons_type_interactive">
+          <button class="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+          <button class="button">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+          <button class="button" data-button="zoom-in">
+            <svg class="svg-icon"  xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+              <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z" />
+            </svg>
+          </button>
+          <button class="button" data-button="zoom-out">
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"
+              />
+            </svg>
+          </button>
+        </div>
+        <button class="button popup-box__close-button" data-button="close">
+          <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+          </svg>
+        </button>
+      </div>
+      <button class="button popup-box__navigate-button popup-box__navigate-button_before" data-button="nav-before">
+        <svg class="svg-icon svg-icon_nav" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+        </svg>
+      </button>
+      <button class="button popup-box__navigate-button popup-box__navigate-button_next" data-button="nav-next">
+        <svg class="svg-icon svg-icon_nav" xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+        </svg>
+      </button>
+      <div class="popup-box__content"></div>
+    </dialog> -->
+
+    <!-- <div>
+      <video class="html-video" controls>
+        <source src="https://youtu.be/J4b_T-qH3BY" type="video/mp4" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+    <div>
+      <iframe
+        class="youtube-video"
+        src="https://www.youtube.com/embed/35npVaFGHMY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div> -->
+  </body>
+</html>

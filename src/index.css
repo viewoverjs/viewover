@@ -1,0 +1,236 @@
+:root {
+  --icon-color: rgb(140, 140, 140);
+  --icon-color-hover: rgb(220, 220, 220);
+
+  --icon-transition: linear 0.2s;
+  --image-transition: linear 0.2s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.media-content__image {
+  width: 400px;
+}
+
+.popup-button {
+  width: 150px;
+  padding: 1rem 2rem;
+  border: black 3px solid;
+}
+
+.html-video {
+  width: 500px;
+  aspect-ratio: 16/9;
+}
+
+.youtube-video {
+  display: block;
+  width: 500px;
+  aspect-ratio: 16/9;
+}
+
+/* dialog elm */
+.popup-box__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  transition: var(--image-transition);
+}
+
+.popup-box {
+  margin: 60px auto 0;
+  border: none;
+  outline: none;
+  overscroll-behavior: contain;
+  overflow: visible;
+  background: none;
+}
+
+.popup-box::backdrop {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.popup-box__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 90vh;
+
+  --main-media-height: 100%;
+  /* option =  media preview adjustment */
+  --media-preview-height: 0;
+  /* option = aspect-ratio */
+  --media-preview-aspect-ratio: 16/9;
+  --media-preview-width: calc(var(--media-preview-height) * var(--media-preview-aspect-ratio));
+  flex-wrap: nowrap;
+  overflow: visible;
+  overscroll-behavior: contain;
+}
+
+.popup-box__media {
+  height: calc(var(--main-media-height) - var(--media-preview-height));
+  overflow: hidden;
+}
+
+.popup-box__preview {
+  /* width: 100%; */
+  height: var(--media-preview-height);
+  display: grid;
+  padding-inline: 10px;
+  gap: 10px;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--media-preview-width);
+  align-items: center;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+.popup-box__preview > * {
+  width: var(--media-preview-width);
+  height: calc(var(--media-preview-height));
+  object-fit: cover;
+}
+
+.popup-box__preview-media {
+  transition: all linear .2s;
+}
+
+.popup-box__preview-media:hover {
+  border: 2px solid var(--icon-color);
+}
+
+.popup-box__content::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.popup-box__preview::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+/* .popup-box__content::-webkit-scrollbar-track {
+  background: hsl(120 75% 50% / 1);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+.popup-box__content::-webkit-scrollbar-thumb {
+  background: hsl(120 100% 20% / 1);
+  border: 0.25em solid hsl(120 75% 50% / 1);
+  border-radius: 100vw;
+}
+
+.popup-box__content::-webkit-scrollbar-thumb:hover {
+  background: hsl(120 100% 10% / 1);
+} */
+
+/* controls */
+.svg-icon {
+  fill: var(--icon-color);
+  transition: all var(--icon-transition);
+}
+
+.svg-icon:hover {
+  fill: var(--icon-color-hover);
+}
+
+.popup-box__buttons {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 25px;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  padding: 13px;
+  width: 100vw;
+  border: none;
+}
+
+.popup-box__controls-buttons {
+  display: flex;
+  column-gap: 25px;
+}
+
+.share-options-buttons {
+  visibility: hidden;
+  position: absolute;
+  inset-inline-start: 60px;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  gap: 15px;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  transition: visibility linear .2s;
+}
+
+.share-options-buttons_active {
+  visibility: visible;
+}
+
+.popup-box__controls-buttons_type_share {
+  margin-inline-end: auto;
+}
+
+.popup-box__controls-buttons_type_interactive {
+  margin-inline: auto;
+}
+
+.popup-box__close-button {
+  margin-inline-start: auto;
+}
+
+/* navigate */
+.popup-box__navigate-button {
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+}
+
+.popup-box__navigate-button_before {
+  inset-inline-start: 0px;
+}
+
+.popup-box__navigate-button_next {
+  inset-inline-start: calc(100% - 50px);
+}
+
+.svg-icon_nav {
+  fill: rgb(180, 180, 180);
+  transition: transform var(--icon-transition);
+}
+
+.popup-box__navigate-button:hover .svg-icon_nav {
+  transform: scale(1.2);
+  fill: var(--icon-color-hover);
+}
