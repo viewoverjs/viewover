@@ -23,16 +23,17 @@
     <a href="https://github.com/Yedidya10/boxview"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/Yedidya10/boxview">View Demo</a> -->
+    <a href="https://github.com/Yedidya10/boxview">View Demo</a>
     ·
     <a href="https://github.com/Yedidya10/boxview/issues">Report Bug</a>
     ·
     <a href="https://github.com/Yedidya10/boxview/issues">Request Feature</a>
   </p>
-
   <!-- <h2 align="center">Ready For</h2> -->
-
 </div>
+
+<br />
+<br />
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
