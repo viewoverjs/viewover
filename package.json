@@ -2,7 +2,7 @@
   "name": "boxview",
   "version": "0.1.0",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
-  "main": "index.js",
+  "main": "boxview.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,6 @@
     "type": "git",
     "url": "https://github.com/Yedidya10/boxview"
   },
-  "author": "yedidya abergel",
+  "author": "yedidya aberjel",
   "license": "MIT"
 }
