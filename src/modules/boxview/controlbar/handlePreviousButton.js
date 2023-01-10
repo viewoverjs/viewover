@@ -1,6 +1,9 @@
 import { boxviewThumbnailsTrack } from '../../document/docConstants.js';
 import getBoxviewActiveMediaUrl from '../mainContent/getBoxviewActiveMediaUrl.js';
 import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
+import createImageElement from '../mainContent/createImageElement.js';
+import createIframeElement from '../mainContent/createIframeElement.js';
+import createVideoElement from '../mainContent/createVideoElement.js';
 
 export default function handlePreviousButton(preparedMediaElements) {
   const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
