@@ -1,0 +1,61 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .media-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* .media-content > video {
+    position: relative;
+  }
+  
+  .media-content > video::after {
+    content: '\e038';
+    font-family: "Material Icons";
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    line-height: 1;
+    z-index: 100;
+    color: black;
+    font-size: 130px;
+    
+  } */
+  
+  .media-content__image,
+  .media-content__video {
+    width: 400px;
+    display: inline-block;
+  }
+  
+  .media-content__youtube {
+    width: 400px;
+    aspect-ratio: 16/9;
+  }
+  
+  .popup-button {
+    width: 150px;
+    padding: 1rem 2rem;
+    border: black 3px solid;
+  }
+  
+  .html-video {
+    width: 500px;
+    aspect-ratio: 16/9;
+  }
+  
+  .youtube-video {
+    display: block;
+    width: 500px;
+    aspect-ratio: 16/9;
+  }
+  
+  body:fullscreen {
+    background-color: red;
+  }
