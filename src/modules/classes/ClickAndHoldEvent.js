@@ -9,9 +9,11 @@ export default class ClickAndHoldEvent {
       this.target.addEventListener(eventType, this.#onHoldStart.bind(this));
     });
 
-    ['mouseup', 'mouseleave', 'mouseout', 'touchend', 'touchcancel'].forEach((eventType) => {
-      this.target.addEventListener(eventType, this.#onHoldEnd.bind(this));
-    });
+    ['mouseup', 'mouseleave', 'mouseout', 'touchend', 'touchcancel'].forEach(
+      (eventType) => {
+        this.target.addEventListener(eventType, this.#onHoldEnd.bind(this));
+      }
+    );
   }
 
   #onHoldStart() {

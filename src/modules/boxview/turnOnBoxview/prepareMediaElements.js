@@ -1,0 +1,25 @@
+let preparedMediaElements = [];
+export default function prepareMediaElements(elementTarget) {
+  // Some of the media elements in the html content are wrapped in a div tag,
+  // in order to create an array of pure media elements,
+  // the prepareMediaElements function must be run.
+  const rawMediaElements = [
+    ...elementTarget.closest('.media-content').children,
+  ];
+  for (let i = 0; i < rawMediaElements.length; i++) {
+    const mediaElement = rawMediaElements[i];
+    let media;
+
+    if (mediaElement.classList.contains('boxview-video-wrapper')) {
+      media = mediaElement.querySelector('video');
+    } else if (mediaElement.classList.contains('boxview-iframe-wrapper')) {
+      media = mediaElement.querySelector('iframe');
+    } else {
+      media = mediaElement;
+    }
+
+    preparedMediaElements.push(media);
+  }
+
+  return preparedMediaElements;
+}
