@@ -1,28 +1,26 @@
 import { boxviewThumbnailsTrack } from '../../document/docConstants.js';
-import getBoxviewActiveMediaUrl from '../mainContent/getBoxviewActiveMediaUrl.js';
+import getActiveMainElementSrc from '../mainContent/getActiveMainElementSrc.js';
 import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
-import createImageElement from '../mainContent/createImageElement.js';
-import createIframeElement from '../mainContent/createIframeElement.js';
-import createVideoElement from '../mainContent/createVideoElement.js';
+import setActiveMainElement from '../mainContent/setActiveMainElement.js';
 
 export default function handlePreviousButton(preparedMediaElements) {
   const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
 
   let boxviewPreviousMedia;
-  const boxviewActiveMediaUrl = getBoxviewActiveMediaUrl();
+  const activeMainElementUrl = getActiveMainElementSrc();
 
   // Deprecated
   // const preparedMediaElementsUrls = extractUrlsFromPreparedMediaElements(
   //   preparedMediaElements
   // );
 
-  const boxviewActiveMediaUrlIndex = preparedMediaElements.findIndex((media) =>
+  const activeMainElementUrlIndex = preparedMediaElements.findIndex((media) =>
     media.currentSrc === undefined
-      ? media.src === boxviewActiveMediaUrl
-      : media.currentSrc === boxviewActiveMediaUrl
+      ? media.src === activeMainElementUrl
+      : media.currentSrc === activeMainElementUrl
   );
 
-  const num = boxviewActiveMediaUrlIndex - 1;
+  const num = activeMainElementUrlIndex - 1;
   if (num > -1) {
     boxviewPreviousMedia = preparedMediaElements.find((media, i) => i === num);
   } else {
@@ -38,15 +36,15 @@ export default function handlePreviousButton(preparedMediaElements) {
   );
 
   if (boxviewPreviousMedia.localName === 'video') {
-    createVideoElement(boxviewPreviousMediaSrc);
+    setActiveMainElement('video', boxviewPreviousMediaSrc);
     return toggleActiveThumbnail(previousThumbnail, thumbnailsTrackList);
   }
   if (boxviewPreviousMedia.localName === 'iframe') {
-    createIframeElement(boxviewPreviousMediaSrc);
+    setActiveMainElement('iframe', boxviewPreviousMediaSrc);
     return toggleActiveThumbnail(previousThumbnail, thumbnailsTrackList);
   }
   if (boxviewPreviousMedia.localName === 'img') {
-    createImageElement(boxviewPreviousMediaSrc);
+    setActiveMainElement('img', boxviewPreviousMediaSrc);
     return toggleActiveThumbnail(previousThumbnail, thumbnailsTrackList);
   }
 }

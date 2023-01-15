@@ -1,31 +1,45 @@
-import { closeButton } from '../../document/docConstants.js';
-import handleCloseButton from './handleCloseButton.js';
+// Constants
+import {
+  closeButton,
+  fullscreenEntryButton,
+  fullscreenExitButton,
+} from '../../document/docConstants.js';
+import toggleButtonIcon from './toggleButtonIcon.js';
+
+// Boxview General
 import boxview from '../../document/createDialog.js';
+
+// FullScreen
 import toggleFullScreenMode from './toggleFullScreenMode.js';
-import toggleFullscreenIcon from './toggleFullscreenIcon.js';
+
+// Close Button
+import handleCloseButton from './handleCloseButton.js';
+import resetBoxviewContent from '../turnOffBoxview/resetBoxviewContent.js';
 
 export default function controlbarAddEvents() {
-  // close button
-  closeButton.addEventListener('click', () => {
+  // Close Button Event
+  closeButton.onclick = () => {
     handleCloseButton();
-  });
+  };
 
-  // Fullscreen
-  document.addEventListener('keydown', (e) => {
-    const isOpen = boxview.hasAttributes('open');
+  document.addEventListener('keyup', (e) => {
+    const isOpen = boxview.hasAttribute('open');
+    // Escape Key
+    if (e.key === 'Escape') {
+      resetBoxviewContent();
+    }
+    // Fullscreen
     if (e.key === 'Enter' && isOpen) {
       toggleFullScreenMode();
     }
   });
 
   document.addEventListener('fullscreenchange', () => {
-    toggleFullscreenIcon();
+    const isHidden = fullscreenEntryButton.classList.contains('button_hidden');
+    if (isHidden) {
+      toggleButtonIcon(fullscreenEntryButton, fullscreenExitButton);
+    } else {
+      toggleButtonIcon(fullscreenExitButton, fullscreenEntryButton);
+    }
   });
 }
-
-// function handleShareButton() {
-//   shareOptionsButtons.classList.toggle('share-options-buttons_active');
-// }
-
-// share button
-// shareButton.addEventListener('click', handleShareButton);

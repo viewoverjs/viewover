@@ -1,11 +1,11 @@
-import { boxviewActiveMedia } from "../mainContent/createMediaElement.js";
+import { activeMainElement } from '../mainContent/createMediaElement.js';
 
 export default function toggleActiveThumbnail(thumbnail, thumbnailsTrackList) {
-  const boxviewActiveMediaSrc =
-    boxviewActiveMedia.element.src || boxviewActiveMedia.element.currentSrc;
+  const activeMainElementSrc =
+    activeMainElement.element.src || activeMainElement.element.currentSrc;
   const nonActiveThumbnails = thumbnailsTrackList.filter((thumbnail) => {
     const thumbnailSrc = thumbnail.getAttribute('boxview-thumbnail-src');
-    return thumbnailSrc !== boxviewActiveMediaSrc;
+    return thumbnailSrc !== activeMainElementSrc;
   });
 
   nonActiveThumbnails.map((thumbnail) =>

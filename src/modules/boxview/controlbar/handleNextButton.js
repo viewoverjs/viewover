@@ -1,28 +1,26 @@
 import { boxviewThumbnailsTrack } from '../../document/docConstants.js';
-import getBoxviewActiveMediaUrl from '../mainContent/getBoxviewActiveMediaUrl.js';
-import createImageElement from '../mainContent/createImageElement.js';
-import createIframeElement from '../mainContent/createIframeElement.js';
-import createVideoElement from '../mainContent/createVideoElement.js';
+import getActiveMainElementSrc from '../mainContent/getActiveMainElementSrc.js';
+import setActiveMainElement from '../mainContent/setActiveMainElement.js';
 import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
 
 export default function handleNextButton(preparedMediaElements) {
   const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
 
   let boxviewNextMedia;
-  const boxviewActiveMediaUrl = getBoxviewActiveMediaUrl();
+  const activeMainElementUrl = getActiveMainElementSrc();
 
   // Deprecated
   // const preparedMediaElementsUrls = extractUrlsFromPreparedMediaElements(
   //   preparedMediaElements
   // );
 
-  const boxviewActiveMediaUrlIndex = preparedMediaElements.findIndex((media) =>
+  const activeMainElementUrlIndex = preparedMediaElements.findIndex((media) =>
     media.currentSrc !== undefined
-      ? media.currentSrc === boxviewActiveMediaUrl
-      : media.src === boxviewActiveMediaUrl
+      ? media.currentSrc === activeMainElementUrl
+      : media.src === activeMainElementUrl
   );
 
-  const num = boxviewActiveMediaUrlIndex + 1;
+  const num = activeMainElementUrlIndex + 1;
   if (num < preparedMediaElements.length) {
     boxviewNextMedia = preparedMediaElements.find((media, i) => i === num);
   } else {
@@ -37,15 +35,15 @@ export default function handleNextButton(preparedMediaElements) {
   );
 
   if (boxviewNextMedia.localName === 'video') {
-    createVideoElement(boxviewNextMediaSrc);
+    setActiveMainElement('video', boxviewNextMediaSrc);
     return toggleActiveThumbnail(nextThumbnail, thumbnailsTrackList);
   }
   if (boxviewNextMedia.localName === 'iframe') {
-    createIframeElement(boxviewNextMediaSrc);
+    setActiveMainElement('iframe', boxviewNextMediaSrc);
     return toggleActiveThumbnail(nextThumbnail, thumbnailsTrackList);
   }
   if (boxviewNextMedia.localName === 'img') {
-    createImageElement(boxviewNextMediaSrc);
+    setActiveMainElement('img', boxviewNextMediaSrc);
     return toggleActiveThumbnail(nextThumbnail, thumbnailsTrackList);
   }
 }

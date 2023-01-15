@@ -78,8 +78,10 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Features
-* Written JavaScript
-* No dependencies
+* Built with performance, UX and DX in mind
+* Embraces native HTML coding conventions
+<!-- * Out of the box integration with UI libraries -->
+* Small size and no dependencies
 <!-- * Lightweight, ___
 * Slide or fade transition by CSS
 * Supports breakpoints

@@ -1,22 +1,39 @@
+// Boxview General
 import boxview from '../../document/createDialog.js';
 import getElementTarget from './getElementTarget.js';
 import prepareMediaElements from './prepareMediaElements.js';
 import checkMediaElementsTypes from './checkMediaElementsTypes.js';
 import getInitialMedia from './getInitialMedia.js';
-import showThumbnailsTrack from '../thumbnailsTrack/showThumbnailsTrack.js';
-import toggleThumbnailsMode from '../thumbnailsTrack/toggleThumbnailsMode.js';
+
+// Constants
+// Imported after boxview^, because constants HTML elements are loaded only after boxview import
 import {
   nextButton,
   previousButton,
-  fullscreenButton,
+  fullscreenEntryButton,
+  fullscreenExitButton,
   thumbnailsShowButton,
   thumbnailsHideButton,
   boxviewThumbnailsTrack,
 } from '../../document/docConstants.js';
+
+// Nav Buttons
 import handleNextButton from '../controlbar/handleNextButton.js';
 import handlePreviousButton from '../controlbar/handlePreviousButton.js';
+
+// FullScreen
 import toggleFullScreenMode from '../controlbar/toggleFullScreenMode.js';
+
+// Thumbnails Track Mode
+import showThumbnailsTrack from '../thumbnailsTrack/showThumbnailsTrack.js';
+import toggleThumbnailsMode from '../thumbnailsTrack/toggleThumbnailsMode.js';
 import isOverflowing from '../thumbnailsTrack/isOverflowing.js';
+
+// Adding events to control bar buttons
+import controlbarAddEvents from '../controlbar/controlbarAddEvents.js';
+controlbarAddEvents();
+
+
 
 // Open Boxview Dialog
 export default function openBoxview(e) {
@@ -73,11 +90,15 @@ export default function openBoxview(e) {
   //   console.log('clicked on scrollbar');
   // });
 
-  fullscreenButton.addEventListener('click', toggleFullScreenMode);
+  // Fullscreen
+  fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
+  fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
 
   // Show modal
   boxview.showModal();
 
   // Create a scroll bar margin if a thumbnails track is over flowing
   isOverflowing(boxviewThumbnailsTrack);
+
+ 
 }

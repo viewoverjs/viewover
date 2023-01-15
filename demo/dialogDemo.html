@@ -79,30 +79,39 @@
     <div
       class="boxview__controls-buttons boxview__controls-buttons_type_interactive"
     >
-      <button class="button">
-        <svg
-          class="svg-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 0 24 24"
-          width="32px"
+      <div class="boxview__auto-scroll-buttons">
+        <button
+          class="button boxview__auto-scroll-button"
+          id="auto-scroll-pause-button"
         >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-        </svg>
-      </button>
-      <button class="button">
-        <svg
-          class="svg-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 0 24 24"
-          width="32px"
+          <svg
+            class="svg-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 0 24 24"
+            width="32px"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+        <button
+          class="button boxview__auto-scroll-button button_visible"
+          id="auto-scroll-play-button"
         >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      </button>
+          <svg
+            class="svg-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 0 24 24"
+            width="32px"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
+
       <button
         class="button boxview__zoom-in-button boxview__zoom-button"
         id="zoom-in-button"
@@ -138,13 +147,13 @@
           />
         </svg>
       </button>
-      <div class="thumbnails-buttons">
+      <div class="boxview__thumbnails-buttons">
         <button
-          class="button boxview__thumbnails-button boxview__thumbnails-button_icon-filled"
+          class="button boxview__thumbnails-button"
           id="thumbnails-filled-button"
         >
           <svg
-            class="svg-icon thumbnails-icon"
+            class="svg-icon boxview__thumbnails-icon"
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 20 20"
             height="32px"
@@ -160,11 +169,11 @@
           </svg>
         </button>
         <button
-          class="button boxview__thumbnails-button boxview__thumbnails-button_icon-outlined"
+          class="button boxview__thumbnails-button"
           id="thumbnails-outlined-button"
         >
           <svg
-            class="svg-icon thumbnails-icon"
+            class="svg-icon boxview__thumbnails-icon"
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 20 20"
             height="32px"
@@ -180,37 +189,44 @@
           </svg>
         </button>
       </div>
-
-      <button class="button boxview__fullscreen-button" id="fullscreen-button">
-        <svg
-          id="fullscreen-entry-icon"
-          class="svg-icon fullscreen-icon fullscreen-entry-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 0 24 24"
-          width="32px"
-          fill="none"
+      <div class="boxview__fullscreen-buttons">
+        <button
+          class="button button_visible boxview__fullscreen-button"
+          id="fullscreen-entry-button"
         >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
-          />
-        </svg>
-        <svg
-          id="fullscreen-exit-icon"
-          class="svg-icon fullscreen-icon fullscreen-exit-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 0 24 24"
-          width="32px"
-          fill="none"
+          <svg
+            class="svg-icon fullscreen-entry-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 0 24 24"
+            width="32px"
+            fill="none"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+            />
+          </svg>
+        </button>
+        <button
+          class="button button_hidden boxview__fullscreen-button"
+          id="fullscreen-exit-button"
         >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"
-          />
-        </svg>
-      </button>
+          <svg
+            class="svg-icon fullscreen-exit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 0 24 24"
+            width="32px"
+            fill="none"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
     <button class="button boxview__close-button" id="close-button">
       <svg
@@ -231,38 +247,36 @@
 
   <div id="boxview-content" class="boxview__content">
     <div id="boxview-main-content" class="boxview__main-content">
-      <div class="boxview__navigation-buttons">
-        <button
-          class="button boxview__navigate-button boxview__navigate-button_before"
-          id="nav-previous-button"
+      <button
+        class="button boxview__navigate-button boxview__navigate-button_before"
+        id="nav-previous-button"
+      >
+        <svg
+          class="svg-icon svg-icon_nav"
+          xmlns="http://www.w3.org/2000/svg"
+          height="48px"
+          viewBox="0 0 24 24"
+          width="48px"
         >
-          <svg
-            class="svg-icon svg-icon_nav"
-            xmlns="http://www.w3.org/2000/svg"
-            height="48px"
-            viewBox="0 0 24 24"
-            width="48px"
-          >
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-          </svg>
-        </button>
-        <button
-          class="button boxview__navigate-button boxview__navigate-button_next"
-          id="nav-next-button"
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+        </svg>
+      </button>
+      <button
+        class="button boxview__navigate-button boxview__navigate-button_next"
+        id="nav-next-button"
+      >
+        <svg
+          class="svg-icon svg-icon_nav"
+          xmlns="http://www.w3.org/2000/svg"
+          height="48px"
+          viewBox="0 0 24 24"
+          width="48px"
         >
-          <svg
-            class="svg-icon svg-icon_nav"
-            xmlns="http://www.w3.org/2000/svg"
-            height="48px"
-            viewBox="0 0 24 24"
-            width="48px"
-          >
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-          </svg>
-        </button>
-      </div>
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+        </svg>
+      </button>
       <div id="boxview-media" class="boxview__media"></div>
     </div>
     <div id="boxview-thumbnails-track" class="boxview__thumbnails-track"></div>

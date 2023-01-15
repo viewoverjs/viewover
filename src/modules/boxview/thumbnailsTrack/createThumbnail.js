@@ -1,7 +1,7 @@
 const getImageDimensions = (img) => {
   return {
-    height: img.height,
-    width: img.width,
+    height: img.naturalHeight,
+    width: img.naturalWidth,
   };
 };
 
@@ -13,7 +13,7 @@ const setThumbnailDimensions = (img) => {
   if (height > width) {
     img.classList.add('boxview__thumbnail_vertical');
   }
-  if (height === width) {
+  if (height === width && width > 0) {
     img.classList.add('boxview__thumbnail_square');
   }
 };

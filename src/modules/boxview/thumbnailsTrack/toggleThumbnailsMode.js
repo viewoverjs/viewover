@@ -5,6 +5,7 @@ import {
   thumbnailsHideButton,
   boxviewThumbnailsTrack,
 } from '../../document/docConstants.js';
+import toggleButtonIcon from '../controlbar/toggleButtonIcon.js';
 
 export default function toggleThumbnailsMode(initial) {
   const trackHeight = boxviewContainer.style.getPropertyValue(
@@ -17,32 +18,29 @@ export default function toggleThumbnailsMode(initial) {
       thumbnailsTrackHeight
     );
 
-    thumbnailsShowButton.classList.add('boxview__thumbnails-button_active');
-    thumbnailsHideButton.classList.remove('boxview__thumbnails-button_active');
+    toggleButtonIcon(thumbnailsShowButton, thumbnailsHideButton);
 
     boxviewContainer.style.setProperty(
       '--boxview-thumbnails-track-margin',
       '15px'
     );
 
-    boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_active');
+    boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_visible');
 
     return;
   }
 
   if (trackHeight == thumbnailsTrackHeight) {
-    thumbnailsShowButton.classList.remove('boxview__thumbnails-button_active');
-    thumbnailsHideButton.classList.add('boxview__thumbnails-button_active');
+    toggleButtonIcon(thumbnailsHideButton, thumbnailsShowButton);
 
-    boxviewThumbnailsTrack.classList.remove('boxview__thumbnails-track_active');
+    boxviewThumbnailsTrack.classList.remove('boxview__thumbnails-track_visible');
     boxviewContainer.style.setProperty('--thumbnails-track-height', '0px');
     boxviewContainer.style.setProperty(
       '--boxview-thumbnails-track-margin',
       '0px'
     );
   } else {
-    thumbnailsShowButton.classList.add('boxview__thumbnails-button_active');
-    thumbnailsHideButton.classList.remove('boxview__thumbnails-button_active');
+    toggleButtonIcon(thumbnailsShowButton, thumbnailsHideButton);
 
     boxviewContainer.style.setProperty(
       '--thumbnails-track-height',
@@ -52,6 +50,6 @@ export default function toggleThumbnailsMode(initial) {
       '--boxview-thumbnails-track-margin',
       '15px'
     );
-    boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_active');
+    boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_visible');
   }
 }

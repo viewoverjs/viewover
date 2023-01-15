@@ -16,12 +16,11 @@ export const zoomOutButton = document.getElementById('zoom-out-button');
 export const closeButton = document.getElementById('close-button');
 
 // Fullscreen Buttons Constants
-export const fullscreenButton = document.getElementById('fullscreen-button');
-export const fullscreenEntryIcon = document.getElementById(
-  'fullscreen-entry-icon'
+export const fullscreenEntryButton = document.getElementById(
+  'fullscreen-entry-button'
 );
-export const fullscreenExitIcon = document.getElementById(
-  'fullscreen-exit-icon'
+export const fullscreenExitButton = document.getElementById(
+  'fullscreen-exit-button'
 );
 
 export const boxviewContainer = document.getElementById('boxview-container');

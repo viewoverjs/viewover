@@ -11,7 +11,7 @@ export function applyBoxviewOnDoc() {
 
     if (mediaItem.localName !== 'video' && mediaItem.localName !== 'iframe') {
       mediaItem.style.cursor = 'pointer';
-      mediaItem.onclick = function (e) {
+      mediaItem.onclick = (e) => {
         openBoxview(e);
       };
     }
@@ -20,7 +20,7 @@ export function applyBoxviewOnDoc() {
       const openPopupButton = mediaItem.parentElement.querySelector(
         '.boxview-open-button'
       );
-      openPopupButton.onclick = function (e) {
+      openPopupButton.onclick = (e) => {
         openBoxview(e);
       };
     }

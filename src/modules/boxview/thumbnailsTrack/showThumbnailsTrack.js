@@ -1,16 +1,19 @@
+// Constants
 import {
   boxviewContainer,
   thumbnailsTrackHeight,
   boxviewThumbnailsTrack,
 } from '../../document/docConstants.js';
-import { boxviewActiveMedia } from '../mainContent/createMediaElement.js';
-import createThumbnail from './createThumbnail.js';
-import showThumbnailsTrackMedia from './showThumbnailsTrackMedia.js';
-import createImageElement from '../mainContent/createImageElement.js';
-import createVideoElement from '../mainContent/createVideoElement.js';
-import createIframeElement from '../mainContent/createIframeElement.js';
-import toggleActiveThumbnail from './toggleActiveThumbnail.js';
 
+// Boxview General
+import { activeMainElement } from '../mainContent/createMediaElement.js';
+import setActiveMainElement from '../mainContent/setActiveMainElement.js';
+
+// Thumbnails Track
+import createThumbnail from './createThumbnail.js';
+import showActiveThumbnailContent from './showActiveThumbnailContent.js';
+import toggleActiveThumbnail from './toggleActiveThumbnail.js';
+import scrollToViewport from './scrollToViewport.js';
 let thumbnailElement;
 
 export default function showThumbnailsTrack(preparedMediaElements) {
@@ -63,37 +66,47 @@ export default function showThumbnailsTrack(preparedMediaElements) {
     const elementType = thumbnail.getAttribute('boxview-thumbnail-type');
 
     if (elementType === 'img') {
-      const elementUrl = thumbnail.getAttribute('boxview-thumbnail-src');
+      const thumbnailUrl = thumbnail.getAttribute('boxview-thumbnail-src');
 
       thumbnail.addEventListener('click', () => {
-        if (boxviewActiveMedia.element.localName === 'img') {
-          showThumbnailsTrackMedia(elementUrl);
+        if (activeMainElement.element.localName === 'img') {
+          if (activeMainElement.element.src === thumbnailUrl) {
+            return;
+          }
+          showActiveThumbnailContent(thumbnailUrl);
         } else {
-          createImageElement(elementUrl);
+          setActiveMainElement('img', thumbnailUrl);
         }
         toggleActiveThumbnail(thumbnail, thumbnailsTrackList);
+        scrollToViewport(thumbnail);
       });
     }
     if (elementType === 'video') {
-      const elementUrl = thumbnail.getAttribute('boxview-thumbnail-src');
+      const thumbnailUrl = thumbnail.getAttribute('boxview-thumbnail-src');
 
       thumbnail.addEventListener('click', (e) => {
-        if (boxviewActiveMedia.element.localName === 'video') {
-          showThumbnailsTrackMedia(elementUrl);
+        if (activeMainElement.element.localName === 'video') {
+          if (activeMainElement.element.currentSrc === thumbnailUrl) {
+            return;
+          }
+          showActiveThumbnailContent(thumbnailUrl);
         } else {
-          createVideoElement(elementUrl);
+          setActiveMainElement('video', thumbnailUrl);
         }
         toggleActiveThumbnail(thumbnail, thumbnailsTrackList);
       });
     }
     if (elementType === 'iframe') {
-      const elementUrl = thumbnail.getAttribute('boxview-thumbnail-src');
+      const thumbnailUrl = thumbnail.getAttribute('boxview-thumbnail-src');
 
       thumbnail.addEventListener('click', (e) => {
-        if (boxviewActiveMedia.element.localName === 'iframe') {
-          showThumbnailsTrackMedia(elementUrl);
+        if (activeMainElement.element.localName === 'iframe') {
+          if (activeMainElement.element.src === thumbnailUrl) {
+            return;
+          }
+          showActiveThumbnailContent(thumbnailUrl);
         } else {
-          createIframeElement(elementUrl);
+          setActiveMainElement('iframe', thumbnailUrl);
         }
 
         toggleActiveThumbnail(thumbnail, thumbnailsTrackList);

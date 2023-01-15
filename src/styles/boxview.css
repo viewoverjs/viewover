@@ -32,44 +32,31 @@
 .boxview-open-button {
   display: none;
   visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: url(../utils/icons/launch_black_48dp.svg) no-repeat;
+  background-color: #00000050;
+  background-position: center;
+  /* background-size: calc(50px + 10%); */
+  z-index: 1;
 }
 
 .boxview-video-wrapper:hover .boxview-open-button {
-  display: inline-block;
+  display: flex;
   visibility: visible;
-  width: 52px;
-  height: 52px;
-  position: absolute;
-  content: '';
-  top: 20px;
-  right: 20px;
-  background: url(./launch_black_48dp.svg) no-repeat;
-  background-color: #00000050;
-  border: none;
-  cursor: pointer;
-  background-position: center;
-  /* background-size: calc(50px + 10%); */
-  z-index: 1;
-  transition: all ease 0.2s;
 }
 
 .boxview-iframe-wrapper:hover .boxview-open-button {
-  display: inline-block;
+  display: flex;
   visibility: visible;
-  width: 52px;
-  height: 52px;
-  position: absolute;
-  content: '';
-  top: 20px;
-  right: 20px;
-  background: url(./launch_black_48dp.svg) no-repeat;
-  background-color: #00000050;
-  border: none;
-  cursor: pointer;
-  background-position: center;
-  /* background-size: calc(50px + 10%); */
-  z-index: 1;
-  transition: all ease 0.2s;
 }
 
 .boxview-video-play-button_hidden,
@@ -79,6 +66,9 @@
 }
 
 .boxview .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -88,10 +78,23 @@
   cursor: default;
 }
 
+.boxview .button_hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.boxview .button_visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.boxview .button_disable .svg-icon_disable {
+  fill: var(--boxview-icon-color-disable);
+}
+
 .boxview {
   box-sizing: border-box;
   margin: 0;
-
   padding: 0;
   height: 100vh;
   border: none;
@@ -140,9 +143,9 @@
   --boxview-media-border-radius: 12px;
 }
 
-.boxview__container:fullscreen {
+/* .boxview__container:fullscreen {
   background-color: red;
-}
+} */
 
 .boxview__control-bar {
   position: sticky;
@@ -158,6 +161,109 @@
   padding-inline: 15px;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Controls */
+.svg-icon {
+  fill: var(--boxview-icon-color);
+  transition: all var(--boxview-icon-transition);
+}
+
+.svg-icon:hover {
+  fill: var(--boxview-icon-color-hover);
+}
+
+.boxview__controls-buttons {
+  width: 100%;
+  display: flex;
+  column-gap: 25px;
+}
+
+/* Fullscreen */
+.boxview__fullscreen-buttons {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.boxview__fullscreen-button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+/* Share */
+.share-options-buttons {
+  visibility: hidden;
+  position: absolute;
+  inset-inline-start: 60px;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  gap: 15px;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  transition: visibility linear 0.2s;
+}
+
+.share-options-buttons_active {
+  visibility: visible;
+}
+
+.boxview__controls-buttons_type_share {
+  margin-inline-end: auto;
+}
+
+.boxview__controls-buttons_type_interactive {
+  display: flex;
+  justify-content: center;
+}
+
+/* Close */
+.boxview__close-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Zoom */
+.boxview__zoom-button {
+  display: none;
+}
+
+.boxview__zoom-button_visible {
+  display: inline-block;
+}
+
+/* Auto-Scroll */
+.boxview__auto-scroll-buttons {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.boxview__auto-scroll-button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+/* Thumbnails */
+.boxview__thumbnails-buttons {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.boxview__thumbnails-button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+.boxview__thumbnails-icon {
+  rotate: 90deg;
 }
 
 .boxview__content {
@@ -183,7 +289,7 @@
 }
 
 /* Navigate */
-.boxview__navigation-buttons {
+/* .boxview__navigation-buttons {
   position: absolute;
   inset: 0 0;
   height: calc(
@@ -191,16 +297,14 @@
       var(--boxview-thumbnails-track-scroll-height) -
       var(--boxview-thumbnails-track-margin) - var(--boxview-control-bar-height)
   );
-}
+} */
 
 .boxview__navigate-button {
   position: absolute;
   height: 100%;
   --navigate-button-width: 50px;
   width: var(--navigate-button-width);
-  display: flex;
-  justify-content: center;
-  align-content: center;
+
   z-index: 1;
 }
 
@@ -215,13 +319,15 @@
 }
 
 .svg-icon_nav {
-  fill: rgb(180, 180, 180);
+  border-radius: 50%;
+  fill: rgb(220, 220, 220);
+  background-color: rgba(0, 0, 0, 0.4);
   transition: transform var(--boxview-icon-transition);
 }
 
 .boxview__navigate-button:hover .svg-icon_nav {
   transform: scale(1.2);
-  fill: var(--boxview-icon-color-hover);
+  fill: rgb(250, 250, 250);
 }
 
 .boxview__media {
@@ -276,7 +382,7 @@
   overscroll-behavior-inline: contain;
 }
 
-.boxview__thumbnails-track_active {
+.boxview__thumbnails-track_visible {
   display: grid;
 }
 
@@ -285,7 +391,8 @@
   /* option = border-radius */
   border-radius: 4px;
   transition: all linear 0.2s;
-
+  object-fit: cover;
+  object-position: center;
   height: calc(var(--thumbnails-track-height));
 }
 
@@ -346,117 +453,4 @@ body::-webkit-scrollbar {
 
 .boxview__thumbnails-track::-webkit-scrollbar-thumb:hover {
   background-color: var(--boxview-icon-color-hover);
-}
-
-/* Controls */
-.svg-icon {
-  fill: var(--boxview-icon-color);
-  transition: all var(--boxview-icon-transition);
-}
-
-.svg-icon_disable {
-  fill: var(--boxview-icon-color-disable);
-}
-
-.svg-icon:hover {
-  fill: var(--boxview-icon-color-hover);
-}
-
-.boxview__controls-buttons {
-  width: 100%;
-  display: flex;
-  column-gap: 25px;
-}
-
-/* Fullscreen */
-.boxview__fullscreen-button {
-  position: relative;
-}
-
-.fullscreen-icon {
-  position: absolute;
-  inset-block-start: 0;
-  inset-block-start: 0;
-}
-
-.fullscreen-entry-icon {
-  visibility: visible;
-  opacity: 1;
-}
-
-.fullscreen-exit-icon {
-  visibility: hidden;
-  opacity: 0;
-}
-
-/* Share */
-.share-options-buttons {
-  visibility: hidden;
-  position: absolute;
-  inset-inline-start: 60px;
-  width: max-content;
-  height: max-content;
-  display: flex;
-  gap: 15px;
-  background: rgba(0, 0, 0, 1);
-  border-radius: 5px;
-  transition: visibility linear 0.2s;
-}
-
-.share-options-buttons_active {
-  visibility: visible;
-}
-
-.boxview__controls-buttons_type_share {
-  margin-inline-end: auto;
-}
-
-.boxview__controls-buttons_type_interactive {
-  display: flex;
-  justify-content: center;
-}
-
-/* Close */
-.boxview__close-button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-/* Zoom */
-.boxview__zoom-button {
-  display: none;
-}
-
-.boxview__zoom-button_visible {
-  display: inline-block;
-}
-
-/* Thumbnails */
-.thumbnails-buttons {
-  position: relative;
-  width: 32px;
-  height: 32px;
-}
-
-.boxview__thumbnails-button {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-}
-
-.thumbnails-icon {
-  rotate: 90deg;
-}
-
-.boxview__thumbnails-button_icon-filled,
-.boxview__thumbnails-button_icon-outlined {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.boxview__thumbnails-button_active {
-  visibility: visible;
-  opacity: 1;
 }

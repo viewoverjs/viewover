@@ -2,7 +2,8 @@ import {
   boxviewMediaWrapper,
   boxviewThumbnailsTrack,
 } from '../../document/docConstants.js';
-import { boxviewActiveMedia } from '../mainContent/createMediaElement.js';
+import { activeMainElement } from '../mainContent/createMediaElement.js';
+import { activeImage } from '../controlbar/handleZoom.js';
 
 const removeAllChildNodes = (parent) => {
   while (parent.firstChild) {
@@ -18,5 +19,6 @@ export default function resetBoxviewContent() {
     }
   });
   removeAllChildNodes(boxviewThumbnailsTrack);
-  delete boxviewActiveMedia.element;
+  delete activeMainElement.element;
+  activeImage.imageScale = 1;
 }

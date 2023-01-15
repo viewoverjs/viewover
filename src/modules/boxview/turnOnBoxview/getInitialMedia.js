@@ -1,22 +1,10 @@
-import createIframeElement from '../mainContent/createIframeElement.js';
-import createImageElement from '../mainContent/createImageElement.js';
-import createVideoElement from '../mainContent/createVideoElement.js';
+import setActiveMainElement from "../mainContent/setActiveMainElement.js";
 
 const getInitialMediaSrc = (elementTarget, type) => {
-  let initialMediaSrc;
+  const initialMediaSrc =
+  elementTarget.src || elementTarget.currentSrc;
 
-  if (type === 'img') {
-    initialMediaSrc = elementTarget.currentSrc;
-    return createImageElement(initialMediaSrc);
-  }
-  if (type === 'video') {
-    initialMediaSrc = elementTarget.currentSrc;
-    return createVideoElement(initialMediaSrc);
-  }
-  if (type === 'iframe') {
-    initialMediaSrc = elementTarget.src;
-    return createIframeElement(initialMediaSrc);
-  }
+  setActiveMainElement(type, initialMediaSrc);
 };
 
 export default function getInitialMedia(mediaElementsTypes, elementTarget) {
@@ -41,11 +29,6 @@ export default function getInitialMedia(mediaElementsTypes, elementTarget) {
     }
   }
   if (mediaElementsTypes.length !== 1) {
-    const url =
-      elementTarget.localName !== 'iframe'
-        ? elementTarget.currentSrc
-        : elementTarget.src;
-
     getInitialMediaSrc(elementTarget, elementTarget.localName);
   }
 }

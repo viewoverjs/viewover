@@ -19,7 +19,7 @@ export default function closeBoxview() {
     //       }
     //     });
     //     removeAllChildNodes(boxviewThumbnailsTrack);
-    //     boxviewActiveMedia.element = '';
+    //     activeMainElement.element = '';
     //   }
     // });
   }
