@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Yedidya10/boxview">
-    <img src="./src/boxview_logo.svg" alt="Logo" width="400">
+    <img src="./boxview_logo.png" alt="Logo" width="600">
   </a>
 
   <h1 align="center">BOX VIEW</h1>
