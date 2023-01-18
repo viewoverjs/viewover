@@ -1,0 +1,16 @@
+.boxview {
+    width: 100%;
+    height: 100%;
+    border: solid red 3px;
+    background-color: rgba(0, 0, 0, 0.97);
+  }
+  
+  .boxview::backdrop {
+    background-color: rgba(0, 0, 0, 0.97);
+  }
+
+  
+  .boxview__container {
+    width: 100%;
+    height: 100%;
+  }
