@@ -4,12 +4,23 @@
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
   "main": "boxview.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yedidya10/boxview"
+    "url": "git+https://github.com/Yedidya10/boxview.git"
   },
   "author": "yedidya aberjel",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yedidya10/boxview/issues"
+  },
+  "homepage": "https://github.com/Yedidya10/boxview#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.29.2"
+  }
 }

@@ -6,6 +6,7 @@ import {
   boxviewThumbnailsTrack,
 } from '../../document/docConstants.js';
 import toggleButtonIcon from '../controlbar/toggleButtonIcon.js';
+import { setScrollbarHeight } from './handleThumbnailsOverflow.js';
 
 export default function toggleThumbnailsMode(initial) {
   const trackHeight = boxviewContainer.style.getPropertyValue(
@@ -22,7 +23,7 @@ export default function toggleThumbnailsMode(initial) {
 
     boxviewContainer.style.setProperty(
       '--boxview-thumbnails-track-margin',
-      '15px'
+      '20px'
     );
 
     boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_visible');
@@ -48,8 +49,9 @@ export default function toggleThumbnailsMode(initial) {
     );
     boxviewContainer.style.setProperty(
       '--boxview-thumbnails-track-margin',
-      '15px'
+      '20px'
     );
     boxviewThumbnailsTrack.classList.add('boxview__thumbnails-track_visible');
   }
+  setScrollbarHeight();
 }

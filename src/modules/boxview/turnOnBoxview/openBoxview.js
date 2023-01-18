@@ -4,6 +4,7 @@ import getElementTarget from './getElementTarget.js';
 import prepareMediaElements from './prepareMediaElements.js';
 import checkMediaElementsTypes from './checkMediaElementsTypes.js';
 import getInitialMedia from './getInitialMedia.js';
+import { disableScroll } from '../../../utils/scroll-control.js';
 
 // Constants
 // Imported after boxview^, because constants HTML elements are loaded only after boxview import
@@ -15,70 +16,78 @@ import {
   thumbnailsShowButton,
   thumbnailsHideButton,
   boxviewThumbnailsTrack,
+  boxviewMainContent,
 } from '../../document/docConstants.js';
 
+import handleArrowNav from './handleArrowNav.js';
+import handleWheelNav from './handleWheelNav.js';
+
 // Nav Buttons
-import handleNextButton from '../controlbar/handleNextButton.js';
-import handlePreviousButton from '../controlbar/handlePreviousButton.js';
+import handleNextElement from '../controlbar/handleNextElement.js';
+import handlePreviousElement from '../controlbar/handlePreviousElement.js';
 
 // FullScreen
 import toggleFullScreenMode from '../controlbar/toggleFullScreenMode.js';
 
 // Thumbnails Track Mode
-import showThumbnailsTrack from '../thumbnailsTrack/showThumbnailsTrack.js';
+import handleThumbnails from '../thumbnailsTrack/handleThumbnails.js';
 import toggleThumbnailsMode from '../thumbnailsTrack/toggleThumbnailsMode.js';
-import isOverflowing from '../thumbnailsTrack/isOverflowing.js';
+import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
+import {
+  setScrollbarHeight,
+  scrollThumbnailToViewport,
+} from '../thumbnailsTrack/handleThumbnailsOverflow.js';
 
 // Adding events to control bar buttons
 import controlbarAddEvents from '../controlbar/controlbarAddEvents.js';
 controlbarAddEvents();
 
-
+export const mediaElements = {};
 
 // Open Boxview Dialog
-export default function openBoxview(e) {
+export const openBoxview = async (e) => {
   const elementTarget = getElementTarget(e);
-  const preparedMediaElements = prepareMediaElements(elementTarget);
-  const mediaElementsTypes = checkMediaElementsTypes(preparedMediaElements);
+  const elementTargetSrc = elementTarget.src || elementTarget.currentSrc;
+
+  mediaElements.preparedMediaElements = prepareMediaElements(elementTarget);
+  const mediaElementsTypes = checkMediaElementsTypes(
+    mediaElements.preparedMediaElements
+  );
 
   // Get initial media target element
   getInitialMedia(mediaElementsTypes, elementTarget);
 
-  // Media navigation
-  const handleArrowKeydown = (e) => {
-    // const isThumbnailsTrackActive = document.activeElement === boxviewThumbnailsTrack;
-
-    // console.log(isThumbnailsTrackActive);
-
-    if (e.key === 'ArrowLeft') {
-      handlePreviousButton(preparedMediaElements);
-    }
-    if (e.key === 'ArrowRight') {
-      handleNextButton(preparedMediaElements);
-    }
+  // Media Navigation
+  // Next button
+  nextButton.onclick = () => {
+    handleNextElement(mediaElements.preparedMediaElements);
   };
+  // Previous button
+  previousButton.onclick = () => {
+    handlePreviousElement(mediaElements.preparedMediaElements);
+  };
+  // Arrows buttons
+  document.addEventListener('keydown', handleArrowNav);
+  // Wheel
+  boxviewMainContent.addEventListener('wheel', handleWheelNav);
 
   // Thumbnails
-  showThumbnailsTrack(preparedMediaElements);
+  await handleThumbnails(mediaElements.preparedMediaElements);
 
-  // Defining an initial state for thumbnails mode on open boxview
-  toggleThumbnailsMode(true);
+  const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
+  const currentThumbnail = thumbnailsTrackList.find(
+    (thumbnailWrapper) =>
+      thumbnailWrapper
+        .querySelector('.boxview__thumbnail')
+        .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
+  );
+  
+  toggleActiveThumbnail(currentThumbnail);
+  
 
   // Thumbnails button
   thumbnailsShowButton.addEventListener('click', toggleThumbnailsMode);
   thumbnailsHideButton.addEventListener('click', toggleThumbnailsMode);
-
-  // Next button
-  nextButton.onclick = () => {
-    handleNextButton(preparedMediaElements);
-  };
-
-  // Previous button
-  previousButton.onclick = () => {
-    handlePreviousButton(preparedMediaElements);
-  };
-
-  document.addEventListener('keydown', handleArrowKeydown);
 
   // const clickedOnScrollbar = (mouseX) => {
   //   if (boxviewThumbnailsTrack.outerWidth <= mouseX) {
@@ -93,12 +102,18 @@ export default function openBoxview(e) {
   // Fullscreen
   fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
   fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
+  boxviewMainContent.addEventListener('dblclick', toggleFullScreenMode);
+
+  disableScroll();
 
   // Show modal
   boxview.showModal();
 
   // Create a scroll bar margin if a thumbnails track is over flowing
-  isOverflowing(boxviewThumbnailsTrack);
+  setScrollbarHeight();
 
- 
-}
+  // Defining an initial state for thumbnails mode on open boxview
+  toggleThumbnailsMode(true);
+  
+  scrollThumbnailToViewport(currentThumbnail);
+};

@@ -4,8 +4,9 @@ export default function prepareMediaElements(elementTarget) {
   // the prepareMediaElements function must be run.
   const preparedMediaElements = [];
   const rawMediaElements = [
-    ...elementTarget.closest('.media-content').children,
+    ...elementTarget.closest('[data-boxview-list]').children,
   ];
+
   for (let i = 0; i < rawMediaElements.length; i++) {
     const mediaElement = rawMediaElements[i];
     let media;

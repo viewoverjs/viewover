@@ -5,23 +5,57 @@ const getImageDimensions = (img) => {
   };
 };
 
-const setThumbnailDimensions = (img) => {
-  const { height, width } = getImageDimensions(img);
+const setThumbnailSize = (thumbnailWrapper, thumbnail) => {
+  const { height, width } = getImageDimensions(thumbnail);
   if (height < width) {
-    img.classList.add('boxview__thumbnail_horizontal');
+    thumbnailWrapper.classList.add('boxview__thumbnail-wrapper_horizontal');
+    thumbnail.classList.add('boxview__thumbnail_horizontal');
   }
   if (height > width) {
-    img.classList.add('boxview__thumbnail_vertical');
+    thumbnailWrapper.classList.add('boxview__thumbnail-wrapper_vertical');
+    thumbnail.classList.add('boxview__thumbnail_vertical');
   }
   if (height === width && width > 0) {
-    img.classList.add('boxview__thumbnail_square');
+    thumbnailWrapper.classList.add('boxview__thumbnail-wrapper_square');
+    thumbnail.classList.add('boxview__thumbnail_square');
   }
 };
 
-export default function createThumbnail(src) {
+export default async function createThumbnail(mediaElement) {
+  let imgUrl;
+  const thumbnailWrapper = document.createElement('div');
   const thumbnail = document.createElement('img');
-  thumbnail.setAttribute('src', src);
-  setThumbnailDimensions(thumbnail);
+
+  thumbnailWrapper.classList.add('boxview__thumbnail-wrapper');
   thumbnail.classList.add('boxview__thumbnail');
-  return thumbnail;
+
+  if (mediaElement.localName === 'img') {
+    imgUrl = mediaElement.src;
+    thumbnail.setAttribute('src', imgUrl);
+    try {
+      await thumbnail.decode();
+      setThumbnailSize(thumbnailWrapper, thumbnail);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  if (mediaElement.localName === 'iframe') {
+    const isYoutube = true;
+    if (isYoutube) {
+      const youtubeId = mediaElement.src.substr(
+        mediaElement.src.lastIndexOf('/') + 1
+      );
+      imgUrl = `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`;
+      thumbnail.setAttribute('src', imgUrl);
+    }
+  }
+  if (mediaElement.localName === 'video') {
+    imgUrl = mediaElement.getAttribute('poster') || null;
+    thumbnail.setAttribute('src', imgUrl);
+  }
+
+  
+  thumbnailWrapper.appendChild(thumbnail);
+
+  return thumbnailWrapper;
 }

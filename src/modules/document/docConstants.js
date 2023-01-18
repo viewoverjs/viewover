@@ -1,3 +1,6 @@
+// Control bar
+export const controlBar = document.getElementById('control-bar');
+
 // Nav Buttons Constants
 export const nextButton = document.getElementById('nav-next-button');
 export const previousButton = document.getElementById('nav-previous-button');
@@ -25,12 +28,13 @@ export const fullscreenExitButton = document.getElementById(
 
 export const boxviewContainer = document.getElementById('boxview-container');
 export const boxviewContent = document.getElementById('boxview-content');
+export const boxviewMainContent = document.getElementById('boxview-main-content');
 export const boxviewMediaWrapper = document.getElementById('boxview-media');
 
 export const boxviewThumbnailsTrack = document.getElementById(
   'boxview-thumbnails-track'
 );
-export const thumbnailsTrackHeight = '72px';
+export const thumbnailsTrackHeight = '76px';
 
 // Thumbnails Buttons Constants
 export const thumbnailsShowButton = document.getElementById(

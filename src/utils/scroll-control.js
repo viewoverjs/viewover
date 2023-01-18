@@ -7,8 +7,12 @@ export const disableScroll = () => {
   window.onscroll = function () {
     window.scrollTo(scrollLeft, scrollTop);
   };
+  document.body.style.overflow = 'hidden';
+  document.body.style.width = 'initial';
+  document.body.style.height = 'initial';
 };
 
 export const enableScroll = () => {
   window.onscroll = function () {};
+  document.body.style.overflow = 'visible';
 };

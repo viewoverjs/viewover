@@ -1,4 +1,4 @@
-import { boxviewContainer } from '../../document/docConstants.js';
+import { boxviewContainer, controlBar } from '../../document/docConstants.js';
 
 export default function toggleFullScreenMode() {
   if (!document.fullscreenElement) {

@@ -56,9 +56,9 @@ export default function addOpenBoxviewButton() {
 
         let width = mediaItem.offsetWidth;
         // let height = mediaItem.offsetHeight;
-        mediaItemWrapper.style.width = `${width}px`;
-        mediaItem.style.width = '100%';
-        mediaItem.style.height = '100%';
+        // mediaItemWrapper.style.width = `${width}px`;
+        // mediaItem.style.width = '100%';
+        // mediaItem.style.height = '100%';
 
         mediaItemParent.replaceChild(mediaItemWrapper, mediaItem);
         mediaItemWrapper.appendChild(mediaItem);
@@ -83,9 +83,9 @@ export default function addOpenBoxviewButton() {
 
         let width = mediaItem.offsetWidth;
         // let height = mediaItem.offsetHeight;
-        mediaItemWrapper.style.width = `${width}px`;
-        mediaItem.style.width = '100%';
-        mediaItem.style.height = '100%';
+        // mediaItemWrapper.style.width = `${width}px`;
+        // mediaItem.style.width = '100%';
+        // mediaItem.style.height = '100%';
 
         mediaItemParent.replaceChild(mediaItemWrapper, mediaItem);
         mediaItemWrapper.appendChild(mediaItem);

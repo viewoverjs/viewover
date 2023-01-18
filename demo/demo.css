@@ -1,16 +1,75 @@
 .body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .media-content {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* .media-content > video {
+  width: 1080px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+}
+
+.section {
+  width: 1080px;
+}
+
+.h2 {
+  font-size: 1.8rem;
+}
+
+.h3 {
+  font-size: 1.3rem;
+}
+
+.p {
+  font-size: 1.2rem;
+}
+
+.video {
+  max-width: 300px;
+}
+
+.section-hero {
+  display: flex;
+  justify-content: center;
+}
+.section-hero img {
+  width: 70%;
+  object-fit: cover;
+  object-position: center;  
+}
+
+.media-content {
+  max-width: 100%;
+  display: grid;
+  gap: 15px;
+}
+
+.media-content_1 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.media-content_2 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.media-content_3 {
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+}
+
+.media-content_0 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+/* .media-content > video {
     position: relative;
   }
   
@@ -27,35 +86,34 @@
     font-size: 130px;
     
   } */
-  
-  .media-content__image,
-  .media-content__video {
-    width: 400px;
-    display: inline-block;
-  }
-  
-  .media-content__youtube {
-    width: 400px;
-    aspect-ratio: 16/9;
-  }
-  
-  .popup-button {
-    width: 150px;
-    padding: 1rem 2rem;
-    border: black 3px solid;
-  }
-  
-  .html-video {
-    width: 500px;
-    aspect-ratio: 16/9;
-  }
-  
-  .youtube-video {
-    display: block;
-    width: 500px;
-    aspect-ratio: 16/9;
-  }
-  
-  body:fullscreen {
-    background-color: red;
-  }
+
+.media-content__image,
+.media-content__video {
+  display: inline-block;
+}
+
+.media-content__youtube {
+  width: 400px;
+  aspect-ratio: 16/9;
+}
+
+.popup-button {
+  width: 150px;
+  padding: 1rem 2rem;
+  border: black 3px solid;
+}
+
+.html-video {
+  width: 500px;
+  aspect-ratio: 16/9;
+}
+
+.youtube-video {
+  display: block;
+  width: 500px;
+  aspect-ratio: 16/9;
+}
+
+body:fullscreen {
+  background-color: red;
+}

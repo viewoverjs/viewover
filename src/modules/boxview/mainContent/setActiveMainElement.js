@@ -14,6 +14,7 @@ import {
   handleZoomInButton,
   handleZoomOutButton,
   handleZoomWheel,
+  activeImage,
 } from '../controlbar/handleZoom.js';
 
 export default function setActiveMainElement(type, url) {
@@ -22,17 +23,23 @@ export default function setActiveMainElement(type, url) {
   }
 
   createMediaElement(type, url);
-  boxviewMediaWrapper.appendChild(activeMainElement.element);
-  if (type === 'video') {
-    activeMainElement.element.load();
-  }
 
   // zoom buttons
   if (type === 'video' || type === 'iframe') {
     hideZoomButtons();
   }
+
   if (type === 'img') {
+    activeImage.imageScale = 1;
+    activeMainElement.element.style.transition = 'none';
+    activeMainElement.element.style.transform = `scale(${activeImage.imageScale})`;
+
     // Zoom wheel
+    // activeMainElement.element.addEventListener('wheel', handleZoomWheel);
+    // activeMainElement.element.addEventListener('wheel', (e) => {
+    //   console.log(e)
+    // });
+
     activeMainElement.element.addEventListener('wheel', handleZoomWheel);
 
     // zoom buttons
@@ -40,4 +47,13 @@ export default function setActiveMainElement(type, url) {
     ClickAndHoldEvent.apply(zoomInButton, handleZoomInButton);
     ClickAndHoldEvent.apply(zoomOutButton, handleZoomOutButton);
   }
+
+  boxviewMediaWrapper.appendChild(activeMainElement.element);
+
+  if (type === 'video') {
+    activeMainElement.element.load();
+  }
+
+  activeMainElement.element.style.transition =
+    'var(--boxview-media-transition)';
 }

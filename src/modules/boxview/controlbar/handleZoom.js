@@ -19,18 +19,22 @@ export const handleZoomOutButton = () => {
 };
 
 export const handleZoomWheel = (e) => {
-  if (e.deltaY > 0) {
-    activeImage.imageScale -= 0.05;
-  }
-  if (e.deltaY < 0) {
-    activeImage.imageScale += 0.05;
-  }
+  e.preventDefault();
 
-  // Restrict scale
-  activeImage.imageScale = Math.min(Math.max(1, activeImage.imageScale), 3);
+  if (e.ctrlKey) {
+    if (e.deltaY > 0) {
+      activeImage.imageScale -= 0.05;
+    }
+    if (e.deltaY < 0) {
+      activeImage.imageScale += 0.05;
+    }
 
-  return (
-    (e.target.style.transform = `scale(${activeImage.imageScale})`),
-    (e.target.style.transition = 'linear .2s')
-  );
+    // Restrict scale
+    activeImage.imageScale = Math.min(Math.max(1, activeImage.imageScale), 3);
+
+    return (
+      (e.target.style.transform = `scale(${activeImage.imageScale})`),
+      (e.target.style.transition = 'linear .2s')
+    );
+  }
 };

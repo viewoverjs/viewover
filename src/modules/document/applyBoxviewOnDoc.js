@@ -1,4 +1,4 @@
-import openBoxview from '../boxview/turnOnBoxview/openBoxview.js';
+import { openBoxview } from '../boxview/turnOnBoxview/openBoxview.js';
 import addOpenBoxviewButton from './addOpenBoxviewButton.js';
 
 addOpenBoxviewButton();

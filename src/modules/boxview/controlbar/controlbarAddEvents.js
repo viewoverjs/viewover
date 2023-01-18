@@ -3,6 +3,8 @@ import {
   closeButton,
   fullscreenEntryButton,
   fullscreenExitButton,
+  controlBar,
+  boxviewContent,
 } from '../../document/docConstants.js';
 import toggleButtonIcon from './toggleButtonIcon.js';
 
@@ -11,6 +13,7 @@ import boxview from '../../document/createDialog.js';
 
 // FullScreen
 import toggleFullScreenMode from './toggleFullScreenMode.js';
+import { toggleControlBar, showControlBar } from './toggleControlBar.js';
 
 // Close Button
 import handleCloseButton from './handleCloseButton.js';
@@ -38,8 +41,15 @@ export default function controlbarAddEvents() {
     const isHidden = fullscreenEntryButton.classList.contains('button_hidden');
     if (isHidden) {
       toggleButtonIcon(fullscreenEntryButton, fullscreenExitButton);
+      boxviewContent.removeEventListener('mousemove', toggleControlBar);
+      controlBar.removeEventListener('mouseenter', showControlBar);
+      controlBar.removeEventListener('mouseleave', toggleControlBar);
+      showControlBar();
     } else {
       toggleButtonIcon(fullscreenExitButton, fullscreenEntryButton);
+      boxviewContent.addEventListener('mousemove', toggleControlBar);
+      controlBar.addEventListener('mouseenter', showControlBar);
+      controlBar.addEventListener('mouseleave', toggleControlBar);
     }
   });
 }

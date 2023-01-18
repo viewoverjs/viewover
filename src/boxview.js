@@ -4,6 +4,8 @@
 import { applyBoxviewOnDoc } from './modules/document/applyBoxviewOnDoc.js';
 applyBoxviewOnDoc();
 
+
+
 // Get active boxview image resolution
 // const GetImageResolution = function () {
 //   const canvas = document.createElement('canvas');
