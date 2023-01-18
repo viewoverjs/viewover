@@ -68,7 +68,6 @@
 .boxview *,
 .boxview *::before,
 .boxview *::after {
-  outline: solid 1px red;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -309,7 +308,7 @@
       var(--boxview-thumbnails-track-margin)
   );
   width: 100%;
-  border: solid 1px blueviolet;
+  border: none;
 }
 
 /* Navigate */
@@ -362,13 +361,12 @@
   max-width: 100%;
   overflow: hidden;
   border-radius: var(--boxview-media-border-radius);
-  border: solid 1px red;
+  border: none;
 }
 
 .boxview__img,
 .boxview__video,
 .boxview__iframe {
-  border: solid 1px white;
   border-radius: var(--boxview-media-border-radius);
   transition: var(--boxview-media-transition);
   user-select: none;
