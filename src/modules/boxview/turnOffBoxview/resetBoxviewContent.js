@@ -29,7 +29,7 @@ export default function resetBoxviewContent() {
     }
   });
   removeAllChildNodes(boxviewThumbnailsTrack);
-  delete activeMainElement.element;
+
   activeImage.imageScale = 1;
   enableScroll();
   document.removeEventListener('keydown', handleArrowNav);
@@ -38,11 +38,12 @@ export default function resetBoxviewContent() {
   boxviewMediaWrapper.removeEventListener('dblclick', toggleFullScreenMode);
 
   toggleButtonIcon(thumbnailsHideButton, thumbnailsShowButton);
-
   boxviewThumbnailsTrack.classList.remove('boxview__thumbnails-track_visible');
   boxviewContainer.style.setProperty('--thumbnails-track-height', '0px');
   boxviewContainer.style.setProperty(
     '--boxview-thumbnails-track-margin',
     '0px'
   );
+
+  delete activeMainElement.element;
 }

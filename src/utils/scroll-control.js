@@ -8,11 +8,13 @@ export const disableScroll = () => {
     window.scrollTo(scrollLeft, scrollTop);
   };
   document.body.style.overflow = 'hidden';
-  document.body.style.width = 'initial';
-  document.body.style.height = 'initial';
+  document.body.style.maxWidth = '100vw';
+
 };
 
 export const enableScroll = () => {
   window.onscroll = function () {};
   document.body.style.overflow = 'visible';
+  document.body.style.maxWidth = 'revert';
+
 };

@@ -4,7 +4,7 @@
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
   "main": "boxview.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "autoprefixer": "postcss ./src/styles/*.css --use autoprefixer -d build/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
     "test": "tests"
   },
   "devDependencies": {
-    "@playwright/test": "^1.29.2"
+    "@playwright/test": "^1.29.2",
+    "autoprefixer": "^10.4.13",
+    "postcss-cli": "^10.1.0"
   }
 }

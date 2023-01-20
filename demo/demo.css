@@ -1,5 +1,4 @@
 .body {
-  width: 1080px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
 }
 
 .section {
-  width: 1080px;
+  max-width: 100%;
 }
 
 .h2 {
@@ -35,12 +34,13 @@
 .section-hero img {
   width: 70%;
   object-fit: cover;
-  object-position: center;  
+  object-position: center;
 }
 
 .media-content {
   max-width: 100%;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -58,6 +58,24 @@
 
 .media-content_0 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (600px > width) {
+  .media-content_1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .media-content_2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .media-content_3 {
+    grid-template-columns: 1fr;
+  }
+
+  .media-content_0 {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .img {
@@ -93,18 +111,18 @@
 }
 
 .media-content__youtube {
-  width: 400px;
+  max-width: 400px;
   aspect-ratio: 16/9;
 }
 
 .popup-button {
-  width: 150px;
+  max-width: 150px;
   padding: 1rem 2rem;
   border: black 3px solid;
 }
 
 .html-video {
-  width: 500px;
+  max-width: 500px;
   aspect-ratio: 16/9;
 }
 
@@ -112,8 +130,4 @@
   display: block;
   width: 500px;
   aspect-ratio: 16/9;
-}
-
-body:fullscreen {
-  background-color: red;
 }

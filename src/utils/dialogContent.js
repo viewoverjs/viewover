@@ -51,7 +51,7 @@ export const dialogContent = `
           </svg>
         </div>
       </div>
-      <button class="button" id="share-button">
+      <button class="button share-button" id="share-button">
         <svg
           class="svg-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export const dialogContent = `
           />
         </svg>
       </button>
-      <button class="button">
+      <button class="button download-button" id="download-button">
         <svg
           class="svg-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +134,7 @@ export const dialogContent = `
         </svg>
       </button>
       <button
-        class="button boxview__zoom-in-button boxview__zoom-button"
+        class="button boxview__zoom-out-button boxview__zoom-button"
         id="zoom-out-button"
       >
         <svg
