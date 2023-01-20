@@ -3,7 +3,11 @@ import {
   boxviewContainer,
   thumbnailsTrackHeight,
   boxviewThumbnailsTrack,
+  thumbnailsShowButton,
+  thumbnailsHideButton,
 } from '../../document/docConstants.js';
+
+import toggleButtonIcon from '../controlbar/toggleButtonIcon.js';
 
 // Thumbnails Track
 import createThumbnail from './createThumbnail.js';
@@ -11,11 +15,16 @@ import createThumbnail from './createThumbnail.js';
 let thumbnailWrapper;
 let thumbnailElement;
 
-export default async function showThumbnailsTrack(preparedMediaElements) {
-  boxviewContainer.style.setProperty(
-    '--thumbnails-track-height',
-    thumbnailsTrackHeight
-  );
+export default async function showThumbnailsTrack(preparedMediaElements, initial) {
+  if (initial) {
+    boxviewContainer.style.setProperty(
+      '--thumbnails-track-height',
+      thumbnailsTrackHeight
+    );
+    toggleButtonIcon(thumbnailsShowButton, thumbnailsHideButton);
+  } else {
+    toggleButtonIcon(thumbnailsHideButton, thumbnailsShowButton);
+  }
 
   for (let i = 0; i < preparedMediaElements.length; i++) {
     const mediaElement = preparedMediaElements[i];

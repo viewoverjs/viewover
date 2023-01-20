@@ -1,3 +1,21 @@
+/* Each selector contains one or more of these labels: "Core Style" , "Preference Style" and "Recommended Style"
+
+"Core Style" means that all is properties are the style of the foundation of the library
+and cannot exist without them, therefore they should not be changed at all.
+
+"Preference Style" means that all is properties they are styles that can be changed according to the user's needs and personal taste.
+(done by defining a JS object according to the documentation).
+The current properties settings are the library's default style.
+
+"Recommended Style" means that all is properties they are styles >>
+
+*/
+
+@import url(./boxview-media.css);
+@import url(./boxview-thumbnails-track.css);
+@import url(./boxview-content.css);
+@import url(./boxview-main-content.css);
+
 :root {
   --boxview-icon-color: rgb(140, 140, 140);
   --boxview-icon-color-hover: rgb(220, 220, 220);
@@ -68,6 +86,7 @@
 .boxview *,
 .boxview *::before,
 .boxview *::after {
+  outline: red 1px solid;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -100,37 +119,30 @@
   fill: var(--boxview-icon-color-disable);
 }
 
-.boxview {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.95);
-  overflow: hidden;
-}
-
-/* .boxview::backdrop {
-  min-width: 100vw;
-  min-height: 100vh;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 1);
-} */
-
 .boxview:modal {
   min-width: 100vw;
   min-height: 100vh;
 }
 
+.boxview::backdrop {
+  background: rgba(0, 0, 0, 1);
+}
+
+.boxview {
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+}
+
 .boxview__container {
   --boxview-padding: 20px;
+  width: 100%;
   height: 100%;
   padding-inline: var(--boxview-padding);
-
   padding-block-end: 0;
   --boxview-control-bar-height: 60px;
   /* option =  media preview adjustment */
@@ -182,6 +194,117 @@
   position: absolute;
   padding-inline: 20px;
   background-color: rgba(240, 240, 240, 0.1);
+  z-index: 9999;
+}
+
+.boxview__content {
+  width: 100%;
+  height: calc(100% - var(--boxview-control-bar-height));
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.boxview__main-content {
+  position: relative;
+  display: flex;
+  align-items: center; /* To center "boxview__media" element whose height in pixels is lower than "boxview__main-content" element height */
+  justify-content: center;
+  margin-block-end: var(--boxview-padding);
+  height: calc(
+    100% - var(--thumbnails-track-height) - var(--boxview-padding) -
+      var(--boxview-thumbnails-track-scroll-height) -
+      var(--boxview-thumbnails-track-margin)
+  );
+  width: 100%;
+  border: none;
+}
+
+.boxview__media {
+  /* Core Style */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border: none;
+
+  /* Preference Style */
+  border-radius: var(--boxview-media-border-radius);
+}
+
+.boxview__img,
+.boxview__video,
+.boxview__iframe {
+  /* Core Style */
+  user-select: none;
+
+  /* Preference Style */
+  border-radius: var(--boxview-media-border-radius);
+  transition: var(--boxview-media-transition);
+}
+
+/* Iframe does not accept % value */
+.boxview__iframe,
+.boxview__video {
+  /* Core Style */
+  height: calc(
+    100% - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
+      var(--boxview-padding) * 2
+  );
+
+  /* Recommended Style */
+  aspect-ratio: 16/9;
+}
+
+@media (orientation: landscape) {
+  .boxview__img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (orientation: portrait) {
+  @media (400px >= width) {
+    .boxview__img {
+      max-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  @media (400px < width) {
+    .boxview__img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.boxview__thumbnails-track {
+  display: grid;
+  align-items: center;
+  max-width: 100%;
+  margin-block-end: var(--boxview-thumbnails-track-margin);
+  padding-inline: 3px;
+  height: calc(
+    var(--thumbnails-track-height) +
+      var(--boxview-thumbnails-track-scroll-height)
+  );
+  grid-auto-flow: column;
+  gap: 6px;
+  grid-auto-columns: var(--media-preview-width);
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.boxview__thumbnails-track_visible {
+  padding-block: 3px calc(var(--boxview-thumbnails-track-scroll-height) + 3px);
 }
 
 /* Controls */
@@ -289,28 +412,6 @@
   rotate: 90deg;
 }
 
-.boxview__content {
-  height: calc(100% - var(--boxview-control-bar-height));
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.boxview__main-content {
-  position: relative;
-  display: flex;
-  align-items: center; /* To center "boxview__media" element whose height in pixels is lower than "boxview__main-content" element height */
-  justify-content: center;
-  margin-block-end: var(--boxview-padding);
-  height: calc(
-    100% - var(--thumbnails-track-height) - var(--boxview-padding) -
-      var(--boxview-thumbnails-track-scroll-height) -
-      var(--boxview-thumbnails-track-margin)
-  );
-  width: 100%;
-  border: none;
-}
-
 /* Navigate */
 /* .boxview__navigation-buttons {
   position: absolute;
@@ -327,7 +428,6 @@
   height: 100%;
   --navigate-button-width: 50px;
   width: var(--navigate-button-width);
-
   z-index: 1;
 }
 
@@ -336,9 +436,7 @@
 }
 
 .boxview__navigate-button_next {
-  inset-inline-start: calc(
-    100vw - var(--boxview-padding) * 2 - var(--navigate-button-width)
-  );
+  inset-inline-start: calc(99% - var(--boxview-padding) * 2);
 }
 
 .svg-icon_nav {
@@ -351,63 +449,6 @@
 .boxview__navigate-button:hover .svg-icon_nav {
   transform: scale(1.2);
   fill: rgb(250, 250, 250);
-}
-
-.boxview__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: var(--boxview-media-border-radius);
-  border: none;
-}
-
-.boxview__img,
-.boxview__video,
-.boxview__iframe {
-  border-radius: var(--boxview-media-border-radius);
-  transition: var(--boxview-media-transition);
-  user-select: none;
-}
-
-.boxview__img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-/* Iframe does not accept % value */
-.boxview__iframe,
-.boxview__video {
-  height: calc(
-    100vh - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
-      var(--boxview-padding) * 2
-  );
-  aspect-ratio: 16/9;
-}
-
-.boxview__thumbnails-track {
-  display: grid;
-  align-items: center;
-  max-width: 100%;
-  margin-block-end: var(--boxview-thumbnails-track-margin);
-  padding-inline: 3px;
-  height: calc(
-    var(--thumbnails-track-height) +
-      var(--boxview-thumbnails-track-scroll-height)
-  );
-  grid-auto-flow: column;
-  gap: 6px;
-  grid-auto-columns: var(--media-preview-width);
-  scroll-behavior: smooth;
-  overflow-y: hidden;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-}
-
-.boxview__thumbnails-track_visible {
-  padding-block: 3px calc(var(--boxview-thumbnails-track-scroll-height) + 3px);
 }
 
 .boxview__thumbnail-wrapper {
@@ -487,3 +528,7 @@
 .boxview__thumbnails-track::-webkit-scrollbar-thumb:hover {
   background-color: var(--boxview-icon-color-hover);
 }
+
+/* @media (100px <= width <= 1900px) {
+
+} */

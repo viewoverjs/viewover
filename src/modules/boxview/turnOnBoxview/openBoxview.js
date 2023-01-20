@@ -17,6 +17,7 @@ import {
   thumbnailsHideButton,
   boxviewThumbnailsTrack,
   boxviewMainContent,
+  boxviewMediaWrapper,
 } from '../../document/docConstants.js';
 
 import handleArrowNav from './handleArrowNav.js';
@@ -71,20 +72,6 @@ export const openBoxview = async (e) => {
   // Wheel
   boxviewMainContent.addEventListener('wheel', handleWheelNav);
 
-  // Thumbnails
-  await handleThumbnails(mediaElements.preparedMediaElements);
-
-  const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
-  const currentThumbnail = thumbnailsTrackList.find(
-    (thumbnailWrapper) =>
-      thumbnailWrapper
-        .querySelector('.boxview__thumbnail')
-        .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
-  );
-  
-  toggleActiveThumbnail(currentThumbnail);
-  
-
   // Thumbnails button
   thumbnailsShowButton.addEventListener('click', toggleThumbnailsMode);
   thumbnailsHideButton.addEventListener('click', toggleThumbnailsMode);
@@ -102,18 +89,31 @@ export const openBoxview = async (e) => {
   // Fullscreen
   fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
   fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
-  boxviewMainContent.addEventListener('dblclick', toggleFullScreenMode);
+  boxviewMediaWrapper.addEventListener('dblclick', toggleFullScreenMode);
 
   disableScroll();
 
   // Show modal
   boxview.showModal();
 
+    // Thumbnails
+    await handleThumbnails(mediaElements.preparedMediaElements, false);
+
+    const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
+    const currentThumbnail = thumbnailsTrackList.find(
+      (thumbnailWrapper) =>
+        thumbnailWrapper
+          .querySelector('.boxview__thumbnail')
+          .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
+    );
+    
+    toggleActiveThumbnail(currentThumbnail);
+
   // Create a scroll bar margin if a thumbnails track is over flowing
   setScrollbarHeight();
 
   // Defining an initial state for thumbnails mode on open boxview
-  toggleThumbnailsMode(true);
+  
   
   scrollThumbnailToViewport(currentThumbnail);
 };

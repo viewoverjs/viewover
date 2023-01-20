@@ -2,15 +2,17 @@ import { boxviewThumbnailsTrack } from '../../document/docConstants.js';
 import { boxviewContainer } from '../../document/docConstants.js';
 
 export const scrollThumbnailToViewport = (element) => {
+  const margin = 23;
   const isHiddenOnRight =
-    element.getBoundingClientRect().right + 23 > window.innerWidth;
-  const isHiddenOnLeft = element.getBoundingClientRect().left < 23;
-
+    element.getBoundingClientRect().right + margin > window.innerWidth;
+  const isHiddenOnLeft = element.getBoundingClientRect().left < margin;
   if (isHiddenOnLeft) {
-    boxviewThumbnailsTrack.scrollLeft -= window.innerWidth;
+    boxviewThumbnailsTrack.scrollLeft -=
+      window.innerWidth - element.getBoundingClientRect().right - margin;
   }
   if (isHiddenOnRight) {
-    boxviewThumbnailsTrack.scrollLeft += window.innerWidth;
+    boxviewThumbnailsTrack.scrollLeft +=
+      element.getBoundingClientRect().left - margin;
   }
 };
 

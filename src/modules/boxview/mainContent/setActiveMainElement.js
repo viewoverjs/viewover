@@ -35,11 +35,6 @@ export default function setActiveMainElement(type, url) {
     activeMainElement.element.style.transform = `scale(${activeImage.imageScale})`;
 
     // Zoom wheel
-    // activeMainElement.element.addEventListener('wheel', handleZoomWheel);
-    // activeMainElement.element.addEventListener('wheel', (e) => {
-    //   console.log(e)
-    // });
-
     activeMainElement.element.addEventListener('wheel', handleZoomWheel);
 
     // zoom buttons
