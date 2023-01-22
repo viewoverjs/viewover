@@ -4,7 +4,7 @@
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
   "main": "boxview.js",
   "scripts": {
-    "autoprefixer": "postcss ./src/styles/*.css --use autoprefixer -d build/"
+    "build": "postcss ./src/styles/*.css --use autoprefixer -d build/ && babel src -d build/"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,11 @@
     "test": "tests"
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@playwright/test": "^1.29.2",
     "autoprefixer": "^10.4.13",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^10.1.0",
+    "uglify-js": "^3.17.4"
   }
 }
