@@ -1,3 +1,10 @@
+const setPlayIcon = (thumbnailWrapper, thumbnail) => {
+  const playIcon = document.createElement('div');
+  // playIcon.setAttribute('src', '');
+  playIcon.classList.add('boxview__play-icon');
+  thumbnailWrapper.appendChild(playIcon);
+};
+
 const getImageDimensions = (img) => {
   return {
     height: img.naturalHeight,
@@ -47,14 +54,20 @@ export default async function createThumbnail(mediaElement) {
       );
       imgUrl = `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`;
       thumbnail.setAttribute('src', imgUrl);
+      setPlayIcon(thumbnailWrapper, thumbnail);
     }
   }
   if (mediaElement.localName === 'video') {
-    imgUrl = mediaElement.getAttribute('poster') || null;
-    thumbnail.setAttribute('src', imgUrl);
+    imgUrl = mediaElement.getAttribute('poster');
+    if (imgUrl !== null) {
+      thumbnail.setAttribute('src', imgUrl);
+      setPlayIcon(thumbnailWrapper, thumbnail);
+    } else {
+      thumbnail.classList.add('boxview__alternate-thumbnail');
+      thumbnailWrapper.classList.add('boxview__alternate-thumbnail-wrapper');
+    }
   }
 
-  
   thumbnailWrapper.appendChild(thumbnail);
 
   return thumbnailWrapper;

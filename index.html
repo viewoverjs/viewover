@@ -14,12 +14,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./demo/demo.css" />
-    <link rel="stylesheet" href="./build/boxview.css" />
+    <link rel="stylesheet" href="./src/styles/boxview.css" />
     <title>Boxview</title>
   </head>
   <body class="body">
     <section class="section section-hero">
-      <img src="../boxview.png" alt="boxview logo" />
+      <img src="./boxview_logo.png" alt="boxview logo" />
     </section>
     <section class="section">
       <h2 id="the-simplest-implementation" class="h2">
@@ -323,7 +323,7 @@
       </div>
     </section>
     <section class="section">
-      <div class="media-content media-content_0" data-boxview-list>
+      <div class="media-content media-content_4" data-boxview-list>
         <iframe
           loading="lazy"
           class="media-content__youtube"
@@ -366,7 +366,12 @@
           src="https://images.unsplash.com/photo-1662241131527-f57cadcacf32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
           alt=""
         />
-        <video class="video media-content__video" data-boxview="video" controls muted>
+        <video
+          class="video media-content__video"
+          data-boxview="video"
+          controls
+          muted
+        >
           <source
             src="./demo/media/videos/Igloo-tents-near-the-mountains.mp4"
             type="video/mp4"

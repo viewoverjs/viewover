@@ -3,9 +3,8 @@ import handlePreviousElement from '../controlbar/handlePreviousElement.js';
 import { mediaElements } from './openBoxview.js';
 
 export default function handleWheelNav(e) {
-  e.preventDefault();
-
-  if (!e.ctrlKey) {
+  console.log(e.target);
+  if (!e.ctrlKey && !e.shiftKey ) {
     if (e.deltaY > 0) {
       handleNextElement(mediaElements.preparedMediaElements);
     }

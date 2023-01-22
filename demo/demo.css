@@ -31,6 +31,7 @@
   display: flex;
   justify-content: center;
 }
+
 .section-hero img {
   width: 70%;
   object-fit: cover;
@@ -45,10 +46,12 @@
 }
 
 .media-content_1 {
+  display: none;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .media-content_2 {
+  display: none;
   grid-template-columns: repeat(5, 1fr);
 }
 

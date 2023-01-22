@@ -21,7 +21,7 @@ export default function listenForThumbnailsEvents() {
     if (elementType === 'img') {
       const thumbnailUrl = thumbnail.getAttribute('data-boxview-thumbnail-src');
 
-      thumbnail.addEventListener('click', () => {
+      thumbnailWrapper.addEventListener('click', () => {
         if (activeMainElement.element.localName === 'img') {
           if (activeMainElement.element.src === thumbnailUrl) {
             return;
@@ -42,7 +42,7 @@ export default function listenForThumbnailsEvents() {
     if (elementType === 'video') {
       const thumbnailUrl = thumbnail.getAttribute('data-boxview-thumbnail-src');
 
-      thumbnail.addEventListener('click', (e) => {
+      thumbnailWrapper.addEventListener('click', (e) => {
         if (activeMainElement.element.localName === 'video') {
           if (activeMainElement.element.currentSrc === thumbnailUrl) {
             return;
@@ -59,7 +59,7 @@ export default function listenForThumbnailsEvents() {
     if (elementType === 'iframe') {
       const thumbnailUrl = thumbnail.getAttribute('data-boxview-thumbnail-src');
 
-      thumbnail.addEventListener('click', (e) => {
+      thumbnailWrapper.addEventListener('click', (e) => {
         if (activeMainElement.element.localName === 'iframe') {
           if (activeMainElement.element.src === thumbnailUrl) {
             return;

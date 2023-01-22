@@ -34,8 +34,10 @@ export default function resetBoxviewContent() {
   enableScroll();
   document.removeEventListener('keydown', handleArrowNav);
   boxviewMainContent.removeEventListener('wheel', handleWheelNav);
-  activeMainElement.element.addEventListener('wheel', handleZoomWheel);
   boxviewMediaWrapper.removeEventListener('dblclick', toggleFullScreenMode);
+
+  // Zoom Button
+  activeMainElement.element.removeEventListener('wheel', handleZoomWheel);
 
   toggleButtonIcon(thumbnailsHideButton, thumbnailsShowButton);
   boxviewThumbnailsTrack.classList.remove('boxview__thumbnails-track_visible');

@@ -20,6 +20,7 @@ import {
   boxviewMediaWrapper,
 } from '../../document/docConstants.js';
 
+import { handleTouchSwipeNav } from './handleTouchSwipeNav.js';
 import handleArrowNav from './handleArrowNav.js';
 import handleWheelNav from './handleWheelNav.js';
 
@@ -69,8 +70,11 @@ export const openBoxview = async (e) => {
   };
   // Arrows buttons
   document.addEventListener('keydown', handleArrowNav);
+  // Touchmove
+  handleTouchSwipeNav.init();
+
   // Wheel
-  boxviewMainContent.addEventListener('wheel', handleWheelNav);
+  // boxviewMainContent.addEventListener('wheel', handleWheelNav);
 
   // Thumbnails button
   thumbnailsShowButton.addEventListener('click', toggleThumbnailsMode);
@@ -96,24 +100,23 @@ export const openBoxview = async (e) => {
   // Show modal
   boxview.showModal();
 
-    // Thumbnails
-    await handleThumbnails(mediaElements.preparedMediaElements, false);
+  // Thumbnails
+  await handleThumbnails(mediaElements.preparedMediaElements, false);
 
-    const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
-    const currentThumbnail = thumbnailsTrackList.find(
-      (thumbnailWrapper) =>
-        thumbnailWrapper
-          .querySelector('.boxview__thumbnail')
-          .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
-    );
-    
-    toggleActiveThumbnail(currentThumbnail);
+  const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
+  const currentThumbnail = thumbnailsTrackList.find(
+    (thumbnailWrapper) =>
+      thumbnailWrapper
+        .querySelector('.boxview__thumbnail')
+        .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
+  );
+
+  toggleActiveThumbnail(currentThumbnail);
 
   // Create a scroll bar margin if a thumbnails track is over flowing
   setScrollbarHeight();
 
   // Defining an initial state for thumbnails mode on open boxview
-  
-  
+
   scrollThumbnailToViewport(currentThumbnail);
 };

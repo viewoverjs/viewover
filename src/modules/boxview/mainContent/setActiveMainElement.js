@@ -1,18 +1,14 @@
 import {
   boxviewMediaWrapper,
-  zoomInButton,
-  zoomOutButton,
 } from '../../document/docConstants.js';
 import removeBoxviewMediaWrapperChildren from './removeBoxviewMediaWrapperChildren.js';
 import { createMediaElement, activeMainElement } from './createMediaElement.js';
 import { hideZoomButtons } from '../controlbar/displayZoomButtons.js';
+// import handleScrollByMousemove from '../turnOnBoxview/handleScrollByMousemove.js';
 
 // Zoom Buttons
 import { showZoomButtons } from '../controlbar/displayZoomButtons.js';
-import ClickAndHoldEvent from '../../classes/ClickAndHoldEvent.js';
 import {
-  handleZoomInButton,
-  handleZoomOutButton,
   handleZoomWheel,
   activeImage,
 } from '../controlbar/handleZoom.js';
@@ -34,13 +30,13 @@ export default function setActiveMainElement(type, url) {
     activeMainElement.element.style.transition = 'none';
     activeMainElement.element.style.transform = `scale(${activeImage.imageScale})`;
 
+    // boxviewMediaWrapper.addEventListener('mousemove', handleScrollByMousemove);
+
     // Zoom wheel
     activeMainElement.element.addEventListener('wheel', handleZoomWheel);
 
     // zoom buttons
     showZoomButtons();
-    ClickAndHoldEvent.apply(zoomInButton, handleZoomInButton);
-    ClickAndHoldEvent.apply(zoomOutButton, handleZoomOutButton);
   }
 
   boxviewMediaWrapper.appendChild(activeMainElement.element);

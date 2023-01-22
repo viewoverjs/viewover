@@ -5,7 +5,10 @@ import {
   fullscreenExitButton,
   controlBar,
   boxviewContent,
+  zoomInButton,
+  zoomOutButton,
 } from '../../document/docConstants.js';
+import { handleZoomInButton, handleZoomOutButton } from './handleZoom.js';
 import toggleButtonIcon from './toggleButtonIcon.js';
 
 // Boxview General
@@ -20,6 +23,10 @@ import handleCloseButton from './handleCloseButton.js';
 import resetBoxviewContent from '../turnOffBoxview/resetBoxviewContent.js';
 
 export default function controlbarAddEvents() {
+  // Zoom Button
+  zoomInButton.addEventListener('click', handleZoomInButton);
+  zoomOutButton.addEventListener('click', handleZoomOutButton);
+
   // Close Button Event
   closeButton.onclick = () => {
     handleCloseButton();

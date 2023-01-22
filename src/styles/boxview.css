@@ -90,16 +90,12 @@ The current properties settings are the library's default style.
 .boxview *,
 .boxview *::before,
 .boxview *::after {
-  outline: red 1px solid;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 .boxview .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -240,13 +236,22 @@ The current properties settings are the library's default style.
   align-items: center;
   max-height: 100%;
   max-width: 100%;
-  object-fit: cover;
+
+  /* Recommended Style */
   overflow: hidden;
+  scroll-behavior: smooth;
+  /* scrollbar-width: none; */
   border: none;
 
   /* Preference Style */
   border-radius: var(--boxview-media-border-radius);
 }
+
+/* .boxview__media::-webkit-scrollbar {
+  display: none;
+  height: 0px;
+  width: 0px;
+} */
 
 .boxview__img,
 .boxview__video,
@@ -259,47 +264,48 @@ The current properties settings are the library's default style.
   transition: var(--boxview-media-transition);
 }
 
-@media (orientation: landscape) {
+.boxview__img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.boxview__video,
+.boxview__iframe {
+  /* Recommended Style */
+  aspect-ratio: 16/9;
+}
+
+@media (min-aspect-ratio: 16/10) {
   /* Iframe does not accept % value */
-  .boxview__iframe,
+  .boxview__iframe {
+    /* Core Style */
+    height: calc(
+      100vh - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
+        var(--boxview-padding) * 2
+    );
+  }
+
   .boxview__video {
     /* Core Style */
     height: calc(
       100vh - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
         var(--boxview-padding) * 2
     );
-
-    /* Recommended Style */
-    aspect-ratio: 16/9;
   }
 }
 
-@media (orientation: portrait) {
-  @media (400px >= width) {
-    .boxview__img {
-      max-height: 100%;
-      min-width: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* Iframe does not accept % value */
-    .boxview__iframe,
-    .boxview__video {
-      /* Core Style */
-      height: calc(100vw);
-
-      /* Recommended Style */
-      aspect-ratio: 16/9;
-    }
+@media (max-aspect-ratio: 16/10) {
+  /* Iframe does not accept % value */
+  .boxview__iframe {
+    /* Core Style */
+    width: 100vw;
   }
-  @media (400px < width) {
-    .boxview__img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+
+  .boxview__video {
+    /* Core Style */
+    width: 100%;
   }
 }
 
@@ -450,45 +456,58 @@ The current properties settings are the library's default style.
   rotate: 90deg;
 }
 
-/* Navigate */
-/* .boxview__navigation-buttons {
-  position: absolute;
-  inset: 0 0;
-  height: calc(
-    100% - var(--thumbnails-track-height) - var(--boxview-padding) * 2 -
-      var(--boxview-thumbnails-track-scroll-height) -
-      var(--boxview-thumbnails-track-margin) - var(--boxview-control-bar-height)
-  );
-} */
-
-.boxview__navigate-button {
-  position: absolute;
-  height: 100%;
-  --navigate-button-width: 50px;
-  width: var(--navigate-button-width);
-  z-index: 1;
-}
-
-.boxview__navigate-button_before {
-  inset-inline-start: 0px;
-}
-
-.boxview__navigate-button_next {
-  inset-inline-start: calc(99% - var(--boxview-padding) * 2);
-}
-
 .svg-icon_nav {
+  /* Preference Style */
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.4);
   transition: transform var(--boxview-icon-transition);
+}
+
+@media (450px < width) {
+  .boxview__navigate-button {
+    /* Core Style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    --navigate-button-width: 50px;
+    width: var(--navigate-button-width);
+    z-index: 1;
+
+    /* Preference Style */
+    height: calc(var(--navigate-button-width) + 10%);
+  }
+
+  .boxview__navigate-button_before {
+    /* Core Style */
+    inset-inline-start: 0px;
+  }
+
+  .boxview__navigate-button_next {
+    /* Core Style */
+    inset-inline-start: calc(99% - var(--boxview-padding) * 2);
+  }
+
+  .svg-icon_nav {
+    /* Preference Style */
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (450px > width) {
+  .boxview__navigate-button {
+    /* Preference Style */
+    display: none;
+  }
 }
 
 @media (any-hover: hover) {
   .svg-icon_nav {
+    /* Preference Style */
     fill: rgb(220, 220, 220);
   }
 
   .boxview__navigate-button:hover .svg-icon_nav {
+    /* Preference Style */
     transform: scale(1.2);
     fill: rgb(250, 250, 250);
   }
@@ -496,12 +515,14 @@ The current properties settings are the library's default style.
 
 @media (any-hover: none) {
   .svg-icon_nav {
-    transform: scale(1.2);
+    background-color: none;
+    transform: scale(1);
     fill: rgb(250, 250, 250);
   }
 }
 
 .boxview__thumbnail-wrapper {
+  position: relative;
   height: calc(var(--thumbnails-track-height) - 6px);
   /* option = border-radius */
   border-radius: 4px;
@@ -512,6 +533,10 @@ The current properties settings are the library's default style.
   outline: solid 3px;
   /* option = outline-color */
   outline-color: white;
+}
+
+.boxview__alternate-thumbnail-wrapper {
+  border: 1px solid rgba(250, 250, 250, 0.5);
 }
 
 .boxview__thumbnail-wrapper_horizontal {
@@ -537,6 +562,26 @@ The current properties settings are the library's default style.
   z-index: 1000;
 }
 
+.boxview__play-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  background-position: center;
+  background-image: url('../utils/icons/play_circle_opsz48.svg');
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+.boxview__alternate-thumbnail {
+  height: calc(var(--thumbnails-track-height) - 6px);
+  aspect-ratio: 16/9;
+  background-image: url('../utils/icons/play_circle_opsz48.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .boxview__thumbnail_horizontal {
   width: var(--boxview-horizontal-thumbnail-width);
 }
@@ -550,7 +595,7 @@ The current properties settings are the library's default style.
 }
 
 @media (any-hover: hover) {
-  .boxview__thumbnail:hover {
+  .boxview__thumbnail-wrapper:hover * {
     scale: 1.1;
   }
 }
