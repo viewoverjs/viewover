@@ -5,6 +5,6 @@ export default function handleCloseButton() {
   if (document.fullscreenElement) {
     document.exitFullscreen();
   }
-  boxview.close();
+
   resetBoxviewContent();
 }

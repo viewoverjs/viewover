@@ -150,7 +150,7 @@ export const dialogContent = `
           />
         </svg>
       </button>
-      <div class="boxview__thumbnails-buttons">
+      <div id="thumbnails-buttons" class="boxview__thumbnails-buttons">
         <button
           class="button boxview__thumbnails-button"
           id="thumbnails-filled-button"
@@ -192,7 +192,7 @@ export const dialogContent = `
           </svg>
         </button>
       </div>
-      <div class="boxview__fullscreen-buttons">
+      <div id="fullscreen-buttons" class="boxview__fullscreen-buttons">
         <button
           class="button button_visible boxview__fullscreen-button"
           id="fullscreen-entry-button"

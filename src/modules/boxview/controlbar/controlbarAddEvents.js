@@ -8,6 +8,7 @@ import {
   zoomInButton,
   zoomOutButton,
 } from '../../document/docConstants.js';
+
 import { handleZoomInButton, handleZoomOutButton } from './handleZoom.js';
 import toggleButtonIcon from './toggleButtonIcon.js';
 
@@ -22,10 +23,12 @@ import { toggleControlBar, showControlBar } from './toggleControlBar.js';
 import handleCloseButton from './handleCloseButton.js';
 import resetBoxviewContent from '../turnOffBoxview/resetBoxviewContent.js';
 
-export default function controlbarAddEvents() {
+export default function controlbarAddEvents(settings) {
   // Zoom Button
-  zoomInButton.addEventListener('click', handleZoomInButton);
-  zoomOutButton.addEventListener('click', handleZoomOutButton);
+  if (settings.zoom == true) {
+    zoomInButton.addEventListener('click', handleZoomInButton);
+    zoomOutButton.addEventListener('click', handleZoomOutButton);
+  }
 
   // Close Button Event
   closeButton.onclick = () => {
@@ -39,7 +42,7 @@ export default function controlbarAddEvents() {
       resetBoxviewContent();
     }
     // Fullscreen
-    if (e.key === 'Enter' && isOpen) {
+    if (e.key === 'Enter' && isOpen && settings.fullscreen == true) {
       toggleFullScreenMode();
     }
   });

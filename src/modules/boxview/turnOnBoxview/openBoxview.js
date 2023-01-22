@@ -18,6 +18,8 @@ import {
   boxviewThumbnailsTrack,
   boxviewMainContent,
   boxviewMediaWrapper,
+  fullscreenButtons,
+  thumbnailsButtons,
 } from '../../document/docConstants.js';
 
 import { handleTouchSwipeNav } from './handleTouchSwipeNav.js';
@@ -42,12 +44,11 @@ import {
 
 // Adding events to control bar buttons
 import controlbarAddEvents from '../controlbar/controlbarAddEvents.js';
-controlbarAddEvents();
 
 export const mediaElements = {};
 
 // Open Boxview Dialog
-export const openBoxview = async (e) => {
+export const openBoxview = async (e, settings) => {
   const elementTarget = getElementTarget(e);
   const elementTargetSrc = elementTarget.src || elementTarget.currentSrc;
 
@@ -55,6 +56,8 @@ export const openBoxview = async (e) => {
   const mediaElementsTypes = checkMediaElementsTypes(
     mediaElements.preparedMediaElements
   );
+
+  mediaElements.enableZoom = settings.zoom;
 
   // Get initial media target element
   getInitialMedia(mediaElementsTypes, elementTarget);
@@ -91,32 +94,42 @@ export const openBoxview = async (e) => {
   // });
 
   // Fullscreen
-  fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
-  fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
-  boxviewMediaWrapper.addEventListener('dblclick', toggleFullScreenMode);
+  if (settings.fullscreen == true) {
+    fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
+    fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
+    boxviewMediaWrapper.addEventListener('dblclick', toggleFullScreenMode);
+  } else {
+    fullscreenButtons.classList.add('boxview__fullscreen-buttons_hidden');
+  }
 
   disableScroll();
 
   // Show modal
   boxview.showModal();
 
+  controlbarAddEvents(settings);
+
   // Thumbnails
-  await handleThumbnails(mediaElements.preparedMediaElements, false);
+  if (settings.thumbnails == true) {
+    await handleThumbnails(mediaElements.preparedMediaElements, false);
 
-  const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
-  const currentThumbnail = thumbnailsTrackList.find(
-    (thumbnailWrapper) =>
-      thumbnailWrapper
-        .querySelector('.boxview__thumbnail')
-        .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
-  );
+    const thumbnailsTrackList = [...boxviewThumbnailsTrack.children];
+    const currentThumbnail = thumbnailsTrackList.find(
+      (thumbnailWrapper) =>
+        thumbnailWrapper
+          .querySelector('.boxview__thumbnail')
+          .getAttribute('data-boxview-thumbnail-src') === elementTargetSrc
+    );
 
-  toggleActiveThumbnail(currentThumbnail);
+    toggleActiveThumbnail(currentThumbnail);
 
-  // Create a scroll bar margin if a thumbnails track is over flowing
-  setScrollbarHeight();
+    // Create a scroll bar margin if a thumbnails track is over flowing
+    setScrollbarHeight();
 
-  // Defining an initial state for thumbnails mode on open boxview
+    // Defining an initial state for thumbnails mode on open boxview
 
-  scrollThumbnailToViewport(currentThumbnail);
+    scrollThumbnailToViewport(currentThumbnail);
+  } else {
+    thumbnailsButtons.classList.add('boxview__thumbnails-buttons_hidden');
+  }
 };

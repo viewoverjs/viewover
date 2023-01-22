@@ -194,7 +194,7 @@ The current properties settings are the library's default style.
 .boxview__container:fullscreen .boxview__control-bar {
   position: absolute;
   padding-inline: 20px;
-  background-color: rgba(240, 240, 240, 0.1);
+  background-color: rgba(40, 40, 40, 0.9);
   z-index: 9999;
 }
 
@@ -377,6 +377,10 @@ The current properties settings are the library's default style.
   height: 32px;
 }
 
+.boxview__fullscreen-buttons_hidden {
+  display: none;
+}
+
 .boxview__fullscreen-button {
   position: absolute;
   width: 32px;
@@ -444,6 +448,10 @@ The current properties settings are the library's default style.
   position: relative;
   width: 32px;
   height: 32px;
+}
+
+.boxview__thumbnails-buttons_hidden {
+  display: none;
 }
 
 .boxview__thumbnails-button {

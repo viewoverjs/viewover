@@ -48,4 +48,6 @@ export default function resetBoxviewContent() {
   );
 
   delete activeMainElement.element;
+  
+  boxview.close();
 }

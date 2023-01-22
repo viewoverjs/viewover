@@ -2,6 +2,7 @@ import setActiveMainElement from '../mainContent/setActiveMainElement.js';
 
 const getInitialMediaSrc = (elementTarget, type) => {
   const initialMediaSrc = elementTarget.src || elementTarget.currentSrc;
+
   setActiveMainElement(type, initialMediaSrc);
 };
 

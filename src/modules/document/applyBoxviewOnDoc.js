@@ -5,14 +5,16 @@ addOpenBoxviewButton();
 
 export const mediaItems = [...document.querySelectorAll('[data-boxview-item]')];
 
-export function applyBoxviewOnDoc() {
+export function applyBoxviewOnDoc(settings) {
+
+
   for (let i = 0; i < mediaItems.length; i++) {
     const mediaItem = mediaItems[i];
 
     if (mediaItem.localName !== 'video' && mediaItem.localName !== 'iframe') {
       mediaItem.style.cursor = 'pointer';
       mediaItem.onclick = (e) => {
-        openBoxview(e);
+        openBoxview(e, settings);
       };
     }
 
@@ -21,7 +23,7 @@ export function applyBoxviewOnDoc() {
         '.boxview-open-button'
       );
       openPopupButton.onclick = (e) => {
-        openBoxview(e);
+        openBoxview(e, settings);
       };
     }
   }

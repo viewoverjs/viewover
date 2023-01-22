@@ -1,5 +1,5 @@
-import boxview from '../../document/createDialog';
-import resetBoxviewContent from './resetBoxviewContent';
+import boxview from '../../document/createDialog.js';
+import resetBoxviewContent from './resetBoxviewContent.js';
 
 export default function closeBoxview() {
   if (boxview.hasAttribute('open')) {
