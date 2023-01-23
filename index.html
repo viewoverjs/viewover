@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./demo/demo.css" />
+    <link rel="stylesheet" href="./dist/css/boxview.min.css" />
+    <script type="module" src="./demo/script.js" defer></script>
+    <title>Boxview</title>
+  </head>
+  <body class="body">
+    <section class="section section-hero">
+      <img src="./boxview_logo.png" alt="boxview logo" />
+    </section>
+    <section class="section">
+      <h2 id="the-simplest-implementation" class="h2">
+        The simplest implementation
+      </h2>
+      <p class="p">
+        In the following examples, you can see the simplest and most lightweight
+        implementation of boxview. they are the most basic form of boxview with
+        the default features.
+      </p>
+      <h3 class="h3">Landscape photos gallery</h3>
+      <div class="media-content media-content_1" data-boxview-list>
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1458150945447-7fb764c11a92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=920&q=80"
+          alt="Charles Bridge, Prague, Praha, Czech Republic"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1555267648-6a4efdb37f1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=970&q=80"
+          alt="A bird in ZOO Plzeň, Czech republic"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1592838530410-6d5867c196d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1071&q=80"
+          alt="River"
+        />
+      </div>
+      <h3 class="h3">Portrait photos gallery</h3>
+      <div class="media-content media-content_2" data-boxview-list>
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="Bridge over a green waterfall"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=489&q=80"
+          alt="warm sunrise on beach"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1673590362725-2323fe837d43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="Santorini, Greece"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="Finding my roots"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1654840756188-6c6254d1a7ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="Yazd, Yazd Province, Iran"
+        />
+      </div>
+      <h3 class="h3">Landscape and Portrait photos gallery</h3>
+      <div class="media-content media-content_3" data-boxview-list>
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1458150945447-7fb764c11a92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=920&q=80"
+          alt="Charles Bridge, Prague, Praha, Czech Republic"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="Bridge over a green waterfall"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1555267648-6a4efdb37f1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=970&q=80"
+          alt="A bird in ZOO Plzeň, Czech republic"
+        />
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1572573385780-90caa8c1ba16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=487&q=80"
+          alt="The French Alps from high up"
+        />
+      </div>
+    </section>
+    <section class="section">
+      <div class="media-content media-content_0" data-boxview-list>
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://cdn3.photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1662241131527-f57cadcacf32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1673010960635-d0d1ad81b90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1661345741272-17a0b691b6da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="section">
+      <div class="media-content" data-boxview-list>
+        <video
+          class="video media-content__video"
+          poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+          playsinline
+          data-boxview="video"
+          controls
+          muted
+        >
+          <source
+            src="./demo/media/videos/Cross-on-a-mountain.mp4"
+            type="video/mp4"
+          />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <video
+          class="video media-content__video"
+          data-boxview="video"
+          controls
+          muted
+        >
+          <source
+            src="./demo/media/videos/Igloo-tents-near-the-mountains.mp4"
+            type="video/mp4"
+          />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <video class="video media-content__video" data-boxview="video">
+          <source
+            class="boxview-element"
+            src="./demo/media/videos/Curvy-road-in-a-snow-covered-forest.mp4"
+            type="video/mp4"
+            muted
+          />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      </div>
+    </section>
+    <section class="section">
+      <div class="media-content media-content_0" data-boxview-list>
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://cdn3.photoblogstop.com/wp-content/uploads/2012/07/Sierra_HDR_Panorama_DFX8048_2280x819_Q40_wm_mini.jpg"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1662241131527-f57cadcacf32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1673010960635-d0d1ad81b90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1661345741272-17a0b691b6da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1595168387088-b54cc4f68e5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1532152562158-bb5400e012f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1586272778320-6fde49c958c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3wxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1647696697729-b44571d0ccf1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1645429044389-8a8707a6035d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NXwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1645516956968-dee62f4a9090?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NnwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1491591462767-3b91b2a19487?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OHwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1488702953093-ac0820558db2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8N3wxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1523951541182-f85facd2f936?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OXwxMjk4NDYzfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1525898939552-346875c89d92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTV8MTI5ODQ2M3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1583272159527-2c1496c5273e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTh8MTI5ODQ2M3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672572305595-c0a319dc09f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672745769443-bd174ad38547?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDN8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672605183243-22fd7c7fd73e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672793693145-4f9f8755af3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672803949246-85b33371c7ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1672173038243-757b40f749df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIxfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="section">
+      <div class="media-content media-content_4" data-boxview-list>
+        <iframe
+          loading="lazy"
+          class="media-content__youtube"
+          poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+          data-boxview="youtube"
+          src="https://www.youtube.com/embed/JphHw6iU4m8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          loading="lazy"
+          class="media-content__youtube"
+          data-boxview="youtube"
+          src="https://www.youtube.com/embed/tMXjUWvJJto"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          loading="lazy"
+          class="media-content__youtube"
+          data-boxview="youtube"
+          src="https://www.youtube.com/embed/ChkzURVOihQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+    <section class="section">
+      <div class="media-content media-content_0" data-boxview-list>
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://images.unsplash.com/photo-1662241131527-f57cadcacf32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          alt=""
+        />
+        <video
+          class="video media-content__video"
+          data-boxview="video"
+          controls
+          muted
+        >
+          <source
+            src="./demo/media/videos/Igloo-tents-near-the-mountains.mp4"
+            type="video/mp4"
+          />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <iframe
+          loading="lazy"
+          class="img media-content__youtube"
+          data-boxview="youtube"
+          src="https://www.youtube.com/embed/ChkzURVOihQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <img
+          loading="lazy"
+          class="img media-content__image"
+          data-boxview="image"
+          src="https://revitalvolkov.files.wordpress.com/2009/03/ildegel.gif"
+          alt=""
+        />
+        <video class="video media-content__video" data-boxview="video">
+          <source
+            class="boxview-element"
+            src="./demo/media/videos/Curvy-road-in-a-snow-covered-forest.mp4"
+            type="video/mp4"
+            muted
+          />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <iframe
+          loading="lazy"
+          class="media-content__youtube"
+          data-boxview="youtube"
+          src="https://www.youtube.com/embed/tMXjUWvJJto"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+  </body>
+</html>
