@@ -1,4 +1,4 @@
-import { disableScroll, enableScroll } from '../../utils/scroll-control.js';
+import { disableScroll, enableScroll } from '../utils/scroll-control.js';
 
 export default class Popover {
   constructor(popover) {

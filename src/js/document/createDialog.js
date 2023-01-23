@@ -1,4 +1,4 @@
-import { dialogContent } from '../../utils/dialogContent.js';
+import { dialogContent } from '../utils/dialogContent.js';
 
 const boxview = document.createElement('dialog');
 boxview.setAttribute('id', 'boxview');

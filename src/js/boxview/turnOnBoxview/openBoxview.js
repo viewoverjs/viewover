@@ -4,7 +4,7 @@ import getElementTarget from './getElementTarget.js';
 import prepareMediaElements from './prepareMediaElements.js';
 import checkMediaElementsTypes from './checkMediaElementsTypes.js';
 import getInitialMedia from './getInitialMedia.js';
-import { disableScroll } from '../../../utils/scroll-control.js';
+import { disableScroll } from '../../utils/scroll-control.js';
 
 // Constants
 // Imported after boxview^, because constants HTML elements are loaded only after boxview import

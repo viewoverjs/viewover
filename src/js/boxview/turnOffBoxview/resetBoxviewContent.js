@@ -8,7 +8,7 @@ import {
 } from '../../document/docConstants.js';
 import { activeMainElement } from '../mainContent/createMediaElement.js';
 import { activeImage } from '../controlbar/handleZoom.js';
-import { enableScroll } from '../../../utils/scroll-control.js';
+import { enableScroll } from '../../utils/scroll-control.js';
 import handleArrowNav from '../turnOnBoxview/handleArrowNav.js';
 import handleWheelNav from '../turnOnBoxview/handleWheelNav.js';
 import toggleFullScreenMode from '../controlbar/toggleFullScreenMode.js';

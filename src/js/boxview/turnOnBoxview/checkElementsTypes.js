@@ -1,5 +1,5 @@
 let mediaElementType;
-import { unauthorizedError } from '../../../utils/customErrors.js';
+import { unauthorizedError } from '../../utils/customErrors.js';
 
 const checkChildMediaElement = (mediaElement, authorizedTypes) => {
   const mediaChildrenElement = [...mediaElement.children];
