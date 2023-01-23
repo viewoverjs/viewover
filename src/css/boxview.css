@@ -12,22 +12,22 @@ The current properties settings are the library's default style.
 */
 
 :root {
-  --boxview-icon-color: rgb(140, 140, 140);
-  --boxview-icon-color-hover: rgb(220, 220, 220);
-  --boxview-icon-color-disable: rgb(60, 60, 60);
-  --boxview-background-color: rgba(0, 0, 0, 0.95);
+  --viewover-icon-color: rgb(140, 140, 140);
+  --viewover-icon-color-hover: rgb(220, 220, 220);
+  --viewover-icon-color-disable: rgb(60, 60, 60);
+  --viewover-background-color: rgba(0, 0, 0, 0.95);
 
-  --boxview-icon-transition: linear 0.2s;
-  --boxview-media-transition: linear 0.2s;
+  --viewover-icon-transition: linear 0.2s;
+  --viewover-media-transition: linear 0.2s;
 }
 
-.boxview-video-wrapper,
-.boxview-iframe-wrapper {
+.viewover-video-wrapper,
+.viewover-iframe-wrapper {
   display: inline-block;
   position: relative;
 }
 
-/* .boxview-video-play-button {
+/* .viewover-video-play-button {
   width: 52px;
   height: 52px;
   position: absolute;
@@ -42,7 +42,7 @@ The current properties settings are the library's default style.
   z-index: 1;
 } */
 
-.boxview-open-button {
+.viewover-open-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -58,78 +58,78 @@ The current properties settings are the library's default style.
 }
 
 @media (any-hover: hover) {
-  .boxview-open-button {
+  .viewover-open-button {
     visibility: hidden;
     opacity: 0;
   }
 
-  .boxview-video-wrapper:hover .boxview-open-button {
+  .viewover-video-wrapper:hover .viewover-open-button {
     visibility: visible;
     opacity: 1;
   }
 
-  .boxview-iframe-wrapper:hover .boxview-open-button {
+  .viewover-iframe-wrapper:hover .viewover-open-button {
     visibility: visible;
     opacity: 1;
   }
 }
 
 @media (any-hover: none) {
-  .boxview-open-button {
+  .viewover-open-button {
     visibility: visible;
     opacity: 1;
   }
 }
 
-.boxview-video-play-button_hidden,
-.boxview-open-button_hidden {
+.viewover-video-play-button_hidden,
+.viewover-open-button_hidden {
   visibility: hidden;
   opacity: 0;
 }
 
-.boxview *,
-.boxview *::before,
-.boxview *::after {
+.viewover *,
+.viewover *::before,
+.viewover *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.boxview .button {
+.viewover .button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.boxview .button_disable {
+.viewover .button_disable {
   cursor: default;
 }
 
-.boxview .button_hidden {
+.viewover .button_hidden {
   visibility: hidden;
   opacity: 0;
 }
 
-.boxview .button_visible {
+.viewover .button_visible {
   visibility: visible;
   opacity: 1;
 }
 
-.boxview .button_disable .svg-icon_disable {
-  fill: var(--boxview-icon-color-disable);
+.viewover .button_disable .svg-icon_disable {
+  fill: var(--viewover-icon-color-disable);
 }
 
-.boxview:modal {
+.viewover:modal {
   max-width: 100%;
   max-height: 100%;
   user-select: none;
 }
 
-.boxview::backdrop {
+.viewover::backdrop {
   background: rgba(0, 0, 0, 0.95);
 }
 
-.boxview {
+.viewover {
   box-sizing: border-box;
   padding: 0;
   width: 100%;
@@ -139,44 +139,44 @@ The current properties settings are the library's default style.
   overflow: hidden;
 }
 
-.boxview__container {
-  --boxview-padding: 20px;
+.viewover__container {
+  --viewover-padding: 20px;
   width: 100%;
   height: 100%;
-  padding-inline: var(--boxview-padding);
+  padding-inline: var(--viewover-padding);
   padding-block-end: 0;
-  --boxview-control-bar-height: 60px;
+  --viewover-control-bar-height: 60px;
   /* option =  media preview adjustment */
   --thumbnails-track-height: 0px;
-  --boxview-media-margin: 10px;
-  --boxview-thumbnails-track-margin: 0px;
-  --boxview-thumbnails-track-scroll-height: 0px;
+  --viewover-media-margin: 10px;
+  --viewover-thumbnails-track-margin: 0px;
+  --viewover-thumbnails-track-scroll-height: 0px;
   /* option = aspect-ratio */
-  --boxview-horizontal-thumbnail-aspect-ratio: 16/9;
-  --boxview-vertical-thumbnail-aspect-ratio: 4/6;
-  --boxview-vertical-thumbnail-width: calc(
+  --viewover-horizontal-thumbnail-aspect-ratio: 16/9;
+  --viewover-vertical-thumbnail-aspect-ratio: 4/6;
+  --viewover-vertical-thumbnail-width: calc(
     var(--thumbnails-track-height) *
-      var(--boxview-vertical-thumbnail-aspect-ratio)
+      var(--viewover-vertical-thumbnail-aspect-ratio)
   );
-  --boxview-horizontal-thumbnail-width: calc(
+  --viewover-horizontal-thumbnail-width: calc(
     var(--thumbnails-track-height) *
-      var(--boxview-horizontal-thumbnail-aspect-ratio)
+      var(--viewover-horizontal-thumbnail-aspect-ratio)
   );
 
   /* option = border-radius */
-  --boxview-media-border-radius: 12px;
+  --viewover-media-border-radius: 12px;
 }
 
-.boxview__container:fullscreen {
-  padding-block-start: var(--boxview-padding);
-  --boxview-control-bar-height: 0px;
+.viewover__container:fullscreen {
+  padding-block-start: var(--viewover-padding);
+  --viewover-control-bar-height: 0px;
 }
 
-.boxview__container:not(:fullscreen) {
+.viewover__container:not(:fullscreen) {
   padding-block-start: 0;
 }
 
-.boxview__control-bar {
+.viewover__control-bar {
   position: sticky;
   position: -webkit-sticky;
   inset-block-start: 0;
@@ -191,45 +191,45 @@ The current properties settings are the library's default style.
   z-index: 9999;
 }
 
-.boxview__container:fullscreen .boxview__control-bar {
+.viewover__container:fullscreen .viewover__control-bar {
   position: absolute;
   padding-inline: 20px;
   background-color: rgba(40, 40, 40, 0.9);
   z-index: 9999;
 }
 
-.boxview__content {
+.viewover__content {
   width: 100%;
-  height: calc(100% - var(--boxview-control-bar-height));
+  height: calc(100% - var(--viewover-control-bar-height));
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
-.boxview__container:fullscreen .boxview__content {
+.viewover__container:fullscreen .viewover__content {
   width: 100%;
-  height: calc(100% - var(--boxview-control-bar-height));
+  height: calc(100% - var(--viewover-control-bar-height));
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
-.boxview__main-content {
+.viewover__main-content {
   position: relative;
   display: flex;
-  align-items: center; /* To center "boxview__media" element whose height in pixels is lower than "boxview__main-content" element height */
+  align-items: center; /* To center "viewover__media" element whose height in pixels is lower than "viewover__main-content" element height */
   justify-content: center;
-  margin-block-end: var(--boxview-padding);
+  margin-block-end: var(--viewover-padding);
   height: calc(
-    100% - var(--thumbnails-track-height) - var(--boxview-padding) -
-      var(--boxview-thumbnails-track-scroll-height) -
-      var(--boxview-thumbnails-track-margin)
+    100% - var(--thumbnails-track-height) - var(--viewover-padding) -
+      var(--viewover-thumbnails-track-scroll-height) -
+      var(--viewover-thumbnails-track-margin)
   );
   width: 100%;
   border: none;
 }
 
-.boxview__media {
+.viewover__media {
   /* Core Style */
   display: flex;
   justify-content: center;
@@ -244,80 +244,80 @@ The current properties settings are the library's default style.
   border: none;
 
   /* Preference Style */
-  border-radius: var(--boxview-media-border-radius);
+  border-radius: var(--viewover-media-border-radius);
 }
 
-/* .boxview__media::-webkit-scrollbar {
+/* .viewover__media::-webkit-scrollbar {
   display: none;
   height: 0px;
   width: 0px;
 } */
 
-.boxview__img,
-.boxview__video,
-.boxview__iframe {
+.viewover__img,
+.viewover__video,
+.viewover__iframe {
   /* Core Style */
   user-select: none;
 
   /* Preference Style */
-  border-radius: var(--boxview-media-border-radius);
-  transition: var(--boxview-media-transition);
+  border-radius: var(--viewover-media-border-radius);
+  transition: var(--viewover-media-transition);
 }
 
-.boxview__img {
+.viewover__img {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.boxview__video,
-.boxview__iframe {
+.viewover__video,
+.viewover__iframe {
   /* Recommended Style */
   aspect-ratio: 16/9;
 }
 
 @media (min-aspect-ratio: 16/10) {
   /* Iframe does not accept % value */
-  .boxview__iframe {
+  .viewover__iframe {
     /* Core Style */
     height: calc(
-      100vh - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
-        var(--boxview-padding) * 2
+      100vh - var(--thumbnails-track-height) -
+        var(--viewover-control-bar-height) - var(--viewover-padding) * 2
     );
   }
 
-  .boxview__video {
+  .viewover__video {
     /* Core Style */
     height: calc(
-      100vh - var(--thumbnails-track-height) - var(--boxview-control-bar-height) -
-        var(--boxview-padding) * 2
+      100vh - var(--thumbnails-track-height) -
+        var(--viewover-control-bar-height) - var(--viewover-padding) * 2
     );
   }
 }
 
 @media (max-aspect-ratio: 16/10) {
   /* Iframe does not accept % value */
-  .boxview__iframe {
+  .viewover__iframe {
     /* Core Style */
     width: 100vw;
   }
 
-  .boxview__video {
+  .viewover__video {
     /* Core Style */
     width: 100%;
   }
 }
 
-.boxview__thumbnails-track {
+.viewover__thumbnails-track {
   display: grid;
   align-items: center;
   max-width: 100%;
-  margin-block-end: var(--boxview-thumbnails-track-margin);
+  margin-block-end: var(--viewover-thumbnails-track-margin);
   padding-inline: 3px;
   height: calc(
     var(--thumbnails-track-height) +
-      var(--boxview-thumbnails-track-scroll-height)
+      var(--viewover-thumbnails-track-scroll-height)
   );
   grid-auto-flow: column;
   gap: 6px;
@@ -328,60 +328,60 @@ The current properties settings are the library's default style.
   overscroll-behavior-inline: contain;
 }
 
-.boxview__thumbnails-track_visible {
-  padding-block: 3px calc(var(--boxview-thumbnails-track-scroll-height) + 3px);
+.viewover__thumbnails-track_visible {
+  padding-block: 3px calc(var(--viewover-thumbnails-track-scroll-height) + 3px);
 }
 
 /* Controls */
 @media (any-hover: hover) {
   .svg-icon {
-    fill: var(--boxview-icon-color);
-    transition: all var(--boxview-icon-transition);
+    fill: var(--viewover-icon-color);
+    transition: all var(--viewover-icon-transition);
   }
 
   .svg-icon:hover {
-    fill: var(--boxview-icon-color-hover);
+    fill: var(--viewover-icon-color-hover);
   }
 }
 
 @media (any-hover: none) {
   .svg-icon {
-    fill: var(--boxview-icon-color-hover);
+    fill: var(--viewover-icon-color-hover);
   }
 }
 
-.boxview__controls-buttons-wrapper {
+.viewover__controls-buttons-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 20px;
 }
 
-.boxview__controls-buttons-wrapper_type_share {
+.viewover__controls-buttons-wrapper_type_share {
   margin-inline-end: auto;
 }
 
-.boxview__controls-buttons-wrapper_type_interactive {
+.viewover__controls-buttons-wrapper_type_interactive {
   display: flex;
   justify-content: center;
 }
 
-.boxview__controls-buttons-wrapper_type_close {
+.viewover__controls-buttons-wrapper_type_close {
   margin-inline-start: auto;
 }
 
 /* Fullscreen */
-.boxview__fullscreen-buttons {
+.viewover__fullscreen-buttons {
   position: relative;
   width: 32px;
   height: 32px;
 }
 
-.boxview__fullscreen-buttons_hidden {
+.viewover__fullscreen-buttons_hidden {
   display: none;
 }
 
-.boxview__fullscreen-button {
+.viewover__fullscreen-button {
   position: absolute;
   width: 32px;
   height: 32px;
@@ -415,28 +415,28 @@ The current properties settings are the library's default style.
 }
 
 /* Close */
-.boxview__close-button {
+.viewover__close-button {
   display: block;
 }
 
 /* Zoom */
-.boxview__zoom-button {
+.viewover__zoom-button {
   display: none;
 }
 
-.boxview__zoom-button_visible {
+.viewover__zoom-button_visible {
   display: inline-block;
 }
 
 /* Auto-Scroll */
-.boxview__auto-scroll-buttons {
+.viewover__auto-scroll-buttons {
   display: none;
   position: relative;
   width: 32px;
   height: 32px;
 }
 
-.boxview__auto-scroll-button {
+.viewover__auto-scroll-button {
   display: none;
   position: absolute;
   width: 32px;
@@ -444,34 +444,34 @@ The current properties settings are the library's default style.
 }
 
 /* Thumbnails */
-.boxview__thumbnails-buttons {
+.viewover__thumbnails-buttons {
   position: relative;
   width: 32px;
   height: 32px;
 }
 
-.boxview__thumbnails-buttons_hidden {
+.viewover__thumbnails-buttons_hidden {
   display: none;
 }
 
-.boxview__thumbnails-button {
+.viewover__thumbnails-button {
   position: absolute;
   width: 32px;
   height: 32px;
 }
 
-.boxview__thumbnails-icon {
+.viewover__thumbnails-icon {
   rotate: 90deg;
 }
 
 .svg-icon_nav {
   /* Preference Style */
   border-radius: 50%;
-  transition: transform var(--boxview-icon-transition);
+  transition: transform var(--viewover-icon-transition);
 }
 
 @media (450px < width) {
-  .boxview__navigate-button {
+  .viewover__navigate-button {
     /* Core Style */
     display: flex;
     justify-content: center;
@@ -485,14 +485,14 @@ The current properties settings are the library's default style.
     height: calc(var(--navigate-button-width) + 10%);
   }
 
-  .boxview__navigate-button_before {
+  .viewover__navigate-button_before {
     /* Core Style */
     inset-inline-start: 0px;
   }
 
-  .boxview__navigate-button_next {
+  .viewover__navigate-button_next {
     /* Core Style */
-    inset-inline-start: calc(99% - var(--boxview-padding) * 2);
+    inset-inline-start: calc(99% - var(--viewover-padding) * 2);
   }
 
   .svg-icon_nav {
@@ -502,7 +502,7 @@ The current properties settings are the library's default style.
 }
 
 @media (450px > width) {
-  .boxview__navigate-button {
+  .viewover__navigate-button {
     /* Preference Style */
     display: none;
   }
@@ -514,7 +514,7 @@ The current properties settings are the library's default style.
     fill: rgb(220, 220, 220);
   }
 
-  .boxview__navigate-button:hover .svg-icon_nav {
+  .viewover__navigate-button:hover .svg-icon_nav {
     /* Preference Style */
     transform: scale(1.2);
     fill: rgb(250, 250, 250);
@@ -529,7 +529,7 @@ The current properties settings are the library's default style.
   }
 }
 
-.boxview__thumbnail-wrapper {
+.viewover__thumbnail-wrapper {
   position: relative;
   height: calc(var(--thumbnails-track-height) - 6px);
   /* option = border-radius */
@@ -537,29 +537,29 @@ The current properties settings are the library's default style.
   overflow: hidden;
 }
 
-.boxview__thumbnail-wrapper_active {
+.viewover__thumbnail-wrapper_active {
   outline: solid 3px;
   /* option = outline-color */
   outline-color: white;
 }
 
-.boxview__alternate-thumbnail-wrapper {
+.viewover__alternate-thumbnail-wrapper {
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
 
-.boxview__thumbnail-wrapper_horizontal {
-  width: var(--boxview-horizontal-thumbnail-width);
+.viewover__thumbnail-wrapper_horizontal {
+  width: var(--viewover-horizontal-thumbnail-width);
 }
 
-.boxview__thumbnail-wrapper_vertical {
-  width: var(--boxview-vertical-thumbnail-width);
+.viewover__thumbnail-wrapper_vertical {
+  width: var(--viewover-vertical-thumbnail-width);
 }
 
-.boxview__thumbnail-wrapper_square {
+.viewover__thumbnail-wrapper_square {
   width: calc(var(--thumbnails-track-height));
 }
 
-.boxview__thumbnail {
+.viewover__thumbnail {
   /* option = border-radius */
   border-radius: 4px;
   transition: all linear 0.2s;
@@ -570,7 +570,7 @@ The current properties settings are the library's default style.
   z-index: 1000;
 }
 
-.boxview__play-icon {
+.viewover__play-icon {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -582,7 +582,7 @@ The current properties settings are the library's default style.
   z-index: 100;
 }
 
-.boxview__alternate-thumbnail {
+.viewover__alternate-thumbnail {
   height: calc(var(--thumbnails-track-height) - 6px);
   aspect-ratio: 16/9;
   background-image: url('../utils/icons/play_circle_opsz48.svg');
@@ -590,44 +590,44 @@ The current properties settings are the library's default style.
   background-position: center;
 }
 
-.boxview__thumbnail_horizontal {
-  width: var(--boxview-horizontal-thumbnail-width);
+.viewover__thumbnail_horizontal {
+  width: var(--viewover-horizontal-thumbnail-width);
 }
 
-.boxview__thumbnail_vertical {
-  width: var(--boxview-vertical-thumbnail-width);
+.viewover__thumbnail_vertical {
+  width: var(--viewover-vertical-thumbnail-width);
 }
 
-.boxview__thumbnail_square {
+.viewover__thumbnail_square {
   width: calc(var(--thumbnails-track-height));
 }
 
 @media (any-hover: hover) {
-  .boxview__thumbnail-wrapper:hover * {
+  .viewover__thumbnail-wrapper:hover * {
     scale: 1.1;
   }
 }
 
 /* Scrollbar */
-/* Boxview thumbnails scrollbar */
-.boxview__thumbnails-track::-webkit-scrollbar {
+/* Viewover thumbnails scrollbar */
+.viewover__thumbnails-track::-webkit-scrollbar {
   display: block;
   height: 8px;
 }
 
-.boxview__thumbnails-track::-webkit-scrollbar-track {
+.viewover__thumbnails-track::-webkit-scrollbar-track {
   background-color: rgb(40, 40, 40);
   border-radius: 100vw;
 }
 
-.boxview__thumbnails-track::-webkit-scrollbar-thumb {
-  background-color: var(--boxview-icon-color);
+.viewover__thumbnails-track::-webkit-scrollbar-thumb {
+  background-color: var(--viewover-icon-color);
   border: 2px solid rgb(40, 40, 40);
   border-radius: 100vw;
 }
 
-.boxview__thumbnails-track::-webkit-scrollbar-thumb:hover {
-  background-color: var(--boxview-icon-color-hover);
+.viewover__thumbnails-track::-webkit-scrollbar-thumb:hover {
+  background-color: var(--viewover-icon-color-hover);
 }
 
 /* @media (100px <= width <= 1900px) {

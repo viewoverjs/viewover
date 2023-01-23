@@ -1,21 +1,21 @@
 {
-  "name": "boxview",
+  "name": "viewover",
   "version": "0.1.0",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
-  "main": "boxview.js",
+  "main": "viewover.js",
   "scripts": {
     "build": "postcss ./src/styles/*.css --use autoprefixer -d build/ && babel src -d build/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yedidya10/boxview.git"
+    "url": "git+https://github.com/Yedidya10/viewover.git"
   },
   "author": "yedidya aberjel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yedidya10/boxview/issues"
+    "url": "https://github.com/Yedidya10/viewover/issues"
   },
-  "homepage": "https://github.com/Yedidya10/boxview#readme",
+  "homepage": "https://github.com/Yedidya10/viewover#readme",
   "directories": {
     "doc": "docs",
     "test": "tests"

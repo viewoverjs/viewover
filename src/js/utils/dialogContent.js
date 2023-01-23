@@ -1,8 +1,8 @@
 export const dialogContent = `
-<div id="boxview-container" class="boxview__container">
-  <div id="control-bar" class="boxview__control-bar">
+<div id="viewover-container" class="viewover__container">
+  <div id="control-bar" class="viewover__control-bar">
     <div
-      class="boxview__controls-buttons-wrapper boxview__controls-buttons-wrapper_type_share"
+      class="viewover__controls-buttons-wrapper viewover__controls-buttons-wrapper_type_share"
     >
       <div class="share-options-buttons">
         <div>
@@ -80,11 +80,11 @@ export const dialogContent = `
       </button>
     </div>
     <div
-      class="boxview__controls-buttons-wrapper boxview__controls-buttons-wrapper_type_interactive"
+      class="viewover__controls-buttons-wrapper viewover__controls-buttons-wrapper_type_interactive"
     >
-      <div class="boxview__auto-scroll-buttons">
+      <div class="viewover__auto-scroll-buttons">
         <button
-          class="button boxview__auto-scroll-button"
+          class="button viewover__auto-scroll-button"
           id="auto-scroll-pause-button"
         >
           <svg
@@ -99,7 +99,7 @@ export const dialogContent = `
           </svg>
         </button>
         <button
-          class="button boxview__auto-scroll-button button_visible"
+          class="button viewover__auto-scroll-button button_visible"
           id="auto-scroll-play-button"
         >
           <svg
@@ -116,7 +116,7 @@ export const dialogContent = `
       </div>
 
       <button
-        class="button boxview__zoom-in-button boxview__zoom-button"
+        class="button viewover__zoom-in-button viewover__zoom-button"
         id="zoom-in-button"
       >
         <svg
@@ -134,7 +134,7 @@ export const dialogContent = `
         </svg>
       </button>
       <button
-        class="button boxview__zoom-out-button boxview__zoom-button"
+        class="button viewover__zoom-out-button viewover__zoom-button"
         id="zoom-out-button"
       >
         <svg
@@ -150,13 +150,13 @@ export const dialogContent = `
           />
         </svg>
       </button>
-      <div id="thumbnails-buttons" class="boxview__thumbnails-buttons">
+      <div id="thumbnails-buttons" class="viewover__thumbnails-buttons">
         <button
-          class="button boxview__thumbnails-button"
+          class="button viewover__thumbnails-button"
           id="thumbnails-filled-button"
         >
           <svg
-            class="svg-icon boxview__thumbnails-icon"
+            class="svg-icon viewover__thumbnails-icon"
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 20 20"
             height="32px"
@@ -172,11 +172,11 @@ export const dialogContent = `
           </svg>
         </button>
         <button
-          class="button boxview__thumbnails-button"
+          class="button viewover__thumbnails-button"
           id="thumbnails-outlined-button"
         >
           <svg
-            class="svg-icon boxview__thumbnails-icon"
+            class="svg-icon viewover__thumbnails-icon"
             xmlns="http://www.w3.org/2000/svg"
             enable-background="new 0 0 20 20"
             height="32px"
@@ -192,9 +192,9 @@ export const dialogContent = `
           </svg>
         </button>
       </div>
-      <div id="fullscreen-buttons" class="boxview__fullscreen-buttons">
+      <div id="fullscreen-buttons" class="viewover__fullscreen-buttons">
         <button
-          class="button button_visible boxview__fullscreen-button"
+          class="button button_visible viewover__fullscreen-button"
           id="fullscreen-entry-button"
         >
           <svg
@@ -212,7 +212,7 @@ export const dialogContent = `
           </svg>
         </button>
         <button
-          class="button button_hidden boxview__fullscreen-button"
+          class="button button_hidden viewover__fullscreen-button"
           id="fullscreen-exit-button"
         >
           <svg
@@ -232,9 +232,9 @@ export const dialogContent = `
       </div>
     </div>
     <div
-      class="boxview__controls-buttons-wrapper boxview__controls-buttons-wrapper_type_close"
+      class="viewover__controls-buttons-wrapper viewover__controls-buttons-wrapper_type_close"
     >
-      <button class="button boxview__close-button" id="close-button">
+      <button class="button viewover__close-button" id="close-button">
         <svg
           class="svg-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -252,10 +252,10 @@ export const dialogContent = `
     </div>
   </div>
 
-  <div id="boxview-content" class="boxview__content">
-    <div id="boxview-main-content" class="boxview__main-content">
+  <div id="viewover-content" class="viewover__content">
+    <div id="viewover-main-content" class="viewover__main-content">
       <button
-        class="button boxview__navigate-button boxview__navigate-button_before"
+        class="button viewover__navigate-button viewover__navigate-button_before"
         id="nav-previous-button"
       >
         <svg
@@ -270,7 +270,7 @@ export const dialogContent = `
         </svg>
       </button>
       <button
-        class="button boxview__navigate-button boxview__navigate-button_next"
+        class="button viewover__navigate-button viewover__navigate-button_next"
         id="nav-next-button"
       >
         <svg
@@ -284,9 +284,9 @@ export const dialogContent = `
           <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
         </svg>
       </button>
-      <div id="boxview-media" class="boxview__media"></div>
+      <div id="viewover-media" class="viewover__media"></div>
     </div>
-    <div id="boxview-thumbnails-track" class="boxview__thumbnails-track"></div>
+    <div id="viewover-thumbnails-track" class="viewover__thumbnails-track"></div>
   </div>
 </div>
 

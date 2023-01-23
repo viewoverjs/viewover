@@ -23,7 +23,7 @@ export default class Popover {
 
   setEventListeners() {
     this.closePopoverButton = this.popover.querySelector(
-      '.boxview__close-button'
+      '.viewover__close-button'
     );
     this.closePopoverButton.addEventListener('click', this.closePopover);
     document.addEventListener('mousedown', this.#handleMouseClosePopover);
@@ -37,14 +37,14 @@ export default class Popover {
   }
 
   openPopover() {
-    this.popover.classList.add('boxview_opened');
+    this.popover.classList.add('viewover_opened');
     this.setEventListeners();
     disableScroll();
   }
 
   closePopover() {
     this.removeEventListeners();
-    this.popover.classList.remove('boxview_opened');
+    this.popover.classList.remove('viewover_opened');
     enableScroll();
   }
 }

@@ -7,7 +7,7 @@ export const previousButton = document.getElementById('nav-previous-button');
 
 // Share Button Constants
 // export const shareButton = document.getElementById('share-button');
-// export const shareOptionsButtons = boxview.querySelector(
+// export const shareOptionsButtons = viewover.querySelector(
 //   '.share-options-buttons'
 // );
 
@@ -27,15 +27,15 @@ export const fullscreenExitButton = document.getElementById(
   'fullscreen-exit-button'
 );
 
-export const boxviewContainer = document.getElementById('boxview-container');
-export const boxviewContent = document.getElementById('boxview-content');
-export const boxviewMainContent = document.getElementById(
-  'boxview-main-content'
+export const viewoverContainer = document.getElementById('viewover-container');
+export const viewoverContent = document.getElementById('viewover-content');
+export const viewoverMainContent = document.getElementById(
+  'viewover-main-content'
 );
-export const boxviewMediaWrapper = document.getElementById('boxview-media');
+export const viewoverMediaWrapper = document.getElementById('viewover-media');
 
-export const boxviewThumbnailsTrack = document.getElementById(
-  'boxview-thumbnails-track'
+export const viewoverThumbnailsTrack = document.getElementById(
+  'viewover-thumbnails-track'
 );
 export const thumbnailsTrackHeight = '76px';
 

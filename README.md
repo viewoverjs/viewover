@@ -1,4 +1,5 @@
 <a name="readme-top"></a>
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -10,24 +11,28 @@
 
 <!-- PROJECT LOGO -->
 <br />
+<br />
+<br />
 <div align="center">
-  <a href="https://github.com/Yedidya10/boxview">
-    <img src="./boxview_logo.png" alt="Logo" width="600">
+  <a href="https://github.com/Yedidya10/viewover">
+    <img src="./viewover_s-logo.png" alt="Logo">
   </a>
-
-  <h1 align="center">BOX VIEW</h1>
+<br />
+<br />
+<br />
+  <h1 align="center">VIEWOVER</h1>
 
   <p align="center">
     Create a light & featured modal to display photos and videos gallery overlay on the page
     <br />
-    <a href="https://github.com/Yedidya10/boxview"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Yedidya10/viewover"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Yedidya10/boxview">View Demo</a>
+    <a href="https://github.com/Yedidya10/viewover">View Demo</a>
     ·
-    <a href="https://github.com/Yedidya10/boxview/issues">Report Bug</a>
+    <a href="https://github.com/Yedidya10/viewover/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Yedidya10/boxview/issues">Request Feature</a>
+    <a href="https://github.com/Yedidya10/viewover/issues">Request Feature</a>
   </p>
   <!-- <h2 align="center">Ready For</h2> -->
 </div>
@@ -68,9 +73,8 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -78,29 +82,28 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Features
-* Built with performance, UX and DX in mind
-* Embraces native HTML coding conventions
+
+- Built with performance, UX and DX in mind
+- Embraces native HTML coding conventions
 <!-- * Out of the box integration with UI libraries -->
-* Small size and no dependencies
+- Small size and no dependencies
 <!-- * Lightweight, ___
-* Slide or fade transition by CSS
-* Supports breakpoints
-* Accepts CSS relative units
-* Autoplay with progress bar and a play-pause toggle button
-* Supports RTL and vertical direction
-* Mouse drag and touch swipe
-* Free drag mode
-* Mouse wheel navigation
-* Nested slider
-* Lazy loading
-* Thumbnail slider
-* Auto width and height
-* Accessibility friendly
-* Live Region -->
+- Slide or fade transition by CSS
+- Supports breakpoints
+- Accepts CSS relative units
+- Autoplay with progress bar and a play-pause toggle button
+- Supports RTL and vertical direction
+- Mouse drag and touch swipe
+- Free drag mode
+- Mouse wheel navigation
+- Nested slider
+- Lazy loading
+- Thumbnail slider
+- Auto width and height
+- Accessibility friendly
+- Live Region -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 <!-- ## Getting Started
@@ -121,7 +124,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/Yedidya10/boxview.git
+   git clone https://github.com/Yedidya10/viewover.git
    ```
 3. Install NPM packages
    ```sh
@@ -134,8 +137,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
 
@@ -145,8 +146,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- ROADMAP -->
 <!-- ## Roadmap
 
@@ -155,13 +154,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/Yedidya10/boxview/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Yedidya10/viewover/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -177,53 +175,50 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Yedidya Aberjel - yedidya.dev@gmail.com
 
-Project Link: [https://github.com/Yedidya10/boxview](https://github.com/Yedidya10/boxview)
+Project Link: [https://github.com/Yedidya10/viewover](https://github.com/Yedidya10/viewover)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+- []()
+- []()
+- []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Yedidya10/boxview.svg?style=for-the-badge
-[contributors-url]: https://github.com/Yedidya10/boxview/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Yedidya10/boxview.svg?style=for-the-badge
-[forks-url]: https://github.com/Yedidya10/boxview/network/members
-[stars-shield]: https://img.shields.io/github/stars/Yedidya10/boxview.svg?style=for-the-badge
-[stars-url]: https://github.com/Yedidya10/boxview/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Yedidya10/boxview.svg?style=for-the-badge
-[issues-url]: https://github.com/Yedidya10/boxview/issues
-[license-shield]: https://img.shields.io/github/license/Yedidya10/boxview.svg?style=for-the-badge
-[license-url]: https://github.com/Yedidya10/boxview/blob/master/LICENSE.txt
+
+[contributors-shield]: https://img.shields.io/github/contributors/Yedidya10/viewover.svg?style=for-the-badge
+[contributors-url]: https://github.com/Yedidya10/viewover/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Yedidya10/viewover.svg?style=for-the-badge
+[forks-url]: https://github.com/Yedidya10/viewover/network/members
+[stars-shield]: https://img.shields.io/github/stars/Yedidya10/viewover.svg?style=for-the-badge
+[stars-url]: https://github.com/Yedidya10/viewover/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Yedidya10/viewover.svg?style=for-the-badge
+[issues-url]: https://github.com/Yedidya10/viewover/issues
+[license-shield]: https://img.shields.io/github/license/Yedidya10/viewover.svg?style=for-the-badge
+[license-url]: https://github.com/Yedidya10/viewover/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/yedidya-aberjel
+
 <!-- [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
@@ -234,4 +229,3 @@ Project Link: [https://github.com/Yedidya10/boxview](https://github.com/Yedidya1
 [Svelte-url]: https://svelte.dev/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com -->
-
