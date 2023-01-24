@@ -7,7 +7,7 @@ import {
   viewoverContainer,
 } from '../../document/docConstants.js';
 import { activeMainElement } from '../mainContent/createMediaElement.js';
-import { activeImage } from '../controlbar/handleZoom.js';
+import { imageScale } from '../controlbar/handleZoom.js';
 import { enableScroll } from '../../utils/scroll-control.js';
 import handleArrowNav from '../turnOnViewover/handleArrowNav.js';
 import handleWheelNav from '../turnOnViewover/handleWheelNav.js';
@@ -30,7 +30,7 @@ export default function resetViewoverContent() {
   });
   removeAllChildNodes(viewoverThumbnailsTrack);
 
-  activeImage.imageScale = 1;
+  imageScale.currentScale = 1;
   enableScroll();
   document.removeEventListener('keydown', handleArrowNav);
   viewoverMainContent.removeEventListener('wheel', handleWheelNav);
