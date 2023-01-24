@@ -115,7 +115,11 @@ The current properties settings are the library's default style.
   opacity: 1;
 }
 
-.viewover .button_disable .svg-icon_disable {
+.button_disable .svg-icon {
+  fill: var(--viewover-icon-color-disable);
+}
+
+.button_disable:hover .svg-icon {
   fill: var(--viewover-icon-color-disable);
 }
 
