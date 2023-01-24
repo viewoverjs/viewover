@@ -1,6 +1,5 @@
 const setPlayIcon = (thumbnailWrapper, thumbnail) => {
   const playIcon = document.createElement('div');
-  // playIcon.setAttribute('src', '');
   playIcon.classList.add('viewover__play-icon');
   thumbnailWrapper.appendChild(playIcon);
 };
