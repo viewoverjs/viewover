@@ -8,6 +8,7 @@ import {
   zoomInButton,
   zoomOutButton,
 } from '../../document/docConstants.js';
+import { activeMainElement } from '../mainContent/createMediaElement.js';
 
 import { handleZoomInButton, handleZoomOutButton } from './handleZoom.js';
 import toggleButtonIcon from './toggleButtonIcon.js';
@@ -22,6 +23,7 @@ import { toggleControlBar, showControlBar } from './toggleControlBar.js';
 // Close Button
 import handleCloseButton from './handleCloseButton.js';
 import resetViewoverContent from '../turnOffViewover/resetViewoverContent.js';
+import { enableZoomButtons } from './displayZoomButtons.js';
 
 export default function controlbarAddEvents(settings) {
   // Zoom Button
