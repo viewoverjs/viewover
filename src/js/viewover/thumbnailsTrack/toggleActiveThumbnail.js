@@ -3,7 +3,7 @@ import { viewoverThumbnailsTrack } from '../../document/docConstants.js';
 
 export default function toggleActiveThumbnail(thumbnailWrapper) {
   const thumbnailsTrackList = [...viewoverThumbnailsTrack.children];
-  const activeMainElementSrc =
+  let activeMainElementSrc =
     activeMainElement.element.src || activeMainElement.element.currentSrc;
   const nonActiveThumbnails = thumbnailsTrackList.filter((thumbnailWrapper) => {
     const thumbnail = thumbnailWrapper.querySelector('.viewover__thumbnail');
