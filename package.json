@@ -2,9 +2,9 @@
   "name": "viewover",
   "version": "0.1.0",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
-  "main": "viewover.js",
+  "main": "src/js/viewover.js",
   "scripts": {
-    "build": "postcss ./src/styles/*.css --use autoprefixer -d build/ && babel src -d build/"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,6 @@
     "url": "https://github.com/Yedidya10/viewover/issues"
   },
   "homepage": "https://github.com/Yedidya10/viewover#readme",
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
-  },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
