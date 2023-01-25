@@ -3,7 +3,6 @@ import getActiveMainElementSrc from '../mainContent/getActiveMainElementSrc.js';
 import setActiveMainElement from '../mainContent/setActiveMainElement.js';
 import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
 import { scrollThumbnailToViewport } from '../thumbnailsTrack/handleThumbnailsOverflow.js';
-import { imageScale } from './handleZoom.js';
 
 export default function handleNextElement(preparedMediaElements) {
   const thumbnailsTrackList = [...viewoverThumbnailsTrack.children];
@@ -36,5 +35,4 @@ export default function handleNextElement(preparedMediaElements) {
   setActiveMainElement(viewoverNextMedia.localName, viewoverNextMediaSrc);
   scrollThumbnailToViewport(nextThumbnail);
   toggleActiveThumbnail(nextThumbnail);
-  imageScale.currentScale = 1;
 }

@@ -1,96 +1,92 @@
 import { activeMainElement } from '../mainContent/createMediaElement.js';
+import checkIfImageScalable from './checkIfImageScalable.js';
+import { enableZoomButtons } from './displayZoomButtons.js';
+import getMainElementsSizes from '../mainContent/getMainElementsSizes.js';
 import {
-  viewoverContainer,
-  viewoverMainContent,
-} from '../../document/docConstants.js';
+  toggleZoomInDisable,
+  toggleZoomOutDisable,
+} from './toggleZoomDisable.js';
 
-const getElementsSizes = (activeMainElement) => {
-  const mainElementNaturalSize = {
-    width: activeMainElement.element.naturalWidth,
-    height: activeMainElement.element.naturalHeight,
-  };
+export const handleZoomInButton = async () => {
+  const elementsSizes = await getMainElementsSizes();
+  const zoomCapability = await checkIfImageScalable();
+  const currentWidth = elementsSizes.currentSize.width;
+  const currentHeight = elementsSizes.currentSize.height;
 
-  const mainElementScaleSize = {
-    width: activeMainElement.element.getBoundingClientRect().width,
-    height: activeMainElement.element.getBoundingClientRect().height,
-  };
+  const naturalWidth = elementsSizes.naturalSize.width;
+  const naturalHeight = elementsSizes.naturalSize.height;
 
-  const viewoverMainContentSize = {
-    width: viewoverMainContent.clientWidth,
-    height: viewoverMainContent.clientHeight,
-  };
-
-  const isHeightOverflow =
-    mainElementScaleSize.height > viewoverMainContentSize.height;
-  const isWidthOverflow =
-    mainElementScaleSize.width > viewoverMainContentSize.width;
-  const isHeightOverScale =
-    mainElementNaturalSize.height > mainElementScaleSize.height;
-  const isWidthOverScale =
-    mainElementNaturalSize.width > mainElementScaleSize.width;
-
-  return {
-    isHeightOverflow,
-    isWidthOverflow,
-    isHeightOverScale,
-    isWidthOverScale,
-  };
-};
-
-export const activeImage = {
-  imageScale: 1,
-};
-
-export const handleZoomInButton = () => {
-  const isActiveImageOverflow = getElementsSizes(activeMainElement);
-
-  if (
-    isActiveImageOverflow.isHeightOverScale &&
-    isActiveImageOverflow.isWidthOverScale
-  ) {
-    activeImage.imageScale += 0.05;
-    return (activeMainElement.element.style.transform = `scale(${activeImage.imageScale})`);
+  if (zoomCapability.isScalable) {
+    activeMainElement.element.style.maxWidth = `calc(${currentWidth}px + ${
+      naturalWidth / 20
+    }px)`;
+    activeMainElement.element.style.maxHeight = `calc(${currentHeight}px + ${
+      naturalHeight / 20
+    }px)`;
   }
-};
 
-export const handleZoomOutButton = () => {
-  const isActiveImageOverflow = getElementsSizes(activeMainElement);
-
-  if (
-    isActiveImageOverflow.isHeightOverflow &&
-    isActiveImageOverflow.isWidthOverflow
-  ) {
-    activeImage.imageScale -= 0.05;
-    return (activeMainElement.element.style.transform = `scale(${activeImage.imageScale})`);
+  if (naturalWidth - currentWidth < naturalWidth / 20) {
+    toggleZoomInDisable(true);
+    return;
   }
+
+  enableZoomButtons();
 };
 
-export const handleZoomWheel = (e) => {
-  const isActiveImageOverflow = getElementsSizes(activeMainElement);
+export const handleZoomOutButton = async () => {
+  const elementsSizes = await getMainElementsSizes();
+  const zoomCapability = await checkIfImageScalable();
+  const currentWidth = elementsSizes.currentSize.width;
+  const currentHeight = elementsSizes.currentSize.height;
 
+  const naturalWidth = elementsSizes.naturalSize.width;
+  const naturalHeight = elementsSizes.naturalSize.height;
+
+  if (zoomCapability.isInvertible) {
+    activeMainElement.element.style.maxWidth = `calc(${currentWidth}px - ${
+      naturalWidth / 20
+    }px)`;
+    activeMainElement.element.style.maxHeight = `calc(${currentHeight}px - ${
+      naturalHeight / 20
+    }px)`;
+  }
+
+  if (currentWidth - elementsSizes.mainContentSize.width < naturalWidth / 20) {
+    toggleZoomOutDisable(true);
+    return;
+  }
+
+  enableZoomButtons();
+};
+
+export const handleZoomWheel = async (e) => {
   if (e.ctrlKey) {
     e.preventDefault();
-    if (
-      e.deltaY > 0 &&
-      isActiveImageOverflow.isHeightOverflow &&
-      isActiveImageOverflow.isWidthOverflow
-    ) {
-      activeImage.imageScale -= 0.05;
+    const elementsSizes = await getMainElementsSizes();
+    const zoomCapability = await checkIfImageScalable();
+    const currentWidth = elementsSizes.currentSize.width;
+    const currentHeight = elementsSizes.currentSize.height;
+
+    const naturalWidth = elementsSizes.naturalSize.width;
+    const naturalHeight = elementsSizes.naturalSize.height;
+
+    if (e.deltaY > 0 && zoomCapability.isInvertible) {
+      activeMainElement.element.style.maxWidth = `calc(${currentWidth}px - ${
+        naturalWidth / 30
+      }px)`;
+      activeMainElement.element.style.maxHeight = `calc(${currentHeight}px - ${
+        naturalHeight / 30
+      }px)`;
     }
-    if (
-      e.deltaY < 0 &&
-      isActiveImageOverflow.isHeightOverScale &&
-      isActiveImageOverflow.isWidthOverScale
-    ) {
-      activeImage.imageScale += 0.05;
+    if (e.deltaY < 0 && zoomCapability.isScalable) {
+      activeMainElement.element.style.maxWidth = `calc(${currentWidth}px + ${
+        naturalWidth / 30
+      }px)`;
+      activeMainElement.element.style.maxHeight = `calc(${currentHeight}px + ${
+        naturalHeight / 30
+      }px)`;
     }
 
-    // Restrict scale
-    activeImage.imageScale = Math.min(Math.max(1, activeImage.imageScale), 3);
-
-    return (
-      (e.target.style.transform = `scale(${activeImage.imageScale})`),
-      (e.target.style.transition = 'linear .2s')
-    );
+    enableZoomButtons();
   }
 };

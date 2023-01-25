@@ -101,10 +101,6 @@ The current properties settings are the library's default style.
   cursor: pointer;
 }
 
-.viewover .button_disable {
-  cursor: default;
-}
-
 .viewover .button_hidden {
   visibility: hidden;
   opacity: 0;
@@ -115,13 +111,10 @@ The current properties settings are the library's default style.
   opacity: 1;
 }
 
-.button_disable .svg-icon {
-  fill: var(--viewover-icon-color-disable);
-}
 
-.button_disable:hover .svg-icon {
+/* .button_disable:hover .svg-icon {
   fill: var(--viewover-icon-color-disable);
-}
+} */
 
 .viewover:modal {
   max-width: 100%;

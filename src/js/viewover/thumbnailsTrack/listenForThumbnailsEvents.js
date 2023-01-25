@@ -1,7 +1,5 @@
 import { viewoverThumbnailsTrack } from '../../document/docConstants.js';
 
-import { imageScale } from '../controlbar/handleZoom.js';
-
 // Viewover General
 import { activeMainElement } from '../mainContent/createMediaElement.js';
 import setActiveMainElement from '../mainContent/setActiveMainElement.js';
@@ -30,9 +28,6 @@ export default function listenForThumbnailsEvents() {
           }
           showActiveThumbnailContent(thumbnailUrl);
 
-          imageScale.currentScale = 1;
-          activeMainElement.element.style.transition = 'none';
-          activeMainElement.element.style.transform = `scale(${imageScale.currentScale})`;
         } else {
           setActiveMainElement('img', thumbnailUrl);
         }
