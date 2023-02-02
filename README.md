@@ -134,7 +134,7 @@ For quick implementation, you can use the default options and just add the `data
     <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
   </div>
   ```
-<div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div>
+<div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div><br />
 
 To use the library, you need to import it to your project and call the `viewover()` function.
   ```js
