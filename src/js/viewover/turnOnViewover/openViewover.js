@@ -23,7 +23,7 @@ import {
 } from '../../document/docConstants.js';
 
 import { handleTouchSwipeNav } from './handleTouchSwipeNav.js';
-import handleArrowNav from './handleArrowNav.js';
+import {handleKeydown} from './handleKeydown.js';
 import handleWheelNav from './handleWheelNav.js';
 
 // Nav Buttons
@@ -46,9 +46,10 @@ import {
 import controlbarAddEvents from '../controlbar/controlbarAddEvents.js';
 
 export const mediaElements = {};
+export let handleArrowNav;
 
 // Open Viewover Dialog
-export const openViewover = async (e, settings) => {
+export const openViewover = async (e, options) => {
   const elementTarget = getElementTarget(e);
   const elementTargetSrc = elementTarget.src || elementTarget.currentSrc;
 
@@ -57,7 +58,7 @@ export const openViewover = async (e, settings) => {
     mediaElements.preparedMediaElements
   );
 
-  mediaElements.enableZoom = settings.zoom;
+  mediaElements.enableZoom = options.zoom;
 
   // Get initial media target element
   getInitialMedia(mediaElementsTypes, elementTarget);
@@ -65,13 +66,14 @@ export const openViewover = async (e, settings) => {
   // Media Navigation
   // Next button
   nextButton.onclick = () => {
-    handleNextElement(mediaElements.preparedMediaElements);
+    handleNextElement(options);
   };
   // Previous button
   previousButton.onclick = () => {
-    handlePreviousElement(mediaElements.preparedMediaElements);
+    handlePreviousElement(options);
   };
   // Arrows buttons
+  handleArrowNav = (e) => handleKeydown(e, options);
   document.addEventListener('keydown', handleArrowNav);
   // Touchmove
   handleTouchSwipeNav.init();
@@ -94,7 +96,7 @@ export const openViewover = async (e, settings) => {
   // });
 
   // Fullscreen
-  if (settings.fullscreen == true) {
+  if (options.fullscreen == true) {
     fullscreenEntryButton.addEventListener('click', toggleFullScreenMode);
     fullscreenExitButton.addEventListener('click', toggleFullScreenMode);
     viewoverMediaWrapper.addEventListener('dblclick', toggleFullScreenMode);
@@ -107,10 +109,10 @@ export const openViewover = async (e, settings) => {
   // Show modal
   viewover.showModal();
 
-  controlbarAddEvents(settings);
+  controlbarAddEvents(options);
 
   // Thumbnails
-  if (settings.thumbnails == true) {
+  if (options.thumbnails == true) {
     await handleThumbnails(mediaElements.preparedMediaElements, false);
 
     const thumbnailsTrackList = [...viewoverThumbnailsTrack.children];

@@ -5,7 +5,7 @@ and cannot exist without them, therefore they should not be changed at all.
 
 "Preference Style" means that all is properties they are styles that can be changed according to the user's needs and personal taste.
 (done by defining a JS object according to the documentation).
-The current properties settings are the library's default style.
+The current properties options are the library's default style.
 
 "Recommended Style" means that all is properties they are styles >>
 
@@ -49,12 +49,19 @@ The current properties settings are the library's default style.
   width: 52px;
   height: 52px;
   position: absolute;
-  bottom: 10px;
   right: 10px;
   background: url(../utils/icons/launch_black_48dp.svg) no-repeat;
   background-color: #00000050;
   background-position: center;
   z-index: 1;
+}
+
+.viewover-open-button_type_video {
+  top: 10px;
+}
+
+.viewover-open-button_type_iframe {
+  bottom: 10px;
 }
 
 @media (any-hover: hover) {
@@ -79,12 +86,6 @@ The current properties settings are the library's default style.
     visibility: visible;
     opacity: 1;
   }
-}
-
-.viewover-video-play-button_hidden,
-.viewover-open-button_hidden {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .viewover *,
@@ -259,6 +260,11 @@ The current properties settings are the library's default style.
   /* Preference Style */
   border-radius: var(--viewover-media-border-radius);
   transition: var(--viewover-media-transition);
+}
+
+.viewover__iframe {
+  /* Recommended Style */ 
+  border: none;
 }
 
 .viewover__img {

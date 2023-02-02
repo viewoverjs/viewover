@@ -10,7 +10,7 @@ const checkChildMediaElement = (mediaElement, authorizedTypes) => {
   if (mediaChildeType !== null) {
     mediaElementType = mediaChildeType.localName;
   } else {
-    unauthorizedError.message = `Element must contain an image, video or iframe`;
+    unauthorizedError.message = 'Element must contain an image, video or iframe';
     throw unauthorizedError;
   }
 };

@@ -41,7 +41,7 @@ export default function listenForThumbnailsEvents() {
         'data-viewover-thumbnail-src'
       );
 
-      thumbnailWrapper.addEventListener('click', (e) => {
+      thumbnailWrapper.addEventListener('click', () => {
         if (activeMainElement.element.localName === 'video') {
           if (activeMainElement.element.currentSrc === thumbnailUrl) {
             return;
@@ -60,7 +60,7 @@ export default function listenForThumbnailsEvents() {
         'data-viewover-thumbnail-src'
       );
 
-      thumbnailWrapper.addEventListener('click', (e) => {
+      thumbnailWrapper.addEventListener('click', () => {
         if (activeMainElement.element.localName === 'iframe') {
           if (activeMainElement.element.src === thumbnailUrl) {
             return;

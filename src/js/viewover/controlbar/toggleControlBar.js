@@ -19,4 +19,4 @@ export const toggleControlBar = () => {
     controlBar.style.visibility = 'hidden';
     controlBar.style.opacity = '0';
   }, 2000);
-}
+};

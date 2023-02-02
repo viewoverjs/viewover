@@ -16,33 +16,33 @@ export const handleTouchSwipeNav = {
       if (typeof event.touches !== 'undefined') {
         touch = event.touches[0];
         switch (event.type) {
-          case 'touchstart':
-          case 'touchmove':
-            handleTouchSwipeNav.touches[event.type].x = touch.pageX;
-            handleTouchSwipeNav.touches[event.type].y = touch.pageY;
+        case 'touchstart':
+        case 'touchmove':
+          handleTouchSwipeNav.touches[event.type].x = touch.pageX;
+          handleTouchSwipeNav.touches[event.type].y = touch.pageY;
 
-            break;
-          case 'touchend':
-            handleTouchSwipeNav.touches.touchend = true;
-            if (
-              handleTouchSwipeNav.touches.touchstart.x > -1 &&
+          break;
+        case 'touchend':
+          handleTouchSwipeNav.touches.touchend = true;
+          if (
+            handleTouchSwipeNav.touches.touchstart.x > -1 &&
               handleTouchSwipeNav.touches.touchmove.x > -1
-            ) {
-              handleTouchSwipeNav.touches.direction =
+          ) {
+            handleTouchSwipeNav.touches.direction =
                 handleTouchSwipeNav.touches.touchstart.x <
                 handleTouchSwipeNav.touches.touchmove.x
                   ? 'right'
                   : 'left';
 
-              if (handleTouchSwipeNav.touches.direction === 'right') {
-                handlePreviousElement(mediaElements.preparedMediaElements);
-              }
-              if (handleTouchSwipeNav.touches.direction === 'left') {
-                handleNextElement(mediaElements.preparedMediaElements);
-              }
+            if (handleTouchSwipeNav.touches.direction === 'right') {
+              handlePreviousElement(mediaElements.preparedMediaElements);
             }
-          default:
-            break;
+            if (handleTouchSwipeNav.touches.direction === 'left') {
+              handleNextElement(mediaElements.preparedMediaElements);
+            }
+          }
+        default:
+          break;
         }
       }
     }

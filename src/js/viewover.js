@@ -1,11 +1,9 @@
 'use strict';
 
-import setSettings from './utils/settings.js';
 import { applyViewoverOnDoc } from './document/applyViewoverOnDoc.js';
+import { updateOptions } from './utils/updateOptions.js';
 
-function viewover(options) {
-  const settings = setSettings(options);
-  applyViewoverOnDoc(settings);
+export default function viewover(options) {
+  const updatedOptions = updateOptions(options);
+  applyViewoverOnDoc(updatedOptions);
 }
-
-module.exports = viewover;

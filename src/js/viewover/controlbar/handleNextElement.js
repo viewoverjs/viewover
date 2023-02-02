@@ -3,24 +3,25 @@ import getActiveMainElementSrc from '../mainContent/getActiveMainElementSrc.js';
 import setActiveMainElement from '../mainContent/setActiveMainElement.js';
 import toggleActiveThumbnail from '../thumbnailsTrack/toggleActiveThumbnail.js';
 import { scrollThumbnailToViewport } from '../thumbnailsTrack/handleThumbnailsOverflow.js';
+import { mediaElements } from '../turnOnViewover/openViewover.js';
 
-export default function handleNextElement(preparedMediaElements) {
+export default function handleNextElement(options) {
   const thumbnailsTrackList = [...viewoverThumbnailsTrack.children];
 
   let viewoverNextMedia;
   const activeMainElementUrl = getActiveMainElementSrc();
 
-  const activeMainElementUrlIndex = preparedMediaElements.findIndex((media) =>
+  const activeMainElementUrlIndex = mediaElements.preparedMediaElements.findIndex((media) =>
     media.currentSrc !== undefined
       ? media.currentSrc === activeMainElementUrl
       : media.src === activeMainElementUrl
   );
 
   const num = activeMainElementUrlIndex + 1;
-  if (num < preparedMediaElements.length) {
-    viewoverNextMedia = preparedMediaElements.find((media, i) => i === num);
+  if (num < mediaElements.preparedMediaElements.length) {
+    viewoverNextMedia = mediaElements.preparedMediaElements.find((media, i) => i === num);
   } else {
-    viewoverNextMedia = preparedMediaElements.at(0);
+    viewoverNextMedia = mediaElements.preparedMediaElements.at(0);
   }
 
   const viewoverNextMediaSrc =
@@ -33,6 +34,10 @@ export default function handleNextElement(preparedMediaElements) {
   );
 
   setActiveMainElement(viewoverNextMedia.localName, viewoverNextMediaSrc);
-  scrollThumbnailToViewport(nextThumbnail);
-  toggleActiveThumbnail(nextThumbnail);
+
+  if (options.thumbnails == true) {
+    scrollThumbnailToViewport(nextThumbnail);
+    toggleActiveThumbnail(nextThumbnail);
+    
+  }
 }

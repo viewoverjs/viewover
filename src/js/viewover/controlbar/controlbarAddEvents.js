@@ -25,9 +25,9 @@ import handleCloseButton from './handleCloseButton.js';
 import resetViewoverContent from '../turnOffViewover/resetViewoverContent.js';
 import { enableZoomButtons } from './displayZoomButtons.js';
 
-export default function controlbarAddEvents(settings) {
+export default function controlbarAddEvents(options) {
   // Zoom Button
-  if (settings.zoom == true) {
+  if (options.zoom == true) {
     zoomInButton.addEventListener('click', handleZoomInButton);
     zoomOutButton.addEventListener('click', handleZoomOutButton);
   }
@@ -44,7 +44,7 @@ export default function controlbarAddEvents(settings) {
       resetViewoverContent();
     }
     // Fullscreen
-    if (e.key === 'Enter' && isOpen && settings.fullscreen == true) {
+    if (e.key === 'Enter' && isOpen && options.fullscreen == true) {
       toggleFullScreenMode();
     }
   });

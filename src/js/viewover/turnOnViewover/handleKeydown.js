@@ -1,14 +1,14 @@
 import handleNextElement from '../controlbar/handleNextElement.js';
 import handlePreviousElement from '../controlbar/handlePreviousElement.js';
-import { mediaElements } from './openViewover.js';
 
 // Media navigation
-export default function handleArrowNav(e) {
+export function handleKeydown(e, options) {
   e.preventDefault();
+
   if (e.key === 'ArrowLeft') {
-    handlePreviousElement(mediaElements.preparedMediaElements);
+    handlePreviousElement(options);
   }
   if (e.key === 'ArrowRight') {
-    handleNextElement(mediaElements.preparedMediaElements);
+    handleNextElement(options);
   }
 }

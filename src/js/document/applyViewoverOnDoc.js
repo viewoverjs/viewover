@@ -7,14 +7,14 @@ export const mediaItems = [
   ...document.querySelectorAll('[data-viewover-item]'),
 ];
 
-export function applyViewoverOnDoc(settings) {
+export function applyViewoverOnDoc(options) {
   for (let i = 0; i < mediaItems.length; i++) {
     const mediaItem = mediaItems[i];
 
     if (mediaItem.localName !== 'video' && mediaItem.localName !== 'iframe') {
       mediaItem.style.cursor = 'pointer';
       mediaItem.onclick = (e) => {
-        openViewover(e, settings);
+        openViewover(e, options);
       };
     }
 
@@ -23,7 +23,7 @@ export function applyViewoverOnDoc(settings) {
         '.viewover-open-button'
       );
       openPopupButton.onclick = (e) => {
-        openViewover(e, settings);
+        openViewover(e, options);
       };
     }
   }

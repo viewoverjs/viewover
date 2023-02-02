@@ -3,10 +3,6 @@ import { disableScroll, enableScroll } from '../utils/scroll-control.js';
 export default class Popover {
   constructor(popover) {
     this.popover = popover;
-    this.closePopover = this.closePopover;
-    this.openPopover = this.openPopover;
-    this.setEventListeners = this.setEventListeners;
-    this.removeEventListeners = this.removeEventListeners;
   }
 
   #handleMouseClosePopover = (evt) => {
