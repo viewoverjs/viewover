@@ -1,6 +1,6 @@
 export const defaultOptions = {
   // Fullscreen
-  fullscreen: false,
+  fullscreen: true,
   // loop: options.loop || false,
 
   // Autoplay
@@ -14,25 +14,25 @@ export const defaultOptions = {
   // thumbnailsLoop: options.loop || false,
 
   // Zoom
-  zoom: false,
+  zoom: true,
   // zoomOnMouseWheel: options.zoomOnMouseWheel || true,
 
   styles: {
     // Navigation
-    navHoverColor: undefined,
+    // navHoverColor: undefined,
 
     // Media
-    mediaBorderRadius: undefined,
-    mediaBorderSize: undefined,
-    mediaBorderColor: undefined,
+    // mediaBorderRadius: undefined,
+    // mediaBorderSize: undefined,
+    // mediaBorderColor: undefined,
 
     // Control Bar
-    controlButtonsColor: undefined,
-    controlButtonsHoverColor: undefined,
+    // controlButtonsColor: undefined,
+    // controlButtonsHoverColor: undefined,
 
     // Thumbnails
-    thumbnailBorderColor: undefined,
-    defaultVideoThumbnail: undefined,
-    thumbnailBorderRadius: undefined,
+    // thumbnailBorderColor: undefined,
+    // defaultVideoThumbnail: undefined,
+    // thumbnailBorderRadius: undefined,
   },
 };
