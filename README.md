@@ -110,7 +110,11 @@
 
 To get started, run this command to install the NPM package:
   ```sh
-  npm install overview
+  npm install viewover
+  ```
+or, copy and paste the jsDelivr CDN url
+  ```html
+  <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.js"></script>
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
