@@ -135,8 +135,9 @@ To use the core CSS file, add this line to your HTML file:
 
 For quick implementation, you can use the default options and just add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
 
-example:
+#### Example:
   ```html
+  // index.html
   <div data-viewover-list>
     <img src="image1.jpg" alt="image 1">
     <img src="image2.jpg" alt="image 2">
@@ -144,11 +145,68 @@ example:
     <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
   </div>
   ```
+  ```css
+  /* index.css */
+  @import "viewover/dist/viewover.min.css";
+  ```
   ```js
+  // index.js
   import viewover from 'viewover';
 
   viewover();
   ```
+
+To customize the viewover, you can pass an object with the desired options to the `viewover()` function.
+
+#### Example:
+  ```html
+  // index.html
+  <div data-viewover-list>
+    <img src="image1.jpg" alt="image 1">
+    <img src="image2.jpg" alt="image 2">
+    <video src="video1.mp4" alt="video 1"></video>
+    <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
+  </div>
+  ```
+  ```css
+  /* index.css */
+  @import "viewover/dist/viewover.min.css";
+  ```
+  ```js
+  // index.js
+  import viewover from 'viewover';
+
+  viewover({
+    // options
+  });
+  ```
+#### Options
+
+| Option | Type | Default | Description |
+
+| --- | --- | --- | --- |
+
+| `fullscreen` | `boolean` | `true` | Enable or disable fullscreen mode |
+
+| `zoom` | `boolean` | `true` | Enable or disable zoom mode |
+
+| `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
+
+Example:
+  ```js
+  // index.js
+  import viewover from 'viewover';
+
+  viewover({
+    fullscreen: false,
+    zoom: false,
+    thumbnails: true,
+  });
+  ```
+
+
+
+  
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
