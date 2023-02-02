@@ -113,27 +113,22 @@
 To get started, you can either install the package via NPM or use the CDN url.
 
 #### NPM
-run this command to install the NPM package:
+Run this command to install the NPM package:
   ```sh
   npm install viewover
   ```
-To use the core JS file, add this line to your JS file:
-  ```js
-  ```css
-  /* index.css */
-
-  @import "viewover/dist/viewover.min.css";
-  ```
 
 #### CDN
-or, use the jsDelivr CDN url
+Or, use the jsDelivr CDN url
   ```html
   <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.js"></script>
   ```
-To use the core CSS file, add this line to your HTML file:
+It is necessary to add the `type='module'` attribute to the script tag in order to use the ES6 module syntax.
+
   ```html
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.css">
   ```
+It is necessary to add the css file to the page in order to implement the library's correctly.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +139,7 @@ For quick implementation, you can use the default options and just add the `data
 
 ##### Example:
   ```html
-  <-- index.html -->
+  <!-- index.html -->
 
   <div data-viewover-list>
     <img src="image1.jpg" alt="image 1">
@@ -153,6 +148,8 @@ For quick implementation, you can use the default options and just add the `data
     <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
   </div>
   ```
+<div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div>
+
   ```js
   // index.js
 
@@ -176,13 +173,9 @@ To customize the viewover, you can pass an object with the desired options to th
 #### Options
 
 | Option | Type | Default | Description |
-
-| --- | --- | --- | --- |
-
+|----------|:-------------:|:------|:-----|	
 | `fullscreen` | `boolean` | `true` | Enable or disable fullscreen mode |
-
 | `zoom` | `boolean` | `true` | Enable or disable zoom mode |
-
 | `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
 
 ##### Example:
@@ -198,24 +191,26 @@ To customize the viewover, you can pass an object with the desired options to th
   });
   ```
 
-
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-<!-- ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+## Roadmap
+
+- [ ] Feature: Social network sharing buttons
+- [ ] Feature: Download button
+- [ ] Feature: Add more media types
+- [ ] Feature: More Customizable UI
+    - [ ] Feature: Customizable RTL
+    - [ ] Feature: Customizable icons
+    - [ ] Feature: Customizable colors
+    - [ ] Feature: Customizable buttons
 
 See the [open issues](https://github.com/Yedidya10/viewover/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## Contributing
 
@@ -232,7 +227,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## License
 
@@ -250,13 +244,12 @@ Project Link: [https://github.com/Yedidya10/viewover](https://github.com/Yedidya
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+<!-- ## Acknowledgments
 
 - []()
 - []()
-- []()
+- []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
