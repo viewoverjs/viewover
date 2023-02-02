@@ -150,6 +150,7 @@ For quick implementation, you can use the default options and just add the `data
   ```
 <div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div>
 
+To use the library, you need to import it to your project and call the `viewover()` function.
   ```js
   // index.js
 
@@ -200,12 +201,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Feature: Social network sharing buttons
 - [ ] Feature: Download button
-- [ ] Feature: Add more media types
+- [ ] Feature: Add more content types
 - [ ] Feature: More Customizable UI
-    - [ ] Feature: Customizable RTL
-    - [ ] Feature: Customizable icons
-    - [ ] Feature: Customizable colors
-    - [ ] Feature: Customizable buttons
+    - [ ] RTL support
+    - [ ] Icons variations
+    - [ ] Customizable colors
+    - [ ] More zoom options
+    - [ ] Animation support
+
+And more...
 
 See the [open issues](https://github.com/Yedidya10/viewover/issues) for a full list of proposed features (and known issues).
 
