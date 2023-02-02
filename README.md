@@ -117,6 +117,13 @@ run this command to install the NPM package:
   ```sh
   npm install viewover
   ```
+To use the core JS file, add this line to your JS file:
+  ```js
+  ```css
+  /* index.css */
+
+  @import "viewover/dist/viewover.min.css";
+  ```
 
 #### CDN
 or, use the jsDelivr CDN url
@@ -135,9 +142,10 @@ To use the core CSS file, add this line to your HTML file:
 
 For quick implementation, you can use the default options and just add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
 
-#### Example:
+##### Example:
   ```html
-  // index.html
+  <-- index.html -->
+
   <div data-viewover-list>
     <img src="image1.jpg" alt="image 1">
     <img src="image2.jpg" alt="image 2">
@@ -145,12 +153,9 @@ For quick implementation, you can use the default options and just add the `data
     <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
   </div>
   ```
-  ```css
-  /* index.css */
-  @import "viewover/dist/viewover.min.css";
-  ```
   ```js
   // index.js
+
   import viewover from 'viewover';
 
   viewover();
@@ -158,22 +163,10 @@ For quick implementation, you can use the default options and just add the `data
 
 To customize the viewover, you can pass an object with the desired options to the `viewover()` function.
 
-#### Example:
-  ```html
-  // index.html
-  <div data-viewover-list>
-    <img src="image1.jpg" alt="image 1">
-    <img src="image2.jpg" alt="image 2">
-    <video src="video1.mp4" alt="video 1"></video>
-    <iframe src="https://www.youtube.com/embed/1" alt="video 2"></iframe>
-  </div>
-  ```
-  ```css
-  /* index.css */
-  @import "viewover/dist/viewover.min.css";
-  ```
+##### Example:
   ```js
   // index.js
+
   import viewover from 'viewover';
 
   viewover({
@@ -192,9 +185,10 @@ To customize the viewover, you can pass an object with the desired options to th
 
 | `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
 
-Example:
+##### Example:
   ```js
   // index.js
+
   import viewover from 'viewover';
 
   viewover({
