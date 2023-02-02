@@ -46,41 +46,6 @@ export default function addOpenViewoverButton() {
         mediaItemParent.replaceChild(mediaItemWrapper, mediaItem);
         mediaItemWrapper.appendChild(mediaItem);
         mediaItemWrapper.appendChild(openViewoverButton);
-
-        mediaItem.setAttribute('enablejsapi', 'true');
-
-
-
-        const hideOpenViewoverButton = () => {
-          openViewoverButton.style.display = 'none';
-        };
-        const showOpenViewoverButton = () => {
-          openViewoverButton.style.display = 'block';
-        };
-
-        // let tag = document.createElement('script');
-        // tag.id = 'iframe-demo';
-        // tag.src = 'https://www.youtube.com/iframe_api';
-        // tag.setAttribute('defer', 'true')
-        // let firstScriptTag = document.getElementsByTagName('script')[0];
-        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        function onPlayerStateChange(event) {
-          if (event.data === YT.PlayerState.PLAYING) {
-            hideOpenViewoverButton();
-          }
-          if (event.data === YT.PlayerState.PAUSED) {
-            showOpenViewoverButton();
-          }
-        }
-        let player;
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player(mediaItem, {
-            events: {
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        }
       }
     }
   }
