@@ -14,10 +14,8 @@
     />
     <link rel="stylesheet" href="./demo/demo.css" />
     <link rel="stylesheet" href="./src/css/boxview.css" />
-    <script defer>
-      const viewover = require('./dist/js/viewover.min.js');
-      viewover();
-    </script>
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <script type="module" src="./demo/script.js"></script>
     <title>Viewover</title>
   </head>
   <body class="body">
@@ -163,7 +161,7 @@
           />
           Sorry, your browser doesn't support embedded videos.
         </video>
-        <video class="video media-content__video" data-viewover="video">
+        <video class="video media-content__video" data-viewover="video" controls>
           <source
             class="viewover-element"
             src="./demo/media/videos/Curvy-road-in-a-snow-covered-forest.mp4"
@@ -398,12 +396,11 @@
           src="https://revitalvolkov.files.wordpress.com/2009/03/ildegel.gif"
           alt=""
         />
-        <video class="video media-content__video" data-viewover="video">
+        <video class="video media-content__video" data-viewover="video" controls>
           <source
             class="viewover-element"
             src="./demo/media/videos/Curvy-road-in-a-snow-covered-forest.mp4"
             type="video/mp4"
-            muted
           />
           Sorry, your browser doesn't support embedded videos.
         </video>
