@@ -108,6 +108,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
+To get started, run this command to install the NPM package:
   ```sh
   npm install overview
   ```
