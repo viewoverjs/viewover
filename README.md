@@ -108,21 +108,32 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get started, run this command to install the NPM package:
+### Installation
+
+To get started, you can either install the package via NPM or use the CDN url.
+
+#### NPM
+run this command to install the NPM package:
   ```sh
   npm install viewover
   ```
-or, copy and paste the jsDelivr CDN url
+
+#### CDN
+or, use the jsDelivr CDN url
   ```html
   <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.js"></script>
+  ```
+To use the core CSS file, add this line to your HTML file:
+  ```html
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.css">
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-<!-- ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Usage
+
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
