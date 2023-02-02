@@ -28,8 +28,8 @@
     <a href="https://github.com/Yedidya10/viewover"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Yedidya10/viewover">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/Yedidya10/viewover">View Demo</a>
+    · -->
     <a href="https://github.com/Yedidya10/viewover/issues">Report Bug</a>
     ·
     <a href="https://github.com/Yedidya10/viewover/issues">Request Feature</a>
@@ -83,10 +83,10 @@
 
 ### Features
 
-- Built with performance, UX and DX in mind
+<!-- - Built with performance, UX and DX in mind -->
 - Embraces native HTML coding conventions
-<!-- * Out of the box integration with UI libraries -->
 - Small size and no dependencies
+<!-- * Out of the box integration with UI libraries -->
 <!-- * Lightweight, ___
 - Slide or fade transition by CSS
 - Supports breakpoints
@@ -106,34 +106,12 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-<!-- ## Getting Started
+## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install overview
   ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/Yedidya10/viewover.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
