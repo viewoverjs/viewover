@@ -1,15 +1,4 @@
 <a name="readme-top"></a>
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-<!-- PROJECT LOGO -->
 <br />
 <br />
 <br />
@@ -34,7 +23,6 @@
     ·
     <a href="https://github.com/Yedidya10/viewover/issues">Request Feature</a>
   </p>
-  <!-- <h2 align="center">Ready For</h2> -->
 </div>
 
 <br />
@@ -47,7 +35,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- TABLE OF CONTENTS -->
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -59,33 +47,34 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
+<!-- ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ### Features
 
 <!-- - Built with performance, UX and DX in mind -->
 - Embraces native HTML coding conventions
 - Small size and no dependencies
+- Supports all modern browsers
+- Adopt modern ES6 JS syntax
+- Support IMG, VIDEO, YOUTUBE IFRAME elements
+- Support keyboard navigation
+- Support touch navigation
+- Thumbnail slider
+- Auto width and height
 <!-- * Out of the box integration with UI libraries -->
 <!-- * Lightweight, ___
 - Slide or fade transition by CSS
@@ -96,10 +85,7 @@
 - Mouse drag and touch swipe
 - Free drag mode
 - Mouse wheel navigation
-- Nested slider
 - Lazy loading
-- Thumbnail slider
-- Auto width and height
 - Accessibility friendly
 - Live Region -->
 
