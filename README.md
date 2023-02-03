@@ -97,9 +97,17 @@ Run this command to install the NPM package:
   ```sh
   npm install viewover
   ```
+To use the library, you need to import it to your project and call the `viewover()` function.
+  ```js
+  // index.js
+
+  import viewover from 'viewover';
+
+  viewover();
+  ```
 
 #### CDN
-Or, use the jsDelivr CDN url
+Or, use the jsDelivr cdn url
   ```html
   <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.js"></script>
   ```
@@ -125,22 +133,12 @@ For quick implementation, you can use the default options and just add the `data
   ```
 <div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div><br />
 
-To use the library, you need to import it to your project and call the `viewover()` function.
-  ```js
-  // index.js
-
-  import viewover from 'viewover';
-
-  viewover();
-  ```
 
 To customize the viewover, you can pass an object with the desired options to the `viewover()` function.
 
 ##### Example:
   ```js
   // index.js
-
-  import viewover from 'viewover';
 
   viewover({
     // options
@@ -152,7 +150,7 @@ To customize the viewover, you can pass an object with the desired options to th
 |----------|:-------------:|:------|:-----|	
 | `fullscreen` | `boolean` | `true` | Enable or disable fullscreen mode |
 | `zoom` | `boolean` | `true` | Enable or disable zoom mode |
-| `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
+| `thumbnails` | `boolean` | `true` | Enable or disable thumbnails mode |
 
 ##### Example:
   ```js
