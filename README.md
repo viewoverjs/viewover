@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Yedidya10/viewover">
-    <img src="./viewover_s-logo.png" alt="Logo">
+    <img src="./viewover_logo.png" alt="Logo">
   </a>
 <br />
 <br />
