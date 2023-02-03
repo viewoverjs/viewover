@@ -1,7 +1,8 @@
 {
-  "name": "viewover",
+  "name": "@Yedidya10/viewover",
   "version": "0.1.2",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
+  "main": "dist/viewover.min.js",
   "browser": "dist/viewover.min.js",
   "module": "dist/viewover.min.js",
   "type": "module",
