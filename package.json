@@ -1,9 +1,9 @@
 {
   "name": "viewover",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
-  "browser": "dist/viewover.js",
-  "module": "dist/viewover.esm.js",
+  "browser": "dist/viewover.min.js",
+  "module": "dist/viewover.min.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
