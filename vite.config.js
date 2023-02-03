@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: `viewover..min.js`,
+        entryFileNames: `viewover.min.js`,
         chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`
       }
