@@ -105,11 +105,6 @@ Or, use the jsDelivr CDN url
   ```
 It is necessary to add the `type='module'` attribute to the script tag in order to use the ES6 module syntax.
 
-  ```html
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.css">
-  ```
-It is necessary to add the css file to the page in order to implement the library's correctly.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
