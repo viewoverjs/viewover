@@ -1,5 +1,5 @@
 import setOptions from './setOptions.js';
-import {defaultOptions} from './defaultOptions.js';
+import { defaultOptions } from './defaultOptions.js';
 
 export const updateOptions = (options) => {
   let updatedOptions;

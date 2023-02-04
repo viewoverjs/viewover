@@ -1,16 +1,4 @@
-/* Each selector contains one or more of these labels: "Core Style" , "Preference Style" and "Recommended Style"
-
-"Core Style" means that all is properties are the style of the foundation of the library
-and cannot exist without them, therefore they should not be changed at all.
-
-"Preference Style" means that all is properties they are styles that can be changed according to the user's needs and personal taste.
-(done by defining a JS object according to the documentation).
-The current properties options are the library's default style.
-
-"Recommended Style" means that all is properties they are styles >>
-
-*/
-
+const styleContent = `
 :root {
   --viewover-icon-color: rgb(140, 140, 140);
   --viewover-icon-color-hover: rgb(220, 220, 220);
@@ -605,4 +593,6 @@ The current properties options are the library's default style.
 
 .viewover__thumbnails-track::-webkit-scrollbar-thumb:hover {
   background-color: var(--viewover-icon-color-hover);
-}
+} `;
+
+export default styleContent;

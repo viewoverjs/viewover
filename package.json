@@ -1,11 +1,21 @@
 {
-  "name": "@Yedidya10/viewover",
-  "version": "0.1.2",
+  "name": "viewover",
+  "version": "0.2.0",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
-  "main": "dist/viewover.min.js",
-  "browser": "dist/viewover.min.js",
-  "module": "dist/viewover.min.js",
+  "files": [
+    "dist"
+  ],
+  "browser": "./dist/viewover-bundle.min.umd.cjs",
+  "module": "./dist/viewover-bundle.min.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "browser": {
+        "import": "./dist/viewover-bundle.min.js",
+        "require": "./dist/viewover-bundle.min.umd.cjs"
+      }
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yedidya10/viewover.git"
+    "url": "git+https://github.com/viewoverjs/viewover.git"
   },
   "author": {
     "name": "Yedidya Aberjel",
@@ -35,7 +45,6 @@
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
-    "vite": "^4.0.4",
-    "vite-plugin-css-injected-by-js": "^2.4.0"
+    "vite": "^4.0.4"
   }
 }

@@ -1,4 +1,4 @@
-import { dialogContent } from '../utils/dialogContent.js';
+import { dialogContent } from './dialogContent.js';
 
 const viewover = document.createElement('dialog');
 viewover.setAttribute('id', 'viewover');
