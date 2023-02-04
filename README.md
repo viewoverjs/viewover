@@ -148,7 +148,7 @@ Options can be passed to the viewover constructor as an object. The following op
 | Option | Type | Default | Description | Comment |
 |:----------|:----------|:----------|:----------|:----------|
 | `fullscreen` | boolean | `true` | Enable or disable fullscreen mode |
-| `zoom` | boolean | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image is smaller than the width or height of the main container |
+| `zoom` | boolean | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image size is smaller than the width or height of the main container |
 | `thumbnails` | boolean | `false` | Enable or disable thumbnails mode |
 
 For now, viewover options are limited to the above. More options will be added in the future.
