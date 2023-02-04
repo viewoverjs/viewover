@@ -146,9 +146,9 @@ To customize the viewover, you can pass an object with the desired options to th
 
 | Option | Type | Default | Description | comment |
 |:----------|:----------|:----------|:----------|:----------|
-| `fullscreen` | `boolean` | `true` | Enable or disable fullscreen mode |
-| `zoom` | `boolean` | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image is smaller than the width and height of the main container |
-| `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
+| `fullscreen` | boolean | `true` | Enable or disable fullscreen mode |
+| `zoom` | boolean | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image is smaller than the width or height of the main container |
+| `thumbnails` | boolean | `false` | Enable or disable thumbnails mode |
 
 ##### Example:
   ```js
