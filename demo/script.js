@@ -1,7 +1,4 @@
-import viewover from "../src/js/viewover.js";
+import Viewover from "../src/js/Viewover.js";
 
-viewover({
-  zoom: false,
-  fullscreen: false,
-  thumbnails: true,
-});
+const viewover = new Viewover();
+
