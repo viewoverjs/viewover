@@ -122,7 +122,7 @@ For implementation, you first need to add the `data-viewover-list` attribute to 
   ```
 <div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div><br />
 
-Then, you need to import the viewover module and call for the new instance of the viewover.
+Then, you need to import the viewover module and call for the new instance. The default options will be used. For more information about the options, see the [Options](#options) section.
   ```js
   // index.js
 
@@ -143,12 +143,15 @@ To customize the viewover, you can pass an object with the desired options to th
   ```
 
 #### Options
+Options can be passed to the viewover constructor as an object. The following options are available:
 
-| Option | Type | Default | Description | comment |
+| Option | Type | Default | Description | Comment |
 |:----------|:----------|:----------|:----------|:----------|
 | `fullscreen` | boolean | `true` | Enable or disable fullscreen mode |
 | `zoom` | boolean | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image is smaller than the width or height of the main container |
 | `thumbnails` | boolean | `false` | Enable or disable thumbnails mode |
+
+For now, viewover options are limited to the above. More options will be added in the future.
 
 ##### Example:
   ```js
