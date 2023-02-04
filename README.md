@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/viewoverjs/viewover">
-    <img src="./viewover_logo.png"  alt="Logo" width="300">
+    <img src="./viewover_logo.png"  alt="Logo" width="400" height="400">
   </a>
 <br />
 <br />
