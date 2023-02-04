@@ -35,9 +35,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yedidya10/viewover/issues"
+    "url": "https://github.com/viewoverjs/viewover/issues"
   },
-  "homepage": "https://github.com/Yedidya10/viewover#readme",
+  "homepage": "https://github.com/viewoverjs/viewover#readme",
   "devDependencies": {
     "@playwright/test": "^1.29.2",
     "eslint": "^8.33.0",

@@ -3,8 +3,8 @@
 <br />
 <br />
 <div align="center">
-  <a href="https://github.com/Yedidya10/viewover">
-    <img src="./viewover_s-logo.png" alt="Logo">
+  <a href="https://github.com/viewoverjs/viewover">
+    <img src="https://github.com/viewoverjs/viewover/blob/main/%E2%80%8F%E2%80%8Fviewover_logo.png"  alt="Logo" width="400">
   </a>
 <br />
 <br />
@@ -14,14 +14,14 @@
   <p align="center">
     Create a light & featured modal to display photos and videos gallery overlay on the page
     <br />
-    <a href="https://github.com/Yedidya10/viewover"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/viewoverjs/viewover"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/Yedidya10/viewover">View Demo</a>
+    <!-- <a href="https://github.com/viewoverjs/viewover">View Demo</a>
     · -->
-    <a href="https://github.com/Yedidya10/viewover/issues">Report Bug</a>
+    <a href="https://github.com/viewoverjs/viewover/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Yedidya10/viewover/issues">Request Feature</a>
+    <a href="https://github.com/viewoverjs/viewover/issues">Request Feature</a>
   </p>
 </div>
 
@@ -185,7 +185,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 And more...
 
-See the [open issues](https://github.com/Yedidya10/viewover/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/viewoverjs/viewover/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,7 +218,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Yedidya Aberjel - yedidya.dev@gmail.com
 
-Project Link: [https://github.com/Yedidya10/viewover](https://github.com/Yedidya10/viewover)
+Project Link: [https://github.com/viewoverjs/viewover](https://github.com/viewoverjs/viewover)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -234,16 +234,16 @@ Project Link: [https://github.com/Yedidya10/viewover](https://github.com/Yedidya
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Yedidya10/viewover.svg?style=for-the-badge
-[contributors-url]: https://github.com/Yedidya10/viewover/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Yedidya10/viewover.svg?style=for-the-badge
-[forks-url]: https://github.com/Yedidya10/viewover/network/members
-[stars-shield]: https://img.shields.io/github/stars/Yedidya10/viewover.svg?style=for-the-badge
-[stars-url]: https://github.com/Yedidya10/viewover/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Yedidya10/viewover.svg?style=for-the-badge
-[issues-url]: https://github.com/Yedidya10/viewover/issues
-[license-shield]: https://img.shields.io/github/license/Yedidya10/viewover.svg?style=for-the-badge
-[license-url]: https://github.com/Yedidya10/viewover/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/viewoverjs/viewover.svg?style=for-the-badge
+[contributors-url]: https://github.com/viewoverjs/viewover/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/viewoverjs/viewover.svg?style=for-the-badge
+[forks-url]: https://github.com/viewoverjs/viewover/network/members
+[stars-shield]: https://img.shields.io/github/stars/viewoverjs/viewover.svg?style=for-the-badge
+[stars-url]: https://github.com/viewoverjs/viewover/stargazers
+[issues-shield]: https://img.shields.io/github/issues/viewoverjs/viewover.svg?style=for-the-badge
+[issues-url]: https://github.com/viewoverjs/viewover/issues
+[license-shield]: https://img.shields.io/github/license/viewoverjs/viewover.svg?style=for-the-badge
+[license-url]: https://github.com/viewoverjs/viewover/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/yedidya-aberjel
 
