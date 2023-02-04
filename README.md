@@ -85,7 +85,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Installation
@@ -101,7 +100,7 @@ Run this command to install the NPM package:
 #### CDN
 Or, use the jsDelivr CDN url
   ```html
-  <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover.min.js"></script>
+  <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover-bundle.min.js"></script>
   ```
 It is necessary to add the `type='module'` attribute to the script tag in order to use the ES6 module syntax.
 
@@ -110,9 +109,7 @@ It is necessary to add the `type='module'` attribute to the script tag in order 
 
 ### Usage
 
-For quick implementation, you can use the default options and just add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
-
-##### Example:
+For implementation, you first need to add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
   ```html
   <!-- index.html -->
 
@@ -125,45 +122,44 @@ For quick implementation, you can use the default options and just add the `data
   ```
 <div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div><br />
 
-To use the library, you need to import it to your project and call the `viewover()` function.
+Then, you need to import the viewover module and call for the new instance of the viewover.
   ```js
   // index.js
 
-  import viewover from 'viewover';
+  import Viewover from 'viewover';
 
-  viewover();
+  const viewover = new Viewover();
   ```
 
-To customize the viewover, you can pass an object with the desired options to the `viewover()` function.
-
-##### Example:
+To customize the viewover, you can pass an object with the desired options to the viewover constructor.
   ```js
   // index.js
 
-  import viewover from 'viewover';
+  import Viewover from 'viewover';
 
-  viewover({
+  const viewover = new Viewover({
     // options
   });
   ```
+
 #### Options
 
-| Option | Type | Default | Description |
-|----------|:-------------:|:------|:-----|	
+| Option | Type | Default | Description | comment |
+|:----------|:----------|:----------|:----------|:----------|
 | `fullscreen` | `boolean` | `true` | Enable or disable fullscreen mode |
-| `zoom` | `boolean` | `true` | Enable or disable zoom mode |
+| `zoom` | `boolean` | `true` | Enable or disable zoom mode | In any case, the zoom mode will be disabled if the image is smaller than the width and height of the main container |
 | `thumbnails` | `boolean` | `false` | Enable or disable thumbnails mode |
 
 ##### Example:
   ```js
   // index.js
 
-  import viewover from 'viewover';
+  import Viewover from 'viewover';
 
-  viewover({
-    fullscreen: false,
-    zoom: false,
-    thumbnails: true,
+  const viewover = new Viewover({
+    fullscreen: true,
+    zoom: true,
+    thumbnails: true
   });
   ```
 
