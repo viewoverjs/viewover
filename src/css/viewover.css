@@ -27,21 +27,6 @@ The current properties options are the library's default style.
   position: relative;
 }
 
-/* .viewover-video-play-button {
-  width: 52px;
-  height: 52px;
-  position: absolute;
-  content: '';
-  top: 50%;
-  right: 51%;
-  transform: translateY(-50%);
-  background: url(./play_circle_black_24dp.svg) no-repeat;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  z-index: 1;
-} */
-
 .viewover-open-button {
   background: none;
   border: none;
@@ -111,11 +96,6 @@ The current properties options are the library's default style.
   visibility: visible;
   opacity: 1;
 }
-
-
-/* .button_disable:hover .svg-icon {
-  fill: var(--viewover-icon-color-disable);
-} */
 
 .viewover:modal {
   max-width: 100%;
@@ -244,12 +224,6 @@ The current properties options are the library's default style.
   /* Preference Style */
   border-radius: var(--viewover-media-border-radius);
 }
-
-/* .viewover__media::-webkit-scrollbar {
-  display: none;
-  height: 0px;
-  width: 0px;
-} */
 
 .viewover__img,
 .viewover__video,
@@ -632,7 +606,3 @@ The current properties options are the library's default style.
 .viewover__thumbnails-track::-webkit-scrollbar-thumb:hover {
   background-color: var(--viewover-icon-color-hover);
 }
-
-/* @media (100px <= width <= 1900px) {
-
-} */
