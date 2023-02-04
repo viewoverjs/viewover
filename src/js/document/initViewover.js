@@ -7,7 +7,7 @@ export const mediaItems = [
   ...document.querySelectorAll('[data-viewover-item]'),
 ];
 
-export function applyViewoverOnDoc(options) {
+export function initViewover(options) {
   for (let i = 0; i < mediaItems.length; i++) {
     const mediaItem = mediaItems[i];
 
