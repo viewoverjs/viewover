@@ -1,4 +1,5 @@
 import Viewover from "../src/js/Viewover.js";
 
-const viewover = new Viewover();
-
+const viewover = new Viewover({
+  thumbnails: true,
+});
