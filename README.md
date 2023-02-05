@@ -126,7 +126,7 @@ Then, you need to import the viewover module and call for the new instance. The 
   ```js
   // index.js
 
-  import Viewover from 'viewover';
+  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover();
   ```
@@ -135,7 +135,7 @@ To customize the viewover, you can pass an object with the desired options to th
   ```js
   // index.js
 
-  import Viewover from 'viewover';
+  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover({
     // options
@@ -157,7 +157,7 @@ For now, viewover options are limited to the above. More options will be added i
   ```js
   // index.js
 
-  import Viewover from 'viewover';
+  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover({
     fullscreen: true,
