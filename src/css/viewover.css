@@ -35,7 +35,7 @@ The current properties options are the library's default style.
   height: 52px;
   position: absolute;
   right: 10px;
-  background: url(../utils/icons/launch_black_48dp.svg) no-repeat;
+  background: url(../js/utils/icons/launch_black_48dp.svg) no-repeat;
   background-color: #00000050;
   background-position: center;
   z-index: 1;
@@ -554,7 +554,7 @@ The current properties options are the library's default style.
   inset-block-start: 0;
   inset-inline-start: 0;
   background-position: center;
-  background-image: url('../utils/icons/play_circle_opsz48.svg');
+  background-image: url('../js/utils/icons/play_circle_opsz48.svg');
   background-repeat: no-repeat;
   z-index: 100;
 }
