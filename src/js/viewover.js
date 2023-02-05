@@ -1,7 +1,7 @@
 'use strict';
 
 import { initViewover } from './document/initViewover.js';
-import styleContent from './document/styleContent.js';
+import viewoverCoreCss from './cssInJs/viewoverCoreCss.js';
 
 export default class Viewover {
   constructor(options) {
@@ -35,7 +35,7 @@ export default class Viewover {
 
   #addStyle() {
     const style = document.createElement('style');
-    style.textContent = styleContent;
+    style.textContent = viewoverCoreCss;
     document.head.append(style);
   }
 
