@@ -5,14 +5,13 @@
   "files": [
     "dist"
   ],
-  "browser": "./dist/viewover-bundle.min.umd.cjs",
+  "browser": "./dist/viewover-bundle.min.js",
   "module": "./dist/viewover-bundle.min.js",
   "type": "module",
   "exports": {
     ".": {
       "browser": {
-        "import": "./dist/viewover-bundle.min.js",
-        "require": "./dist/viewover-bundle.min.umd.cjs"
+        "import": "./dist/viewover-bundle.min.js"
       }
     }
   },
