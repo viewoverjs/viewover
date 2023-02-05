@@ -51,7 +51,7 @@ export const dialogContent = `
           </svg>
         </div>
       </div>
-      <button class="button share-button" id="share-button">
+      <button class="button share-button" id="share-button" tabindex="-1">
         <svg
           class="svg-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export const dialogContent = `
           />
         </svg>
       </button>
-      <button class="button download-button" id="download-button">
+      <button class="button download-button" id="download-button" tabindex="-1">
         <svg
           class="svg-icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +86,7 @@ export const dialogContent = `
         <button
           class="button viewover__auto-scroll-button"
           id="auto-scroll-pause-button"
+          tabindex="-1"
         >
           <svg
             class="svg-icon"
@@ -101,6 +102,7 @@ export const dialogContent = `
         <button
           class="button viewover__auto-scroll-button button_visible"
           id="auto-scroll-play-button"
+          tabindex="-1"
         >
           <svg
             class="svg-icon"
@@ -114,7 +116,6 @@ export const dialogContent = `
           </svg>
         </button>
       </div>
-
       <button
         class="button viewover__zoom-in-button viewover__zoom-button"
         id="zoom-in-button"
@@ -196,6 +197,7 @@ export const dialogContent = `
         <button
           class="button button_visible viewover__fullscreen-button"
           id="fullscreen-entry-button"
+          tabindex="0"
         >
           <svg
             class="svg-icon fullscreen-entry-icon"
@@ -214,6 +216,7 @@ export const dialogContent = `
         <button
           class="button button_hidden viewover__fullscreen-button"
           id="fullscreen-exit-button"
+          tabindex="-1"
         >
           <svg
             class="svg-icon fullscreen-exit-icon"
