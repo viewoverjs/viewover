@@ -9,7 +9,7 @@
   "module": "./dist/viewover-bundle.min.js",
   "type": "module",
   "exports": {
-    ".": {
+    "viewover": {
       "browser": {
         "import": "./dist/viewover-bundle.min.js"
       }
