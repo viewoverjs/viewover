@@ -1,9 +1,9 @@
 {
   "name": "viewover",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
   "files": [
-    "viewover-bundle.min.js",
+    "dist",
     "README.md",
     "LICENSE",
     "icons",
