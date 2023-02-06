@@ -35,7 +35,7 @@ The current properties options are the library's default style.
   height: 52px;
   position: absolute;
   right: 10px;
-  background: url(../js/utils/icons/launch_black_48dp.svg) no-repeat;
+  background: url(../../icons/launch_black_48dp.svg) no-repeat;
   background-color: #00000050;
   background-position: center;
   z-index: 1;
@@ -554,7 +554,7 @@ The current properties options are the library's default style.
   inset-block-start: 0;
   inset-inline-start: 0;
   background-position: center;
-  background-image: url('../js/utils/icons/play_circle_opsz48.svg');
+  background-image: url('../../icons/play_circle_opsz48.svg');
   background-repeat: no-repeat;
   z-index: 100;
 }
@@ -562,7 +562,7 @@ The current properties options are the library's default style.
 .viewover__alternate-thumbnail {
   height: calc(var(--thumbnails-track-height) - 6px);
   aspect-ratio: 16/9;
-  background-image: url('../utils/icons/play_circle_opsz48.svg');
+  background-image: url('../../icons/play_circle_opsz48.svg');
   background-repeat: no-repeat;
   background-position: center;
 }

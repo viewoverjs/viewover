@@ -130,10 +130,10 @@ Then, import the viewover module from cdn or node modules and call for the new i
   // index.js
 
   // cdn
-  import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/viewover-bundle.min.js';
+  import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/dist/viewover-bundle.min.js';
 
   // npm
-  import Viewover from '../node_modules/viewover/viewover-bundle.min.js';
+  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover();
   ```
@@ -169,7 +169,7 @@ For now, viewover options are limited to the above. More options will be added i
   });
   ```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
