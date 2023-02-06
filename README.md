@@ -100,7 +100,10 @@ Run this command to install the NPM package:
 #### CDN
 Or, use the jsDelivr CDN url
   ```html
-  <script type='module' src="https://cdn.jsdelivr.net/npm/viewover/dist/viewover-bundle.min.js"></script>
+  <script type="module">
+    import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/dist/viewover-bundle.min.js'
+    const viewover = new Viewover();
+  </script>
   ```
 It is necessary to add the `type='module'` attribute to the script tag in order to use the ES6 module syntax.
 
@@ -109,7 +112,7 @@ It is necessary to add the `type='module'` attribute to the script tag in order 
 
 ### Usage
 
-For implementation, you first need to add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
+For implementation, you need to add the `data-viewover-list` attribute to the media elements wrapper to display them in viewover.
   ```html
   <!-- index.html -->
 
@@ -122,10 +125,14 @@ For implementation, you first need to add the `data-viewover-list` attribute to 
   ```
 <div><strong>⚠️ Note:</strong> This version does not fully support iframe elements except YouTube</div><br />
 
-Then, you need to import the viewover module and call for the new instance. The default options will be used. For more information about the options, see the [Options](#options) section.
+Then, import the viewover module from cdn or node modules and call for the new instance. The default options will be used. For more information about the options, see the [Options](#options) section.
   ```js
   // index.js
 
+  // cdn
+  import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/dist/viewover-bundle.min.js';
+
+  // npm
   import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover();
@@ -134,8 +141,6 @@ Then, you need to import the viewover module and call for the new instance. The 
 To customize the viewover, you can pass an object with the desired options to the viewover constructor.
   ```js
   // index.js
-
-  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover({
     // options
@@ -156,8 +161,6 @@ For now, viewover options are limited to the above. More options will be added i
 ##### Example:
   ```js
   // index.js
-
-  import Viewover from '../node_modules/viewover/dist/viewover-bundle.min.js';
 
   const viewover = new Viewover({
     fullscreen: true,
