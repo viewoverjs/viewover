@@ -130,7 +130,7 @@ Then, import the viewover module from cdn or node modules and call for the new i
   // index.js
 
   // cdn
-  import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/dist/viewover-bundle.min.js';
+  import Viewover from 'https://cdn.jsdelivr.net/npm/viewover@latest/viewover-bundle.min.js';
 
   // npm
   import Viewover from '../node_modules/viewover/viewover-bundle.min.js';
