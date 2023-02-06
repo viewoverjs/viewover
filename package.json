@@ -1,19 +1,19 @@
 {
   "name": "viewover",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "light & featured modal to display photos and videos gallery overlay on the page",
   "files": [
-    "dist"
+    "viewover-bundle.min.js",
+    "README.md",
+    "LICENSE",
+    "package-lock.json",
+    "package.json"
   ],
-  "browser": "./dist/viewover-bundle.min.js",
-  "module": "./dist/viewover-bundle.min.js",
+  "browser": "./viewover-bundle.min.js",
+  "module": "./viewover-bundle.min.js",
   "type": "module",
   "exports": {
-    "viewover": {
-      "browser": {
-        "import": "./dist/viewover-bundle.min.js"
-      }
-    }
+    ".": "./viewover-bundle.min.js"
   },
   "scripts": {
     "dev": "vite",
