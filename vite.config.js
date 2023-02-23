@@ -9,7 +9,7 @@ export default defineConfig({
         babelrc: false,
         configFile: false,
         plugins: [
-          [require.resolve('babel-plugin-module-resolver'), {
+          ['module-resolver', {
             root: ["./dist/"],
             alias: {
               viewover: "./viewover-bundle.min.js"
