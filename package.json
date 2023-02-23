@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node ./dev-helpers/readCss.js && vite build",
     "preview": "vite preview",
     "test": "playwright test",
     "lint": "eslint --fix src/js/**/*.js",
