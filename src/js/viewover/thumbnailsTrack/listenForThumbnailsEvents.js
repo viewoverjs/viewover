@@ -8,6 +8,8 @@ import showActiveThumbnailContent from './showActiveThumbnailContent.js';
 import toggleActiveThumbnail from './toggleActiveThumbnail.js';
 import { scrollThumbnailToViewport } from './handleThumbnailsOverflow.js';
 
+import { enableZoomButtons } from '../controlbar/displayZoomButtons.js';
+
 export default function listenForThumbnailsEvents() {
   const thumbnailsTrackList = [...viewoverThumbnailsTrack.children];
 
@@ -22,20 +24,18 @@ export default function listenForThumbnailsEvents() {
       );
 
       thumbnailWrapper.addEventListener('click', () => {
-        if (activeMainElement.element.localName === 'img') {
-          if (activeMainElement.element.src === thumbnailUrl) {
-            return;
-          }
-          showActiveThumbnailContent(thumbnailUrl);
-
+        if (activeMainElement.element.src === thumbnailUrl) {
+          return;
         } else {
           setActiveMainElement('img', thumbnailUrl);
+          toggleActiveThumbnail(thumbnailWrapper);
+          scrollThumbnailToViewport(thumbnailWrapper);
         }
-        toggleActiveThumbnail(thumbnailWrapper);
-        scrollThumbnailToViewport(thumbnailWrapper);
       });
+
       continue;
     }
+
     if (elementType === 'video') {
       const thumbnailUrl = thumbnail.getAttribute(
         'data-viewover-thumbnail-src'
@@ -53,8 +53,10 @@ export default function listenForThumbnailsEvents() {
         toggleActiveThumbnail(thumbnailWrapper, thumbnailsTrackList);
         scrollThumbnailToViewport(thumbnailWrapper);
       });
+
       continue;
     }
+
     if (elementType === 'iframe') {
       const thumbnailUrl = thumbnail.getAttribute(
         'data-viewover-thumbnail-src'
@@ -69,10 +71,10 @@ export default function listenForThumbnailsEvents() {
         } else {
           setActiveMainElement('iframe', thumbnailUrl);
         }
-
         toggleActiveThumbnail(thumbnailWrapper, thumbnailsTrackList);
         scrollThumbnailToViewport(thumbnailWrapper);
       });
+
       continue;
     }
   }
