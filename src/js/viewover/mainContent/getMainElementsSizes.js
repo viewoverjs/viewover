@@ -3,7 +3,7 @@ import { viewoverMainContent } from '../../document/docConstants.js';
 
 export default async function getMainElementsSizes() {
   await activeMainElement.element.decode();
-  
+
   const naturalSize = {
     width: activeMainElement.element.naturalWidth,
     height: activeMainElement.element.naturalHeight,

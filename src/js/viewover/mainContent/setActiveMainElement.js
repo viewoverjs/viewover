@@ -26,8 +26,6 @@ export default async function setActiveMainElement(type, url) {
   }
 
   if (type === 'img') {
- 
-
     // Zoom wheel
     if (mediaElements.enableZoom == true) {
       activeMainElement.element.removeEventListener('wheel', handleZoomWheel);

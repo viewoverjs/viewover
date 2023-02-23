@@ -1,6 +1,6 @@
 import { zoomInButton, zoomOutButton } from '../../document/docConstants.js';
 
-export const toggleZoomInDisable = (state) => {
+export const setZoomInDisable = (state) => {
   if (state) {
     zoomInButton.setAttribute('disabled', '');
     zoomInButton.style.cursor = 'default';
@@ -15,7 +15,7 @@ export const toggleZoomInDisable = (state) => {
   }
 };
 
-export const toggleZoomOutDisable = (state) => {
+export const setZoomOutDisable = (state) => {
   if (state) {
     zoomOutButton.setAttribute('disabled', '');
     zoomOutButton.style.cursor = 'default';

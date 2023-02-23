@@ -1,27 +1,39 @@
 import { zoomInButton, zoomOutButton } from '../../document/docConstants.js';
 import checkIfImageScalable from './checkIfImageScalable.js';
-import getMainElementsSizes from '../mainContent/getMainElementsSizes.js';
-import { toggleZoomInDisable, toggleZoomOutDisable } from './toggleZoomDisable.js';
+import { setZoomInDisable, setZoomOutDisable } from './toggleZoomDisable.js';
 
 export const showZoomButtons = () => {
   if (!zoomInButton.classList.contains('viewover__zoom-button_visible')) {
     zoomInButton.classList.add('viewover__zoom-button_visible');
     zoomOutButton.classList.add('viewover__zoom-button_visible');
   }
+  
+  setZoomInDisable(true);
+  setZoomOutDisable(true);
+};
 
-  toggleZoomInDisable(true);
-  toggleZoomOutDisable(true);
+export const hideZoomButtons = () => {
+  if (zoomInButton.classList.contains('viewover__zoom-button_visible')) {
+    zoomInButton.classList.remove('viewover__zoom-button_visible');
+    zoomOutButton.classList.remove('viewover__zoom-button_visible');
+  }
 };
 
 export const enableZoomButtons = async () => {
-  const elementsSizes = await getMainElementsSizes();
   const zoomCapability = await checkIfImageScalable();
 
+  console.log(zoomCapability);
+
   if (zoomCapability.isScalable) {
-    toggleZoomInDisable(false);
+    setZoomInDisable(false);
+  } else {
+    setZoomInDisable(true);
   }
+  
   if (zoomCapability.isInvertible) {
-    toggleZoomOutDisable(false);
+    setZoomOutDisable(false);
+  } else {
+    setZoomOutDisable(true);
   }
 
   // if (!isScalable) {
@@ -37,9 +49,4 @@ export const enableZoomButtons = async () => {
   // }
 };
 
-export const hideZoomButtons = () => {
-  if (zoomInButton.classList.contains('viewover__zoom-button_visible')) {
-    zoomInButton.classList.remove('viewover__zoom-button_visible');
-    zoomOutButton.classList.remove('viewover__zoom-button_visible');
-  }
-};
+
